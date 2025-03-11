@@ -1,0 +1,22 @@
+{
+  "type": "filter",
+  "name": "Blooprnt's ClearFilter",
+  "description": "Loot filter for my main account",
+  "modules": [
+    {
+      "name": "Hidden Items",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/hidden_items/hidden_items.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/hidden_items/hidden_items.rs2f"
+    },
+    {
+      "name": "Catacombs",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/catacombs/catacombs.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/catacombs/catacombs.rs2f"
+    },
+    {
+      "name": "Item Values",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.rs2f"
+    }
+  ]
+}
