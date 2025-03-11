@@ -1,0 +1,91 @@
+{
+  "name": "Hidden Items",
+  "description": "Hide items based on quantity",
+  "inputs": [
+    {
+      "type": "stringlist",
+      "description": "Hide items with quantity 1 or less",
+      "label": "Hide 1 items",
+      "macroName": "HIDE_1",
+      "default": [
+        "*ashes",
+        "Dragon dart",
+        "blue dragonhide",
+        "green dragonhide",
+        "red dragonhide",
+        "black dragonhide"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "description": "Hide items with quantity 5 or less",
+      "label": "Hide 5 items",
+      "macroName": "HIDE_5",
+      "default": [
+        "Big bones",
+        "Spinach roll",
+        "Goblin mail",
+        "Small ninja monkey bones",
+        "Empty spice shaker",
+        "Icosahedron",
+        "Orb",
+        "Burnt meat",
+        "Flyer",
+        "Brown spice (1)",
+        "Brown spice (2)",
+        "Red spice (1)",
+        "Red spice (2)",
+        "Red spice (3)",
+        "Red spice (4)",
+        "Yellow spice (1)",
+        "Yellow spice (2)",
+        "Tile",
+        "Abyssal ashes"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "description": "Hide items with quantity 40 or less",
+      "label": "Hide 40 items",
+      "macroName": "HIDE_40",
+      "default": [
+        "Dark kebbit fur",
+        "Suqah hide",
+        "Suqah tooth",
+        "Volcanic sulphur",
+        "Malicious ashes"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "description": "Hide items with quantity 60 or less",
+      "label": "Hide 60 items",
+      "macroName": "HIDE_60",
+      "default": [
+        "Logs",
+        "Vile ashes",
+        "Fiendish ashes",
+        "Ashes",
+        "Oyster pearl",
+        "Calcite",
+        "Numulite",
+        "Volcanic ash",
+        "Vial",
+        "Bucket",
+        "Jug",
+        "Seaweed",
+        "Green egg",
+        "Red egg",
+        "Blue egg",
+        "Yellow egg",
+        "Raw chicken",
+        "Empty oyster",
+        "Edible seaweed",
+        "Tin ore",
+        "Fishing bait",
+        "Raw mackerel",
+        "Wildblood seed"
+      ]
+    }
+  ]
+}
