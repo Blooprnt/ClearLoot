@@ -1,0 +1,13 @@
+// module:catacombs
+
+#define CATACOMBS_LIST []
+
+#define CATACOMBS_CUSTOMSTYLE
+
+apply (name:CATACOMBS_LIST) {
+    CATACOMBS_CUSTOMSTYLE
+}
+
+
+
+// endmodule:catacombs
