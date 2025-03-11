@@ -1,0 +1,33 @@
+{
+  "name": "Catacombs Items",
+  "description": "Customize Catacombs items",
+  "inputs": [
+      {
+          "macroName": "CATACOMBS_LIST",
+          "label": "List of Catacombs items with backgrounds to apply custom unique style to (by default just lootbeam)",
+          "type": "stringlist",
+          "default": [
+              "Dark totem",
+              "Dark totem top",
+              "Dark totem base",
+              "Dark totem middle",
+              "Ancient shard"
+            ]
+          },
+          {
+              "macroName": "CATACOMBS_CUSTOMSTYLE",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          }
+      ]
+  }
