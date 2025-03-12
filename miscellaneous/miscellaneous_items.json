@@ -14,7 +14,7 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_1",
-              "label": "Uniques custom style",
+              "label": "Rare drop table",
               "type": "style",
               "default": {
                 "backgroundColor": "#08dfd9d9",
@@ -38,7 +38,7 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_2",
-              "label": "Uniques custom style",
+              "label": "Rare bones",
               "type": "style",
               "default": {
                 "backgroundColor": "#99b4ad8f",
@@ -61,14 +61,14 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_3",
-              "label": "Uniques custom style",
+              "label": "Uncut Onyx",
               "type": "style",
               "default": {
                 "backgroundColor": "#FF0c0c1e",
                 "borderColor": "#FF595965",
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF9b9b9b",
-                "menuTextColor": "#387f1fd5",
+                "menuTextColor": "#ff0c0c1e",
                 "textAccent": 0,
                 "fontType": 1,
                 "showLootBeam": true,
@@ -85,14 +85,14 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_4",
-              "label": "Uniques custom style",
+              "label": "Champion scrolls",
               "type": "style",
               "default": {
                 "backgroundColor": "#90150951",
                 "borderColor": "#99e9cb11",
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFdfdfdf",
-                "menuTextColor": "#387f1fd5",
+                "menuTextColor": "#FFe9cb11",
                 "textAccent": 0,
                 "fontType": 1,
                 "showLootBeam": true,
@@ -109,7 +109,7 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_5",
-              "label": "Uniques custom style",
+              "label": "Key master teleport",
               "type": "style",
               "default": {
                 "backgroundColor": "#90151111",
@@ -132,7 +132,7 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_6",
-              "label": "Uniques custom style",
+              "label": "Ancient blood ornament kit",
               "type": "style",
               "default": {
                 "backgroundColor": "#00000000",
@@ -156,7 +156,7 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_7",
-              "label": "Uniques custom style",
+              "label": "Dragon Javelin",
               "type": "style",
               "default": {
                 "backgroundColor": "#00000000",
@@ -179,7 +179,7 @@
           },
           {
               "macroName": "MISCELLANEOUS_CUSTOMSTYLE_8",
-              "label": "Uniques custom style",
+              "label": "Crystal shard (for AFK slayer)",
               "type": "style",
               "default": {
                 "backgroundColor": "#00000000",
