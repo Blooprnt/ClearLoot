@@ -1,4 +1,4 @@
-// module:miscellaneous_items
+// module:miscellaneous
 
 #define MISCELLANEOUS_LIST_1 []
 #define MISCELLANEOUS_LIST_2 []
@@ -49,4 +49,4 @@ apply (name:MISCELLANEOUS_LIST_)8 {
     MISCELLANEOUS_CUSTOMSTYLE_8
 }
 
-// endmodule:miscellaneous_items
+// endmodule:miscellaneous
