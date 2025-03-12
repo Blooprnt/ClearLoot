@@ -19,6 +19,11 @@
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/catacombs/catacombs.rs2f"
     },
     {
+      "name": "Keys",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/keys/keys.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/keys/keys.rs2f"
+    },
+    {
       "name": "Item Values",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.rs2f"
