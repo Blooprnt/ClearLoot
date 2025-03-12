@@ -10,8 +10,8 @@
     },
     {
       "name": "Miscellaneous",
-      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/miscellaneous/miscellaneous_items.json",
-      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/miscellaneous/miscellaneous_items.rs2f"
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/miscellaneous/miscellaneous.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/miscellaneous/miscellaneous.rs2f"
     },
     {
       "name": "Catacombs",
