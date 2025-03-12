@@ -1,0 +1,42 @@
+// module:keys
+
+#define KEYS_LIST_1 []
+#define KEYS_LIST_2 []
+#define KEYS_LIST_3 []
+#define KEYS_LIST_4 []
+#define KEYS_LIST_5 []
+#define KEYS_LIST_6 []
+
+#define KEYS_CUSTOMSTYLE_1
+apply (name:KEYS_LIST_1) {
+    KEYS_CUSTOMSTYLE_1
+}
+
+#define KEYS_CUSTOMSTYLE_2
+apply (name:KEYS_LIST_2) {
+    KEYS_CUSTOMSTYLE_2
+}
+
+#define KEYS_CUSTOMSTYLE_3
+apply (name:KEYS_LIST_3) {
+    KEYS_CUSTOMSTYLE_3
+}
+
+#define KEYS_CUSTOMSTYLE_4
+apply (name:KEYS_LIST_4) {
+    KEYS_CUSTOMSTYLE_4
+}
+
+#define KEYS_CUSTOMSTYLE_5
+apply (name:KEYS_LIST_5) {
+    KEYS_CUSTOMSTYLE_5
+}
+
+#define KEYS_CUSTOMSTYLE_6
+apply (name:KEYS_LIST_6) {
+    KEYS_CUSTOMSTYLE_6
+}
+
+
+
+// endmodule:keys
