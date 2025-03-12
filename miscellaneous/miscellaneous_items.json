@@ -41,11 +41,11 @@
               "label": "Uniques custom style",
               "type": "style",
               "default": {
-                "backgroundColor": "#387f1fd5",
-                "borderColor": "#90000000",
+                "backgroundColor": "#99b4ad8f",
+                "borderColor": "#FF3d2a09",
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFdfdfdf",
-                "menuTextColor": "#387f1fd5",
+                "menuTextColor": "#FFe4d38b",
                 "textAccent": 0,
                 "fontType": 1,
                 "showLootBeam": false
@@ -64,14 +64,15 @@
               "label": "Uniques custom style",
               "type": "style",
               "default": {
-                "backgroundColor": "#387f1fd5",
-                "borderColor": "#90000000",
+                "backgroundColor": "#FF0c0c1e",
+                "borderColor": "#FF595965",
                 "textAccentColor": "#FF000000",
-                "textColor": "#FFdfdfdf",
+                "textColor": "#FF9b9b9b",
                 "menuTextColor": "#387f1fd5",
                 "textAccent": 0,
                 "fontType": 1,
-                "showLootBeam": false
+                "showLootBeam": true,
+                "lootbeamColor": "#FF070711"
             }
           },
           {
@@ -87,14 +88,15 @@
               "label": "Uniques custom style",
               "type": "style",
               "default": {
-                "backgroundColor": "#387f1fd5",
-                "borderColor": "#90000000",
+                "backgroundColor": "#90150951",
+                "borderColor": "#99e9cb11",
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFdfdfdf",
                 "menuTextColor": "#387f1fd5",
                 "textAccent": 0,
                 "fontType": 1,
-                "showLootBeam": false
+                "showLootBeam": true,
+                "lootbeamColor": "#FFe9cb11"
             }
           },
           {
@@ -110,11 +112,11 @@
               "label": "Uniques custom style",
               "type": "style",
               "default": {
-                "backgroundColor": "#387f1fd5",
-                "borderColor": "#90000000",
+                "backgroundColor": "#90151111",
+                "borderColor": "#93e1a613",
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFdfdfdf",
-                "menuTextColor": "#387f1fd5",
+                "menuTextColor": "#FFffda7d",
                 "textAccent": 0,
                 "fontType": 1,
                 "showLootBeam": false
@@ -133,14 +135,15 @@
               "label": "Uniques custom style",
               "type": "style",
               "default": {
-                "backgroundColor": "#387f1fd5",
-                "borderColor": "#90000000",
+                "backgroundColor": "#00000000",
+                "borderColor": "#00000000",
                 "textAccentColor": "#FF000000",
-                "textColor": "#FFdfdfdf",
-                "menuTextColor": "#387f1fd5",
+                "textColor": "#FFff1414",
+                "menuTextColor": "#FFff1414",
                 "textAccent": 0,
                 "fontType": 2,
-                "showLootBeam": false
+                "showLootBeam": true,
+                "lootbeamColor": "#FF000000"
             }
           },
           {
@@ -156,11 +159,11 @@
               "label": "Uniques custom style",
               "type": "style",
               "default": {
-                "backgroundColor": "#387f1fd5",
-                "borderColor": "#90000000",
+                "backgroundColor": "#00000000",
+                "borderColor": "#00000000",
                 "textAccentColor": "#FF000000",
-                "textColor": "#FFdfdfdf",
-                "menuTextColor": "#387f1fd5",
+                "textColor": "#60787878",
+                "menuTextColor": "#FF787878",
                 "textAccent": 0,
                 "fontType": 1,
                 "showLootBeam": false
@@ -179,11 +182,11 @@
               "label": "Uniques custom style",
               "type": "style",
               "default": {
-                "backgroundColor": "#387f1fd5",
-                "borderColor": "#90000000",
+                "backgroundColor": "#00000000",
+                "borderColor": "#00000000",
                 "textAccentColor": "#FF000000",
-                "textColor": "#FFdfdfdf",
-                "menuTextColor": "#387f1fd5",
+                "textColor": "#FF00F5C8",
+                "menuTextColor": "#FF00F5C8",
                 "textAccent": 0,
                 "fontType": 1,
                 "showLootBeam": false
