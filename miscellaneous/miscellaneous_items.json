@@ -1,0 +1,193 @@
+{
+  "name": "Miscellaneous Items",
+  "description": "Customize MISCELLANEOUS items",
+  "inputs": [
+      {
+          "macroName": "MISCELLANEOUS_LIST_1",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "Dragon med helm",
+              "Dragon spear",
+              "Shield left half"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_1",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "MISCELLANEOUS_LIST_2",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "Long bone",
+              "Curved bone"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_2",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "MISCELLANEOUS_LIST_3",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "Uncut onyx"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_3",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "MISCELLANEOUS_LIST_4",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "*champion scroll"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_4",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "MISCELLANEOUS_LIST_5",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "Key master teleport"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_5",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "MISCELLANEOUS_LIST_6",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "Ancient blood ornament kit"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_6",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "MISCELLANEOUS_LIST_7",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "Dragon Javelin"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_7",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "MISCELLANEOUS_LIST_8",
+          "label": "List of miscellaneous items to apply custom unique style to",
+          "type": "stringlist",
+          "default": [
+              "Crystal shard"
+            ]
+          },
+          {
+              "macroName": "MISCELLANEOUS_CUSTOMSTYLE_8",
+              "label": "Uniques custom style",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#387f1fd5",
+                "borderColor": "#90000000",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFdfdfdf",
+                "menuTextColor": "#387f1fd5",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          }
+      ]
+  }
