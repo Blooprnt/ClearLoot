@@ -73,8 +73,8 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF000000",
                 "menuTextColor": "#FF787878",
-                "textAccent": 3,
-                "showLootBeam": false,
+                "textAccent": 2,
+                "showLootbeam": false,
                 "hideOverlay": true
             }
         },
@@ -94,8 +94,8 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFffffff",
                 "menuTextColor": "#FF787878",
-                "textAccent": 1,
-                "showLootBeam": false
+                "textAccent": 0,
+                "showLootbeam": false
             }
         },
         {
@@ -113,9 +113,9 @@
             "default": {
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF21EB41",
-                "menuTextColor": "#FF787878",
-                "textAccent": 1,
-                "showLootBeam": false
+                "menuTextColor": "#FF21EB41",
+                "textAccent": 0,
+                "showLootbeam": false
             }
         },
         {
@@ -136,9 +136,9 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFD4D4D4",
-                "textAccent": 1,
-                "lootBeamColor": "#FFD4D4D4",
-                "showLootBeam": true
+                "textAccent": 0,
+                "lootbeamColor": "#FFD4D4D4",
+                "showLootbeam": true
             }
         },
         {
@@ -159,9 +159,9 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FF32DC95",
-                "textAccent": 1,
-                "lootBeamColor": "#FF32DC95",
-                "showLootBeam": true
+                "textAccent": 0,
+                "lootbeamColor": "#FF32DC95",
+                "showLootbeam": true
             }
         },
         {
@@ -182,9 +182,9 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFF0D337",
-                "textAccent": 1,
-                "lootBeamColor": "#FFF0D337",
-                "showLootBeam": true
+                "textAccent": 0,
+                "lootbeamColor": "#FFF0D337",
+                "showLootbeam": true
             }
         },
         {
@@ -205,9 +205,9 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFE83131",
-                "textAccent": 1,
-                "lootBeamColor": "#FFE83131",
-                "showLootBeam": true
+                "textAccent": 0,
+                "lootbeamColor": "#FFE83131",
+                "showLootbeam": true
             }
         },
         {
@@ -228,9 +228,9 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFA74FFF",
-                "textAccent": 1,
-                "lootBeamColor": "#FFA74FFF",
-                "showLootBeam": true
+                "textAccent": 0,
+                "lootbeamColor": "#FFA74FFF",
+                "showLootbeam": true
             }
         }
     ]
