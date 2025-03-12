@@ -24,7 +24,7 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFdfdfdf",
                 "menuTextColor": "#387f1fd5",
-                "textAccent": 1,
+                "textAccent": 0,
                 "fontType": 1,
                 "showLootBeam": false
             }
