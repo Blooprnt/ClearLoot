@@ -1,0 +1,136 @@
+{
+  "name": "Clue",
+  "description": "Customize clues",
+  "inputs": [
+      {
+          "macroName": "CLUE_LIST_1",
+          "label": "clue scroll (beginner)",
+          "type": "stringlist",
+          "default": [
+              "clue scroll (beginner)"
+            ]
+          },
+          {
+              "macroName": "CLUE_CUSTOMSTYLE_1",
+              "label": "clue scroll (beginner)",
+              "type": "style",
+              "default": {
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFffffff",
+                "menuTextColor": "#FFffffff",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "CLUE_LIST_2",
+          "label": "clue scroll (easy)",
+          "type": "stringlist",
+          "default": [
+              "clue scroll (easy)"
+            ]
+          },
+          {
+              "macroName": "CLUE_CUSTOMSTYLE_2",
+              "label": "clue scroll (easy)",
+              "type": "style",
+              "default": {
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF21EB41",
+                "menuTextColor": "#FF21EB41",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": false
+            }
+          },
+          {
+          "macroName": "CLUE_LIST_3",
+          "label": "clue scroll (medium)",
+          "type": "stringlist",
+          "default": [
+              "clue scroll (medium)"
+            ]
+          },
+          {
+              "macroName": "CLUE_CUSTOMSTYLE_3",
+              "label": "clue scroll (medium)",
+              "type": "style",
+              "default": {
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF00F5C8",
+                "menuTextColor": "#FF00F5C8",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": false,
+                "lootbeamColor": "#FF070711"
+            }
+          },
+          {
+          "macroName": "CLUE_LIST_4",
+          "label": "clue scroll (hard)",
+          "type": "stringlist",
+          "default": [
+              "clue scroll (hard)"
+            ]
+          },
+          {
+              "macroName": "CLUE_CUSTOMSTYLE_4",
+              "label": "clue scroll (hard)",
+              "type": "style",
+              "default": {
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFF2E905",
+                "menuTextColor": "#FFF2E905",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": false,
+                "lootbeamColor": "#FF070711"
+            }
+          },
+          {
+          "macroName": "CLUE_LIST_5",
+          "label": "clue scroll (elite)",
+          "type": "stringlist",
+          "default": [
+              "clue scroll (elite)"
+            ]
+          },
+          {
+              "macroName": "CLUE_CUSTOMSTYLE_5",
+              "label": "clue scroll (elite)",
+              "type": "style",
+              "default": {
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFFF3F38",
+                "menuTextColor": "#FFFF3F38",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": false,
+                "lootbeamColor": "#FF000000"
+            }
+          },
+          {
+          "macroName": "CLUE_LIST_6",
+          "label": "clue scroll (master)",
+          "type": "stringlist",
+          "default": [
+              "clue scroll (master)"
+            ]
+          },
+          {
+              "macroName": "CLUE_CUSTOMSTYLE_6",
+              "label": "clue scroll (master)",
+              "type": "style",
+              "default": {
+                "textAccentColor": "#FF000000",
+                "textColor": "#FFCB46FA",
+                "menuTextColor": "#FFCB46FA",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": false,
+                "lootbeamColor": "#FF000000"
+            }
+          }
+      ]
+  }
