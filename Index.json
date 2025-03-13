@@ -19,6 +19,11 @@
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/catacombs/catacombs.rs2f"
     },
     {
+      "name": "Defenders",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/defenders/defenders.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/defenders/defenders.rs2f"
+    },
+    {
       "name": "Keys",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/keys/keys.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/keys/keys.rs2f"
