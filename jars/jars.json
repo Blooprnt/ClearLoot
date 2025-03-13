@@ -1,0 +1,320 @@
+{
+  "name": "Jars",
+  "description": "Customize jars",
+  "inputs": [
+      {
+          "macroName": "JARS_LIST_1",
+          "label": "Jar of chemicals",
+          "type": "stringlist",
+          "default": [
+              "Jar of chemicals"
+            ]
+          },
+          {
+              "macroName": "JARS_CUSTOMSTYLE_1",
+              "label": "Jar of chemicals",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#99000000",
+                "borderColor": "#FF6f8688",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF1deff6",
+                "menuTextColor": "#FF1deff6",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": true,
+                "lootbeamColor": "#FF1deff6"
+            }
+          },
+          {
+          "macroName": "JARS_LIST_2",
+          "label": "Jar of darkness",
+          "type": "stringlist",
+          "default": [
+              "Jar of darkness"
+            ]
+          },
+          {
+              "macroName": "JARS_CUSTOMSTYLE_2",
+              "label": "Jar of darkness",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#99141010",
+                "borderColor": "#88a035ff",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF1deff6",
+                "menuTextColor": "#FFa035ff",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": true,
+                "lootbeamColor": "#FF141010"
+            }
+          },
+          {
+          "macroName": "JARS_LIST_3",
+          "label": "Jar of decay",
+          "type": "stringlist",
+          "default": [
+              "Jar of decay"
+            ]
+          },
+          {
+              "macroName": "JARS_CUSTOMSTYLE_3",
+              "label": "Jar of decay",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#99141010",
+                "borderColor": "#996af3de",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF1deff6",
+                "menuTextColor": "#FF3c6f67",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": true,
+                "lootbeamColor": "#FF3c6f67"
+            }
+          },
+          {
+          "macroName": "JARS_LIST_4",
+          "label": "Jar of dirt",
+          "type": "stringlist",
+          "default": [
+              "Jar of dirt"
+            ]
+          },
+          {
+              "macroName": "JARS_CUSTOMSTYLE_4",
+              "label": "Jar of dirt",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#99141010",
+                "borderColor": "#FFa5a362",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF1deff6",
+                "menuTextColor": "#FF66664e",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": true,
+                "lootbeamColor": "#FF66664e"
+            }
+          },
+          {
+          "macroName": "JARS_LIST_5",
+          "label": "Jar of dreams",
+          "type": "stringlist",
+          "default": [
+              "Jar of dreams"
+            ]
+          },
+          {
+              "macroName": "JARS_CUSTOMSTYLE_5",
+              "label": "Jar of dreams",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#99141010",
+                "borderColor": "#995cafa2",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF1deff6",
+                "menuTextColor": "#ffdffffb",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": true,
+                "lootbeamColor": "#FF697170"
+            }
+          },
+          {
+          "macroName": "JARS_LIST_6",
+          "label": "Jar of spirits",
+          "type": "stringlist",
+          "default": [
+              "Jar of spirits"
+            ]
+          },
+          {
+              "macroName": "JARS_CUSTOMSTYLE_6",
+              "label": "Jar of spirits",
+              "type": "style",
+              "default": {
+                "backgroundColor": "#99141010",
+                "borderColor": "#99f7e3c7",
+                "textAccentColor": "#FF000000",
+                "textColor": "#FF1deff6",
+                "menuTextColor": "#FFe3d0c6",
+                "textAccent": 0,
+                "fontType": 1,
+                "showLootBeam": true,
+                "lootbeamColor": "#FF816a5e"
+            }
+          },
+          {
+            "macroName": "JARS_LIST_7",
+            "label": "Jar of stone",
+            "type": "stringlist",
+            "default": [
+                "Jar of stone"
+              ]
+            },
+            {
+                "macroName": "JARS_CUSTOMSTYLE_7",
+                "label": "Jar of stone",
+                "type": "style",
+                "default": {
+                  "backgroundColor": "#99141010",
+                  "borderColor": "#998148fe",
+                  "textAccentColor": "#FF000000",
+                  "textColor": "#FF1deff6",
+                  "menuTextColor": "#FF97a2a2",
+                  "textAccent": 0,
+                  "fontType": 1,
+                  "showLootBeam": true,
+                  "lootbeamColor": "#FF926b0a"
+              }
+            },
+            {
+              "macroName": "JARS_LIST_8",
+              "label": "Jar of swamp",
+              "type": "stringlist",
+              "default": [
+                  "Jar of swamp"
+                ]
+              },
+              {
+                  "macroName": "JARS_CUSTOMSTYLE_8",
+                  "label": "Jar of swamp",
+                  "type": "style",
+                  "default": {
+                    "backgroundColor": "#99141010",
+                    "borderColor": "#99bdd319",
+                    "textAccentColor": "#FF000000",
+                    "textColor": "#FF1deff6",
+                    "menuTextColor": "#FF11bb48",
+                    "textAccent": 0,
+                    "fontType": 1,
+                    "showLootBeam": true,
+                    "lootbeamColor": "#FF304a1e"
+                }
+              },
+              {
+                "macroName": "JARS_LIST_9",
+                "label": "Jar of venom",
+                "type": "stringlist",
+                "default": [
+                    "Jar of venom"
+                  ]
+                },
+                {
+                    "macroName": "JARS_CUSTOMSTYLE_9",
+                    "label": "Jar of venom",
+                    "type": "style",
+                    "default": {
+                      "backgroundColor": "#99141010",
+                      "borderColor": "#99d8772f",
+                      "textAccentColor": "#FF000000",
+                      "textColor": "#FF1deff6",
+                      "menuTextColor": "#FF44bf7c",
+                      "textAccent": 0,
+                      "fontType": 1,
+                      "showLootBeam": true,
+                      "lootbeamColor": "#FF266e47"
+                  }
+                },
+              {
+                "macroName": "JARS_LIST_10",
+                "label": "Jar of sand",
+                "type": "stringlist",
+                "default": [
+                    "Jar of sand"
+                  ]
+                },
+                {
+                    "macroName": "JARS_CUSTOMSTYLE_10",
+                    "label": "Jar of sand",
+                    "type": "style",
+                    "default": {
+                      "backgroundColor": "#99141010",
+                      "borderColor": "#9984cf10",
+                      "textAccentColor": "#FF000000",
+                      "textColor": "#FF1deff6",
+                      "menuTextColor": "#FFc6bd5c",
+                      "textAccent": 0,
+                      "fontType": 1,
+                      "showLootBeam": true,
+                      "lootbeamColor": "#FF869049"
+                  }
+                },
+              {
+                "macroName": "JARS_LIST_11",
+                "label": "Jar of smoke",
+                "type": "stringlist",
+                "default": [
+                    "Jar of smoke"
+                  ]
+                },
+                {
+                    "macroName": "JARS_CUSTOMSTYLE_11",
+                    "label": "Jar of smoke",
+                    "type": "style",
+                    "default": {
+                      "backgroundColor": "#99141010",
+                      "borderColor": "#99d3cf13",
+                      "textAccentColor": "#FF000000",
+                      "textColor": "#FF1deff6",
+                      "menuTextColor": "#FFefed79",
+                      "textAccent": 0,
+                      "fontType": 1,
+                      "showLootBeam": true,
+                      "lootbeamColor": "#FF33627b"
+                  }
+                },
+              {
+                "macroName": "JARS_LIST_12",
+                "label": "Jar of souls, eyes, miasma",
+                "type": "stringlist",
+                "default": [
+                    "Jar of souls",
+                    "Jar of eyes",
+                    "Jar of miasma"
+                  ]
+                },
+                {
+                    "macroName": "JARS_CUSTOMSTYLE_12",
+                    "label": "Jar of souls, eyes, miasma",
+                    "type": "style",
+                    "default": {
+                      "backgroundColor": "#99141010",
+                      "borderColor": "#99f41d1d",
+                      "textAccentColor": "#FF000000",
+                      "textColor": "#FF1deff6",
+                      "menuTextColor": "#FFFF3F38",
+                      "textAccent": 0,
+                      "fontType": 1,
+                      "showLootBeam": true,
+                      "lootbeamColor": "#FF7d0000"
+                  }
+                },
+              {
+                "macroName": "JARS_LIST_13",
+                "label": "Other Jars",
+                "type": "stringlist",
+                "default": [
+                    "Jar of*"
+                  ]
+                },
+                {
+                    "macroName": "JARS_CUSTOMSTYLE_13",
+                    "label": "Other Jars",
+                    "type": "style",
+                    "default": {
+                      "backgroundColor": "#99141010",
+                      "borderColor": "#99f41d1d",
+                      "textAccentColor": "#FF000000",
+                      "textColor": "#FF1deff6",
+                      "menuTextColor": "#FFFF3F38",
+                      "textAccent": 0,
+                      "fontType": 1,
+                      "showLootBeam": true,
+                      "lootbeamColor": "#FFc90000"
+                  }
+                }
+      ]
+  }
