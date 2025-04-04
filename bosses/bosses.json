@@ -1,0 +1,1034 @@
+{
+  "name": "Bosses",
+  "description": "Customize bosses",
+  "inputs": [
+    {
+      "macroName": "ALCHEMICAL_HYDRA_LIST",
+      "label": "Alchemical Hydra",
+      "type": "stringlist",
+      "default": [
+        "Hydra's claw",
+        "Hydra tail",
+        "Hydra leather",
+        "Hydra's fang",
+        "Hydra's eye",
+        "Hydra's heart",
+        "Alchemical hydra heads"
+      ]
+    },
+    {
+      "macroName": "ALCHEMICAL_HYDRA_CUSTOMSTYLE",
+      "label": "Alchemical Hydra",
+      "type": "style",
+      "default": {
+        "backgroundColor": "#70105f10",
+        "borderColor": "#FF9db304",
+        "textAccentColor": "#FF000000",
+        "textColor": "#FFf0f0f0",
+        "menuTextColor": "#FFcbc4c4",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "lootbeamColor": "#FF225a22"
+      }
+    },
+    {
+      "macroName": "AMOXLIATL_LIST",
+      "label": "Amoxliatl",
+      "type": "stringlist",
+      "default": [
+        "Glacial temotli",
+        "Pendant of ates (inert)"
+      ]
+    },
+    {
+      "macroName": "AMOXLIATL_CUSTOMSTYLE",
+      "label": "Amoxliatl",
+      "type": "style",
+      "default": {
+        "textColor": "#FFdaecef",
+        "borderColor": "#FF000000",
+        "backgroundColor": "#6541BDE7",
+        "lootbeamColor": "#FF40b1d0",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "ARTIO_AND_CALLISTO_LIST",
+      "label": "Artio & Callisto",
+      "type": "stringlist",
+      "default": [
+        "Tyrannical ri*",
+        "Claws of callisto",
+        "Voidwaker hilt"
+      ]
+    },
+    {
+      "macroName": "ARTIO_AND_CALLISTO_CUSTOMSTYLE",
+      "label": "Artio & Callisto",
+      "type": "style",
+      "default": {
+        "textColor": "#FFdedede",
+        "borderColor": "#99c91515",
+        "backgroundColor": "#99110e0e",
+        "lootbeamColor": "#FF000000",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "BRYOPHYTA_LIST",
+      "label": "Bryophyta",
+      "type": "stringlist",
+      "default": [
+        "Bryophyta's essence"
+      ]
+    },
+    {
+      "macroName": "BRYOPHYTA_CUSTOMSTYLE",
+      "label": "Bryophyta",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF9db304",
+        "backgroundColor": "#70105f10",
+        "lootbeamColor": "#FF225a22",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "CALVARION_AND_VETION_LIST",
+      "label": "Calvar'ion & Vet'ion",
+      "type": "stringlist",
+      "default": [
+        "Ring of the go*",
+        "Skull of vet'ion",
+        "Voidwaker blade"
+      ]
+    },
+    {
+      "macroName": "CALVARION_AND_VETION_CUSTOMSTYLE",
+      "label": "Calvar'ion & Vet'ion",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#99fcb42e",
+        "backgroundColor": "#689823ff",
+        "lootbeamColor": "#FF8c5cc0",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "CERBERUS_LIST",
+      "label": "Cerberus",
+      "type": "stringlist",
+      "default": [
+        "Eternal crystal",
+        "Pegasian crystal",
+        "Primordial crystal",
+        "Smouldering stone"
+      ]
+    },
+    {
+      "macroName": "CERBERUS_CUSTOMSTYLE",
+      "label": "Cerberus",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF000000",
+        "backgroundColor": "#70FF3F38",
+        "lootbeamColor": "#FFea1911",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "CHAOS_ELEMENTAL_LIST",
+      "label": "Chaos Elemental",
+      "type": "stringlist",
+      "default": [
+        "Odium shard 1",
+        "Malediction shard 1"
+      ]
+    },
+    {
+      "macroName": "CHAOS_ELEMENTAL_CUSTOMSTYLE",
+      "label": "Chaos Elemental",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#99fcb42e",
+        "backgroundColor": "#689823ff",
+        "lootbeamColor": "#FF8c5cc0",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "COMMANDER_ZILYANA_LIST",
+      "label": "Commander Zilyana",
+      "type": "stringlist",
+      "default": [
+        "Armadyl crossbow",
+        "Saradomin hilt",
+        "Saradomin sword",
+        "Saradomin's light"
+      ]
+    },
+    {
+      "macroName": "COMMANDER_ZILYANA_CUSTOMSTYLE",
+      "label": "Commander Zilyana",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf6d05b",
+        "borderColor": "#95f6d05b",
+        "backgroundColor": "#70557eff",
+        "lootbeamColor": "#FF2c5fff",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "CORPOREAL_BEAST_LIST",
+      "label": "Corporeal Beast",
+      "type": "stringlist",
+      "default": [
+        "Elysian sigil",
+        "Spectral sigil",
+        "Arcane sigil",
+        "Holy elixir",
+        "Spirit shield",
+        "Blessed spirit shield"
+      ]
+    },
+    {
+      "macroName": "CORPOREAL_BEAST_CUSTOMSTYLE",
+      "label": "Corporeal Beast",
+      "type": "style",
+      "default": {
+        "textColor": "#FFe3d8c8",
+        "borderColor": "#FFf7e3c7",
+        "backgroundColor": "#80af898f",
+        "lootbeamColor": "#FFEDD9B7",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "CRAZY_ARCHAEOLOGIST_LIST",
+      "label": "Crazy Archaeologist",
+      "type": "stringlist",
+      "default": [
+        "Odium shard 2",
+        "Malediction shard 2",
+        "Fedora"
+      ]
+    },
+    {
+      "macroName": "CRAZY_ARCHAEOLOGIST_CUSTOMSTYLE",
+      "label": "Crazy Archaeologist",
+      "type": "style",
+      "default": {
+        "textColor": "#FFE8DFDF",
+        "borderColor": "#FFd3cbc8",
+        "backgroundColor": "#70d3914b",
+        "lootbeamColor": "#FFb8752d",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "DAGANNOTH_KINGS_LIST",
+      "label": "Dagannoth Kings",
+      "type": "stringlist",
+      "default": [
+        "Seers ri*",
+        "Mud battlestaff",
+        "Berserker ri*",
+        "Warrior ri*",
+        "Archers ri*",
+        "Seercull"
+      ]
+    },
+    {
+      "macroName": "DAGANNOTH_KINGS_CUSTOMSTYLE",
+      "label": "Dagannoth Kings",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf75227",
+        "borderColor": "#9900a34e",
+        "backgroundColor": "#705b503c",
+        "lootbeamColor": "#FF675e4f",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "DUKE_SUCELLUS_LIST",
+      "label": "Duke Sucellus",
+      "type": "stringlist",
+      "default": [
+        "Magus vestige",
+        "Eye of the duke",
+        "Ice quartz",
+        "Frozen tablet"
+      ]
+    },
+    {
+      "macroName": "DUKE_SUCELLUS_CUSTOMSTYLE",
+      "label": "Duke Sucellus",
+      "type": "style",
+      "default": {
+        "textColor": "#FFdaecef",
+        "borderColor": "#992cc5e8",
+        "backgroundColor": "#655d369a",
+        "lootbeamColor": "#FF306a79",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "GENERAL_GRAARDOR_LIST",
+      "label": "General Graardor",
+      "type": "stringlist",
+      "default": [
+        "Bandos chestplate",
+        "Bandos tassets",
+        "Bandos boots",
+        "Bandos hilt"
+      ]
+    },
+    {
+      "macroName": "GENERAL_GRAARDOR_CUSTOMSTYLE",
+      "label": "General Graardor",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF326d35",
+        "backgroundColor": "#80121211",
+        "lootbeamColor": "#FF318c34",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "GROTESQUE_GUARDIANS_LIST",
+      "label": "Grotesque Guardians",
+      "type": "stringlist",
+      "default": [
+        "Black tourmaline core",
+        "Granite gloves",
+        "Granite rin*",
+        "Granite hammer"
+      ]
+    },
+    {
+      "macroName": "GROTESQUE_GUARDIANS_CUSTOMSTYLE",
+      "label": "Grotesque Guardians",
+      "type": "style",
+      "default": {
+        "textColor": "#FFFCB80D",
+        "borderColor": "#99FCB80D",
+        "backgroundColor": "#60763EF0",
+        "lootbeamColor": "#FF6B6B6B",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "HESPORI_LIST",
+      "label": "Hespori",
+      "type": "stringlist",
+      "default": [
+        "Bottomless compost bucket"
+      ]
+    },
+    {
+      "macroName": "HESPORI_CUSTOMSTYLE",
+      "label": "Hespori",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF9db304",
+        "backgroundColor": "#70105f10",
+        "lootbeamColor": "#FF225a22",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "KRIL_TSUTSAROTH_LIST",
+      "label": "K'ril Tsutsaroth",
+      "type": "stringlist",
+      "default": [
+        "Staff of the dead",
+        "Zamorakian spear",
+        "Steam battlestaff",
+        "Zamorak hilt"
+      ]
+    },
+    {
+      "macroName": "KRIL_TSUTSAROTH_CUSTOMSTYLE",
+      "label": "K'ril Tsutsaroth",
+      "type": "style",
+      "default": {
+        "textColor": "#f0f0f0",
+        "borderColor": "#FF000000",
+        "backgroundColor": "#70FF3F38",
+        "lootbeamColor": "#FFea1911",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "KALPHITE_QUEEN_LIST",
+      "label": "Kalphite Queen",
+      "type": "stringlist",
+      "default": [
+        "Kq head"
+      ]
+    },
+    {
+      "macroName": "KALPHITE_QUEEN_CUSTOMSTYLE",
+      "label": "Kalphite Queen",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF9db304",
+        "backgroundColor": "#70105f10",
+        "lootbeamColor": "#FF225a22",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "KING_BLACK_DRAGON_LIST",
+      "label": "King Black Dragon",
+      "type": "stringlist",
+      "default": [
+        "Kbd heads"
+      ]
+    },
+    {
+      "macroName": "KING_BLACK_DRAGON_CUSTOMSTYLE",
+      "label": "King Black Dragon",
+      "type": "style",
+      "default": {
+        "textColor": "#FFdedede",
+        "borderColor": "#99c91515",
+        "backgroundColor": "#99110e0e",
+        "lootbeamColor": "#FF000000",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "KRAKEN_LIST",
+      "label": "Kraken",
+      "type": "stringlist",
+      "default": [
+        "Kraken tentacle",
+        "Trident of the seas (full)"
+      ]
+    },
+    {
+      "macroName": "KRAKEN_CUSTOMSTYLE",
+      "label": "Kraken",
+      "type": "style",
+      "default": {
+        "textColor": "#FFE8DFDF",
+        "borderColor": "#FFd3cbc8",
+        "backgroundColor": "#70d3914b",
+        "lootbeamColor": "#FFb8752d",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "KREEARRA_LIST",
+      "label": "Kree'arra",
+      "type": "stringlist",
+      "default": [
+        "Armadyl helmet",
+        "Armadyl chestplate",
+        "Armadyl chainskirt",
+        "Armadyl hilt"
+      ]
+    },
+    {
+      "macroName": "KREEARRA_CUSTOMSTYLE",
+      "label": "Kree'arra",
+      "type": "style",
+      "default": {
+        "textColor": "#FFE8DFDF",
+        "borderColor": "#FFd3cbc8",
+        "backgroundColor": "#70d3914b",
+        "lootbeamColor": "#FFb8752d",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "NEX_LIST",
+      "label": "Nex",
+      "type": "stringlist",
+      "default": [
+        "Ancient hilt",
+        "Nihil horn",
+        "Zaryte vambraces",
+        "Torva full helm (damaged)",
+        "Torva platebody (damaged)",
+        "Torva platelegs (damaged)",
+        "Nihil shard"
+      ]
+    },
+    {
+      "macroName": "NEX_CUSTOMSTYLE",
+      "label": "Nex",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#99fcb42e",
+        "backgroundColor": "#689823ff",
+        "lootbeamColor": "#FF8c5cc0",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "OBOR_LIST",
+      "label": "Obor",
+      "type": "stringlist",
+      "default": [
+        "Hill giant club"
+      ]
+    },
+    {
+      "macroName": "OBOR_CUSTOMSTYLE",
+      "label": "Obor",
+      "type": "style",
+      "default": {
+        "textColor": "#FFE8DFDF",
+        "borderColor": "#FFd3cbc8",
+        "backgroundColor": "#70d3914b",
+        "lootbeamColor": "#FFb8752d",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "PHANTOM_MUSPAH_LIST",
+      "label": "Phantom Muspah",
+      "type": "stringlist",
+      "default": [
+        "Venator shard",
+        "Ancient icon",
+        "Charged ice",
+        "Frozen cache"
+      ]
+    },
+    {
+      "macroName": "PHANTOM_MUSPAH_CUSTOMSTYLE",
+      "label": "Phantom Muspah",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#9900e580",
+        "backgroundColor": "#650e66b4",
+        "lootbeamColor": "#FF1d8859",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "REVENANT_MALEDICTUS_LIST",
+      "label": "Revenant maledictus",
+      "type": "stringlist",
+      "default": [
+        "Amulet of avarice",
+        "Craw's bow (u)",
+        "Thammaron's sceptre (u)",
+        "Viggora's chainmace (u)"
+      ]
+    },
+    {
+      "macroName": "REVENANT_MALEDICTUS_CUSTOMSTYLE",
+      "label": "Revenant maledictus",
+      "type": "style",
+      "default": {
+        "textColor": "#FF7FF6FA",
+        "borderColor": "#FF13E3EB",
+        "backgroundColor": "#75C3C0CC",
+        "lootbeamColor": "#FF7CEEF2",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "SARACHNIS_LIST",
+      "label": "Sarachnis",
+      "type": "stringlist",
+      "default": [
+        "Sraracha",
+        "Giant egg sac",
+        "Sarachnis cudgel"
+      ]
+    },
+    {
+      "macroName": "SARACHNIS_CUSTOMSTYLE",
+      "label": "Sarachnis",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF000000",
+        "backgroundColor": "#70FF3F38",
+        "lootbeamColor": "#FFea1911",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "SCORPIA_LIST",
+      "label": "Scorpia",
+      "type": "stringlist",
+      "default": [
+        "Odium shard 3",
+        "Malediction shard 3"
+      ]
+    },
+    {
+      "macroName": "SCORPIA_CUSTOMSTYLE",
+      "label": "Scorpia",
+      "type": "style",
+      "default": {
+        "textColor": "#FFdedede",
+        "borderColor": "#99c91515",
+        "backgroundColor": "#99110e0e",
+        "lootbeamColor": "#FF000000",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "SCURRIUS_LIST",
+      "label": "Scurrius",
+      "type": "stringlist",
+      "default": [
+        "Scurrius' spine"
+      ]
+    },
+    {
+      "macroName": "SCURRIUS_CUSTOMSTYLE",
+      "label": "Scurrius",
+      "type": "style",
+      "default": {
+        "textColor": "#FFE8DFDF",
+        "borderColor": "#FFd3cbc8",
+        "backgroundColor": "#70d3914b",
+        "lootbeamColor": "#FFb8752d",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "SKOTIZO_LIST",
+      "label": "Skotizo",
+      "type": "stringlist",
+      "default": [
+        "Dark claw"
+      ]
+    },
+    {
+      "macroName": "SKOTIZO_CUSTOMSTYLE",
+      "label": "Skotizo",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#99000000",
+        "backgroundColor": "#687f1fd5",
+        "lootbeamColor": "#FF0c0c0d",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "SPINDEL_AND_VENENATIS_LIST",
+      "label": "Spindel & Venenatis",
+      "type": "stringlist",
+      "default": [
+        "Treasonous ri*",
+        "Fangs of venenatis",
+        "Voidwaker gem"
+      ]
+    },
+    {
+      "macroName": "SPINDEL_AND_VENENATIS_CUSTOMSTYLE",
+      "label": "Spindel & Venenatis",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF000000",
+        "backgroundColor": "#70FF3F38",
+        "lootbeamColor": "#FFea1911",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "THE_HUEYCOATL_LIST",
+      "label": "The Hueycoatl",
+      "type": "stringlist",
+      "default": [
+        "Dragon hunter wand",
+        "Hueycoatl hide",
+        "Tome of earth (empty)",
+        "Huasca seed"
+      ]
+    },
+    {
+      "macroName": "THE_HUEYCOATL_CUSTOMSTYLE",
+      "label": "The Hueycoatl",
+      "type": "style",
+      "default": {
+        "textColor": "#FFffb4b4",
+        "borderColor": "#99ff8a87",
+        "backgroundColor": "#7044c3c6",
+        "lootbeamColor": "#FFff2520",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "THE_LEVIATHAN_LIST",
+      "label": "The Leviathan",
+      "type": "stringlist",
+      "default": [
+        "Venator vestige",
+        "Leviathan's lure",
+        "Smoke quartz",
+        "Scarred tablet"
+      ]
+    },
+    {
+      "macroName": "THE_LEVIATHAN_CUSTOMSTYLE",
+      "label": "The Leviathan",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF72ca4e",
+        "backgroundColor": "#65e17c67",
+        "lootbeamColor": "#FFff2520",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "THE_MIMIC_LIST",
+      "label": "The Mimic",
+      "type": "stringlist",
+      "default": [
+        "Ring of 3rd age"
+      ]
+    },
+    {
+      "macroName": "THE_MIMIC_CUSTOMSTYLE",
+      "label": "The Mimic",
+      "type": "style",
+      "default": {
+        "textColor": "#FFE8DFDF",
+        "borderColor": "#FFd3cbc8",
+        "backgroundColor": "#70d3914b",
+        "lootbeamColor": "#FFb8752d",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "THE_NIGHTMARE_LIST",
+      "label": "The Nightmare & Phosani's Nightmare",
+      "type": "stringlist",
+      "default": [
+        "Inquisitor's mace",
+        "Inquisitor's great helm",
+        "Inquisitor's hauberk",
+        "Inquisitor's plateskirt",
+        "Nightmare staff",
+        "Volatile orb",
+        "Harmonised orb",
+        "Eldritch orb",
+        "Slepey tablet",
+        "Parasitic egg"
+      ]
+    },
+    {
+      "macroName": "THE_NIGHTMARE_CUSTOMSTYLE",
+      "label": "The Nightmare & Phosani's Nightmare",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#9900e580",
+        "backgroundColor": "#650e66b4",
+        "lootbeamColor": "#FF1d8859",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "THERMONUCLEAR_LIST",
+      "label": "Thermonuclear Smoke Devil",
+      "type": "stringlist",
+      "default": [
+        "Occult necklace",
+        "Smoke battlestaff"
+      ]
+    },
+    {
+      "macroName": "THERMONUCLEAR_CUSTOMSTYLE",
+      "label": "Thermonuclear Smoke Devil",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#99f4e600",
+        "backgroundColor": "#706c7dc4",
+        "lootbeamColor": "#FF8c5cc0",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "THE_WHISPERER_LIST",
+      "label": "The Whisperer",
+      "type": "stringlist",
+      "default": [
+        "Bellator vestige",
+        "Siren's staff",
+        "Shadow quartz",
+        "Sirenic tablet"
+      ]
+    },
+    {
+      "macroName": "THE_WHISPERER_CUSTOMSTYLE",
+      "label": "The Whisperer",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#99bbd1f0",
+        "backgroundColor": "#681f4190",
+        "lootbeamColor": "#658ddf",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "TORMENTED_DEMON_LIST",
+      "label": "Tormented Demon",
+      "type": "stringlist",
+      "default": [
+        "Smouldering heart",
+        "Smouldering pile of flesh",
+        "Smouldering gland"
+      ]
+    },
+    {
+      "macroName": "TORMENTED_DEMON_CUSTOMSTYLE",
+      "label": "Tormented Demon",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#70ac747a",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": false,
+        "showDespawn": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "VARDORVIS_LIST",
+      "label": "Vardorvis",
+      "type": "stringlist",
+      "default": [
+        "Executioner's axe head",
+        "Blood quartz",
+        "Strangled tablet"
+      ]
+    },
+    {
+      "macroName": "VARDORVIS_CUSTOMSTYLE",
+      "label": "Vardorvis",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF000000",
+        "backgroundColor": "#70FF3F38",
+        "lootbeamColor": "#FFea1911",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "VORKATH_LIST",
+      "label": "Vorkath",
+      "type": "stringlist",
+      "default": [
+        "Vorkath's head",
+        "Draconic visage",
+        "Skeletal visage",
+        "Dragonbone necklace"
+      ]
+    },
+    {
+      "macroName": "VORKATH_CUSTOMSTYLE",
+      "label": "Vorkath",
+      "type": "style",
+      "default": {
+        "textColor": "#FFdaecef",
+        "borderColor": "#FF000000",
+        "backgroundColor": "#6541BDE7",
+        "lootbeamColor": "#FF40b1d0",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    },
+    {
+      "macroName": "ZULRAH_LIST",
+      "label": "Zulrah",
+      "type": "stringlist",
+      "default": [
+        "Tanzanite mutagen",
+        "Magma mutagen",
+        "Magic fang",
+        "Serpentine visage",
+        "Tanzanite fang"
+      ]
+    },
+    {
+      "macroName": "ZULRAH_CUSTOMSTYLE",
+      "label": "Zulrah",
+      "type": "style",
+      "default": {
+        "textColor": "#FFf0f0f0",
+        "borderColor": "#FF223415",
+        "backgroundColor": "#58bdd319",
+        "lootbeamColor": "#FF679312",
+        "textAccent": 0,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFcbc4c4"
+      }
+    }
+  ]
+}
