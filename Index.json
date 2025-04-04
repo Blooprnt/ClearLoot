@@ -47,7 +47,7 @@
       "name": "Bosses",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/bosses/bosses.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/bosses/bosses.rs2f"
-    }
+    },
     {
       "name": "Item Values",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.json",
