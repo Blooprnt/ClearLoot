@@ -260,7 +260,7 @@
         "menuTextColor": "#FF906c11",
         "textAccent": 0,
         "fontType": 1,
-        "showLootBeam": false,
+        "showLootBeam": true,
         "lootbeamColor": "#FF000000"
       }
     }
