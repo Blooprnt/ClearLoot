@@ -205,15 +205,19 @@
       "label": "Avernic defender",
       "type": "style",
       "default": {
-        "backgroundColor": "#90303030",
+        "backgroundColor": "#8f393939",
         "borderColor": "#99000000",
         "textAccentColor": "#FF000000",
         "textColor": "#FFececec",
         "menuTextColor": "#FFc4bbba",
+        "tileStrokeColor": "#99ececec",
         "textAccent": 0,
         "fontType": 1,
-        "showLootBeam": true,
-        "lootbeamColor": "#FF000000"
+        "lootbeamColor": "#FF000000",
+        "showLootbeam": true,
+        "showDespawn": true,
+        "notify": true,
+        "highlightTile": true
       }
     },
     {
@@ -229,15 +233,19 @@
       "label": "Ghommal's avernic defender 5",
       "type": "style",
       "default": {
-        "backgroundColor": "#90430d02",
-        "borderColor": "#991f1717",
+        "backgroundColor": "#90303030",
+        "borderColor": "#99ff0000",
         "textAccentColor": "#FF000000",
         "textColor": "#FFececec",
-        "menuTextColor": "#FF430d02",
+        "menuTextColor": "#ffff3e25",
+        "tileStrokeColor": "#99ffd000",
         "textAccent": 0,
         "fontType": 1,
-        "showLootBeam": true,
-        "lootbeamColor": "#FF000000"
+        "lootbeamColor": "#FF000000",
+        "showLootbeam": true,
+        "showDespawn": true,
+        "notify": true,
+        "highlightTile": true
       }
     },
     {
@@ -253,15 +261,19 @@
       "label": "Ghommal's avernic defender 6",
       "type": "style",
       "default": {
-        "backgroundColor": "#90906c11",
-        "borderColor": "#996d2019",
+        "backgroundColor": "#90303030",
+        "borderColor": "#99ffc700",
         "textAccentColor": "#FF000000",
         "textColor": "#FFececec",
-        "menuTextColor": "#FF906c11",
+        "menuTextColor": "#ffffcf00",
+        "tileStrokeColor": "#99ffd000",
         "textAccent": 0,
         "fontType": 1,
-        "showLootBeam": true,
-        "lootbeamColor": "#FF000000"
+        "lootbeamColor": "#FF000000",
+        "showLootbeam": true,
+        "showDespawn": true,
+        "notify": true,
+        "highlightTile": true
       }
     }
   ]
