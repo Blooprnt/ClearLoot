@@ -215,7 +215,7 @@
         "showLootBeam": true,
         "lootbeamColor": "#FF000000"
       }
-    }
+    },
     {
       "macroName": "DEFENDER_LIST_10",
       "label": "Ghommal's avernic defender 5",
@@ -239,7 +239,7 @@
         "showLootBeam": true,
         "lootbeamColor": "#FF000000"
       }
-    }
+    },
     {
       "macroName": "DEFENDER_LIST_11",
       "label": "Ghommal's avernic defender 6",
