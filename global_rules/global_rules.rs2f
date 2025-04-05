@@ -27,7 +27,7 @@ apply (value:<GLOBAL_VALUE_HIDE) {
 }
 
 if (name:"Grimy*" && value:<HERBS_SHOW) { 
-    hidden = false;,
+    hidden = false;
     color = "0eee00"; 
 }
 
