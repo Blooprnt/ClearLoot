@@ -27,7 +27,7 @@
             "macroName": "GLOBAL_HIDE",
             "label": "Hidden, but still clickable items:",
             "default": [
-                ""
+                
               ]
         }
     ]
