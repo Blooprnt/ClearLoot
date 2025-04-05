@@ -8,7 +8,9 @@
             "type": "stringlist",
             "macroName": "GLOBAL_HIDE",
             "label": "Global items you want hidden, but still clickable",
-            "default": []
+            "default": [
+                "Bronze bar"
+              ]
         },
         {
             "macroName": "GLOBAL_DESPAWN_HIDE",
