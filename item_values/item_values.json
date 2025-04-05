@@ -1,237 +1,109 @@
 {
-    "name": "Color Based on Value",
-    "inputs": [
-        {
-            "macroName": "VALUES_TIER_1_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 1",
-            "type": "number",
-            "default": 550
-        },
-        {
-            "macroName": "VALUES_TIER_2_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 2",
-            "type": "number",
-            "default": 1300
-        },
-        {
-            "macroName": "VALUES_TIER_3_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 3",
-            "type": "number",
-            "default": 18000
-        },
-        {
-            "macroName": "VALUES_TIER_4_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 4",
-            "type": "number",
-            "default": 80000
-        },
-        {
-            "macroName": "VALUES_TIER_5_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 5",
-            "type": "number",
-            "default": 300000
-        },
-        {
-            "macroName": "VALUES_TIER_6_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 6",
-            "type": "number",
-            "default": 1000000
-        },
-        {
-            "macroName": "VALUES_TIER_7_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 7",
-            "type": "number",
-            "default": 10000000
-        },
-        {
-            "macroName": "VALUES_TIER_8_VALUE",
-            "label": "Minimum value",
-            "group": "Tier 8",
-            "type": "number",
-            "default": 70000000
-        },
-        {
-            "macroName": "VALUES_TIER_1_SHOW",
-            "label": "Tier 1 force items shown",
-            "group": "Tier 1",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_1_CUSTOMSTYLE",
-            "label": "Tier 1 Display",
-            "group": "Tier 1",
-            "type": "style",
-            "default": {
-                "textAccentColor": "#FF000000",
-                "menuTextColor": "#FF787878",
-                "textAccent": 2,
-                "textColor": "#FF000000",
-                "showLootbeam": false,
-                "hideOverlay": true
-            }
-        },
-        {
-            "macroName": "VALUES_TIER_2_SHOW",
-            "label": "Tier 2 force items shown",
-            "group": "Tier 2",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_2_CUSTOMSTYLE",
-            "label": "Tier 2 Display",
-            "group": "Tier 2",
-            "type": "style",
-            "default": {
-                "textColor": "#FFffffff",
-                "menuTextColor": "#FF787878",
-                "textAccent": 1,
-                "textAccentColor": "#FF000000",
-                "showLootbeam": false
-            }
-        },
-        {
-            "macroName": "VALUES_TIER_3_SHOW",
-            "label": "Tier 3 force items shown",
-            "group": "Tier 3",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_3_CUSTOMSTYLE",
-            "label": "Tier 3 Display",
-            "group": "Tier 3",
-            "type": "style",
-            "default": {
-                "textColor": "#FF21EB41",
-                "menuTextColor": "#FF21EB41",
-                "textAccent": 1,
-                "textAccentColor": "#FF000000",
-                "showLootbeam": false
-            }
-        },
-        {
-            "macroName": "VALUES_TIER_4_SHOW",
-            "label": "Tier 4 force items shown",
-            "group": "Tier 4",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_4_CUSTOMSTYLE",
-            "label": "Tier 4 Display",
-            "group": "Tier 4",
-            "type": "style",
-            "default": {
-                "backgroundColor": "#67A3A3A3",
-                "borderColor": "#FFD4D4D4",
-                "textColor": "#FFF2F2F2",
-                "menuTextColor": "#FFD4D4D4",
-                "textAccent": 1,
-                "textAccentColor": "#FF000000",
-                "lootbeamColor": "#FFD4D4D4",
-                "showLootbeam": true
-            }
-        },
-        {
-            "macroName": "VALUES_TIER_5_SHOW",
-            "label": "Tier 5 force items shown",
-            "group": "Tier 5",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_5_CUSTOMSTYLE",
-            "label": "Tier 5 Display",
-            "group": "Tier 5",
-            "type": "style",
-            "default": {
-                "backgroundColor": "#6700D97E",
-                "borderColor": "#FF32DC95",
-                "textColor": "#FFF2F2F2",
-                "menuTextColor": "#FF32DC95",
-                "textAccent": 1,
-                "textAccentColor": "#FF000000",
-                "lootbeamColor": "#FF32DC95",
-                "showLootbeam": true
-            }
-        },
-        {
-            "macroName": "VALUES_TIER_6_SHOW",
-            "label": "Tier 6 force items shown",
-            "group": "Tier 6",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_6_CUSTOMSTYLE",
-            "label": "Tier 6 Display",
-            "group": "Tier 6",
-            "type": "style",
-            "default": {
-                "backgroundColor": "#67FFA800",
-                "borderColor": "#FFF0D337",
-                "textColor": "#FFF2F2F2",
-                "menuTextColor": "#FFF0D337",
-                "textAccent": 1,
-                "textAccentColor": "#FF000000",
-                "lootbeamColor": "#FFF0D337",
-                "showLootbeam": true
-            }
-        },
-        {
-            "macroName": "VALUES_TIER_7_SHOW",
-            "label": "Tier 7 force items shown",
-            "group": "Tier 7",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_7_CUSTOMSTYLE",
-            "label": "Tier 7 Display",
-            "group": "Tier 7",
-            "type": "style",
-            "default": {
-                "backgroundColor": "#67FF0000",
-                "borderColor": "#FFE83131",
-                "textColor": "#FFF2F2F2",
-                "menuTextColor": "#FFE83131",
-                "textAccent": 1,
-                "textAccentColor": "#FF000000",
-                "lootbeamColor": "#FFE83131",
-                "showLootbeam": true
-            }
-        },
-        {
-            "macroName": "VALUES_TIER_8_SHOW",
-            "label": "Tier 8 force items shown",
-            "group": "Tier 8",
-            "type": "stringlist",
-            "default": []
-        },
-        {
-            "macroName": "VALUES_TIER_8_CUSTOMSTYLE",
-            "label": "Tier 8 Display",
-            "group": "Tier 8",
-            "type": "style",
-            "default": {
-                "backgroundColor": "#678000FF",
-                "borderColor": "#FFA74FFF",
-                "textColor": "#FFF2F2F2",
-                "menuTextColor": "#FFA74FFF",
-                "textAccent": 1,
-                "textAccentColor": "#FF000000",
-                "lootbeamColor": "#FFA74FFF",
-                "showLootbeam": true
-            }
-        }
-    ]
+  "name": "Color based on item value",
+  "inputs": [
+    { "macroName": "VALUES_TIER_1_ENABLED", "label": "Tier 1: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_2_ENABLED", "label": "Tier 2: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_3_ENABLED", "label": "Tier 3: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_4_ENABLED", "label": "Tier 4: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_5_ENABLED", "label": "Tier 5: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_6_ENABLED", "label": "Tier 6: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_7_ENABLED", "label": "Tier 7: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_8_ENABLED", "label": "Tier 8: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_1_VALUE", "label": "Tier 1: Min value", "type": "number", "default": 550 },
+    { "macroName": "VALUES_TIER_2_VALUE", "label": "Tier 2: Min value", "type": "number", "default": 1300 },
+    { "macroName": "VALUES_TIER_3_VALUE", "label": "Tier 3: Min value", "type": "number", "default": 18000 },
+    { "macroName": "VALUES_TIER_4_VALUE", "label": "Tier 4: Min value", "type": "number", "default": 80000 },
+    { "macroName": "VALUES_TIER_5_VALUE", "label": "Tier 5: Min value", "type": "number", "default": 300000 },
+    { "macroName": "VALUES_TIER_6_VALUE", "label": "Tier 6: Min value", "type": "number", "default": 1000000 },
+    { "macroName": "VALUES_TIER_7_VALUE", "label": "Tier 7: Min value", "type": "number", "default": 10000000 },
+    { "macroName": "VALUES_TIER_8_VALUE", "label": "Tier 8: Min value", "type": "number", "default": 70000000 },
+    { "macroName": "VALUES_TIER_1_CUSTOMSTYLE", "label": "Tier 1: Display", "type": "style",
+    "default": {
+      "textColor": "#FF000000",
+      "textAccentColor": "#FF000000",
+      "menuTextColor": "#FF787878",
+      "textAccent": 2,
+      "howLootbeam": false,
+      "hideOverlay": true
+    }
+  },
+    { "macroName": "VALUES_TIER_2_CUSTOMSTYLE", "label": "Tier 2: Display", "type": "style",
+    "default": {
+      "textColor": "#FFffffff",
+      "textAccentColor": "#FF000000",
+      "menuTextColor": "#FF787878",
+      "textAccent": 1,
+      "howLootbeam": false
+    }
+  },
+    { "macroName": "VALUES_TIER_3_CUSTOMSTYLE", "label": "Tier 3: Display", "type": "style",
+    "default": {
+      "textColor": "#FF21EB41",
+      "textAccentColor": "#FF000000",
+      "menuTextColor": "#FF21EB41",
+      "textAccent": 1,
+      "howLootbeam": false
+    }
+  },
+    { "macroName": "VALUES_TIER_4_CUSTOMSTYLE", "label": "Tier 4: Display", "type": "style",
+    "default": {
+      "textColor": "#FFF2F2F2",
+      "backgroundColor": "#67A3A3A3",
+      "borderColor": "#FFD4D4D4",
+      "textAccentColor": "#FF000000",
+      "lootbeamColor": "#FFD4D4D4",
+      "menuTextColor": "#FFD4D4D4",
+      "textAccent": 1,
+      "howLootbeam": true
+    }
+  },
+    { "macroName": "VALUES_TIER_5_CUSTOMSTYLE", "label": "Tier 5: Display", "type": "style",
+      "default": {
+        "textColor": "#FFF2F2F2",
+        "backgroundColor": "#6700D97E",
+        "borderColor": "#FF32DC95",
+        "textAccentColor": "#FF000000",
+        "lootbeamColor": "#FF32DC95",
+        "menuTextColor": "#FF32DC95",
+        "textAccent": 1,
+        "howLootbeam": true
+      }
+    },
+    { "macroName": "VALUES_TIER_6_CUSTOMSTYLE", "label": "Tier 6: Display", "type": "style",
+      "default": {
+        "textColor": "#FFF2F2F2",
+        "backgroundColor": "#67FFA800",
+        "borderColor": "#FFF0D337",
+        "textAccentColor": "#FF000000",
+        "lootbeamColor": "#FFF0D337",
+        "menuTextColor": "#FFF0D337",
+        "textAccent": 1,
+        "howLootbeam": true
+      }
+    },
+    { "macroName": "VALUES_TIER_7_CUSTOMSTYLE", "label": "Tier 7: Display", "type": "style",
+      "default": {
+        "textColor": "#FFF2F2F2",
+        "backgroundColor": "#67FF0000",
+        "borderColor": "#FFE83131",
+        "textAccentColor": "#FF000000",
+        "lootbeamColor": "#FFE83131",
+        "menuTextColor": "#FFE83131",
+        "textAccent": 1,
+        "howLootbeam": true
+      }
+    },
+    { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "label": "Tier 8: Display", "type": "style",
+      "default": {
+        "textColor": "#FFF2F2F2",
+        "backgroundColor": "#678000FF",
+        "borderColor": "#FFA74FFF",
+        "textAccentColor": "#FF000000",
+        "lootbeamColor": "#FFA74FFF",
+        "menuTextColor": "#FFA74FFF",
+        "textAccent": 1,
+        "howLootbeam": true
+      }
+    }
+  ]
 }
