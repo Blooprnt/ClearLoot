@@ -1,6 +1,6 @@
 {
   "type": "filter",
-  "name": "Blooprnt's ClearFilter",
+  "name": "ClearFilter",
   "description": "Loot filter for my main account",
   "modules": [
     {
