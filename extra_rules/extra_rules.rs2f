@@ -6,7 +6,7 @@
 #define GLOBAL_VALUE_HIDE []
 
 
-if (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
+if (tradeable: true && UNTRADABLE_SHOW_ENABLED) {
     hidden = false;
     UNTRADABLE_SHOW_CUSTOMSTYLE
 }
@@ -23,7 +23,7 @@ apply (name:"*") {
     hidden = true;
 }
 
-apply (value:<GLOBAL_VALUE_HIDE) {
+apply (value:>GLOBAL_VALUE_HIDE) {
     hidden = false;
 }
 
