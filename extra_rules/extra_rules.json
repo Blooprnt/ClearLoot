@@ -29,7 +29,7 @@
       {
         "macroName": "GLOBAL_VALUE_HIDE",
         "group": "Hide Items Below",
-        "label": ":",
+        "label": "Hide ground items below the value of:",
         "type": "number",
         "default": 550
       }
