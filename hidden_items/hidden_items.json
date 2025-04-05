@@ -5,7 +5,7 @@
     {
       "type": "stringlist",
       "description": "Hide items with quantity 1 or less",
-      "label": "Hide 1 items",
+      "label": "Hide if less than 1",
       "macroName": "HIDE_1",
       "default": [
         "*ashes",
@@ -19,7 +19,7 @@
     {
       "type": "stringlist",
       "description": "Hide items with quantity 5 or less",
-      "label": "Hide 5 items",
+      "label": "Hide if less than a stack of 5",
       "macroName": "HIDE_5",
       "default": [
         "Big bones",
@@ -46,7 +46,7 @@
     {
       "type": "stringlist",
       "description": "Hide items with quantity 40 or less",
-      "label": "Hide 40 items",
+      "label": "Hide if less than a stack of 40",
       "macroName": "HIDE_40",
       "default": [
         "Dark kebbit fur",
@@ -59,7 +59,7 @@
     {
       "type": "stringlist",
       "description": "Hide items with quantity 60 or less",
-      "label": "Hide 60 items",
+      "label": "Hide if less than a stack of 60",
       "macroName": "HIDE_60",
       "default": [
         "Logs",
