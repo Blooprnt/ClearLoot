@@ -7,7 +7,7 @@
 
 
 if (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
-    hidden = false;,
+    hidden = false;
     UNTRADABLE_SHOW_CUSTOMSTYLE
 }
 
