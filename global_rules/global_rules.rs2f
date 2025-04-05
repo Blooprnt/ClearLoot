@@ -1,0 +1,34 @@
+// module:global
+
+#define GLOBAL_HIDE []
+
+#define GLOBAL_DESPAWN_HIDE
+#define GLOBAL_VALUE_HIDE
+
+
+apply (name:GLOBAL_HIDE) {
+    hideOverlay = true;
+}
+
+apply (name:"*") {
+    showDespawn = true;
+}
+
+apply (value:<GLOBAL_DESPAWN_HIDE) {
+    showDespawn = false;
+}
+
+apply (name:"*") {
+    showValue = true;
+}
+
+apply (value:<GLOBAL_VALUE_HIDE) {
+    showValue = false;
+}
+
+if (name:"Grimy*" && value:<2000) { 
+    color = "0eee00"; 
+}
+
+// endmodule:global
+

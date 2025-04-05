@@ -1,0 +1,30 @@
+{
+    "name": "Global Rules",
+    "rs2fPath": "global_rules.rs2f",
+    "subtitle": "Rules that apply globally",
+    "description": "",
+    "inputs": [
+        {
+            "macroName": {
+                "excludes": "GLOBAL_HIDE"
+            },
+            "label": "Global items you want hidden, but still clickable",
+            "type": "includeExcludeList",
+            "default": {
+                "excludes": []
+            }
+        },
+        {
+            "macroName": "GLOBAL_DESPAWN_HIDE",
+            "label": "The price for the item to show the despawn timer",
+            "type": "number",
+            "default": 500
+        },
+        {
+            "macroName": "GLOBAL_VALUE_HIDE",
+            "label": "The price for the item to show the item's value",
+            "type": "number",
+            "default": 1000
+        }
+    ]
+}
