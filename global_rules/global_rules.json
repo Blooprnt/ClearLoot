@@ -5,14 +5,10 @@
     "description": "",
     "inputs": [
         {
-            "macroName": {
-                "excludes": "GLOBAL_HIDE"
-            },
+            "type": "stringlist",
+            "macroName": "GLOBAL_HIDE",
             "label": "Global items you want hidden, but still clickable",
-            "type": "includeExcludeList",
-            "default": {
-                "excludes": []
-            }
+            "default": []
         },
         {
             "macroName": "GLOBAL_DESPAWN_HIDE",
