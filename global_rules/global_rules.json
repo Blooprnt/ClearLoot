@@ -1,28 +1,34 @@
 {
     "name": "Global Rules",
     "rs2fPath": "global_rules.rs2f",
-    "subtitle": "Rules that apply globally",
-    "description": "",
+    "subtitle": "",
+    "description": "Rules that apply globally",
     "inputs": [
         {
-            "type": "stringlist",
-            "macroName": "GLOBAL_HIDE",
-            "label": "Global items you want hidden, but still clickable",
-            "default": [
-                "Bronze bar"
-              ]
-        },
-        {
             "macroName": "GLOBAL_DESPAWN_HIDE",
-            "label": "The price for the item to show the despawn timer",
+            "label": "Hide despawn timer below:",
             "type": "number",
             "default": 500
         },
         {
             "macroName": "GLOBAL_VALUE_HIDE",
-            "label": "The price for the item to show the item's value",
+            "label": "Hide item prices below:",
             "type": "number",
             "default": 1000
+        },
+        {
+            "type": "stringlist",
+            "macroName": "GLOBAL_HIDE",
+            "label": "Hidden, but still clickable items:",
+            "default": [
+                "Dragon javelin"
+              ]
+        },
+        {
+            "macroName": "HERBS_SHOW",
+            "label": "Show herbs that cost more than:",
+            "type": "number",
+            "default": 1500
         }
     ]
 }
