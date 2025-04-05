@@ -57,6 +57,11 @@
       "name": "Item Values",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.rs2f"
+    },
+    {
+      "name": "Extra Rules",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/extra_rules/extra_rules.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/extra_rules/extra_rules.rs2f"
     }
   ]
 }
