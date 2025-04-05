@@ -6,29 +6,29 @@
     "inputs": [
         {
             "macroName": "GLOBAL_DESPAWN_HIDE",
-            "label": "Hide despawn timer below:",
-            "type": "number",
-            "default": 500
-        },
-        {
-            "macroName": "GLOBAL_VALUE_HIDE",
-            "label": "Hide item prices below:",
+            "label": "Hide despawn timer for items that cost less than:",
             "type": "number",
             "default": 1000
         },
         {
-            "type": "stringlist",
-            "macroName": "GLOBAL_HIDE",
-            "label": "Hidden, but still clickable items:",
-            "default": [
-                "Dragon javelin"
-              ]
+            "macroName": "GLOBAL_VALUE_HIDE",
+            "label": "Hide item prices for items that cost less than:",
+            "type": "number",
+            "default": 2000
         },
         {
             "macroName": "HERBS_SHOW",
             "label": "Show herbs that cost more than:",
             "type": "number",
             "default": 1500
+        },
+        {
+            "type": "stringlist",
+            "macroName": "GLOBAL_HIDE",
+            "label": "Hidden, but still clickable items:",
+            "default": [
+                ""
+              ]
         }
     ]
 }
