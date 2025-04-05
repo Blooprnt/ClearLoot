@@ -4,6 +4,11 @@
   "description": "Loot filter for my main account",
   "modules": [
     {
+      "name": "Global Rules",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/global_rules/global_rules.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/global_rules/global_rules.rs2f"
+    },
+    {
       "name": "Hidden Items",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/hidden_items/hidden_items.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/hidden_items/hidden_items.rs2f"
