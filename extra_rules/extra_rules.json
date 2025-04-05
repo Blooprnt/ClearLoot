@@ -22,7 +22,7 @@
         "label": "Style",
         "macroName": "UNTRADABLE_SHOW_CUSTOMSTYLE",
         "default": {
-          "textColor": "#FF000000",
+          "textColor": "#FFffffff",
           "showDespawn": true
         }
       },
