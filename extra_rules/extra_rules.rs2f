@@ -5,21 +5,12 @@
 #define UNTRADABLE_SHOW_CUSTOMSTYLE
 #define GLOBAL_VALUE_HIDE []
 
-
-if (tradeable: true && UNTRADABLE_SHOW_ENABLED) {
+apply (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
     hidden = false;
     UNTRADABLE_SHOW_CUSTOMSTYLE
 }
 
-if (name:UNTRADABLE_HIDE_ITEMS) { 
-    hidden = true; 
-}
-
-if (UNTRADABLE_SHOW_ENABLED && name:UNTRADABLE_HIDE_ITEMS) {
-  UNTRADABLE_SHOW_CUSTOMSTYLE
-}
-
-apply (name:"*") {
+apply (tradeable: true && name:"*") {
     hidden = true;
 }
 
@@ -27,4 +18,7 @@ apply (value:>GLOBAL_VALUE_HIDE) {
     hidden = false;
 }
 
+apply (name:UNTRADABLE_HIDE_ITEMS) { 
+    hidden = true; 
+}
 // endmodule:extra
