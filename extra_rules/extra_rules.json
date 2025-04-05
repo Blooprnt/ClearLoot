@@ -4,21 +4,21 @@
     "inputs": [
       {
         "type": "boolean",
-        "group": "Show Untradables",
+        "group": "Unhide All Untradables",
         "label": "Enabled",
         "macroName": "UNTRADABLE_SHOW_ENABLED",
         "default": true
       },
       {
         "type": "stringlist",
-        "group": "Show Untradables",
+        "group": "Unhide All Untradables",
         "label": "Add item exceptions here to hide",
         "macroName": "UNTRADABLE_HIDE_ITEMS",
         "default": []
       },
       {
         "type": "style",
-        "group": "Show Untradables",
+        "group": "Unhide All Untradables",
         "label": "Style",
         "macroName": "UNTRADABLE_SHOW_CUSTOMSTYLE",
         "default": {
@@ -28,7 +28,7 @@
       },
       {
         "macroName": "GLOBAL_VALUE_HIDE",
-        "group": "Hide Items Below",
+        "group": "Hide Tradable Items Below",
         "label": "Hide ground items below the value of:",
         "type": "number",
         "default": 550
