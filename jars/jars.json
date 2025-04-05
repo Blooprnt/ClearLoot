@@ -20,7 +20,7 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF1deff6",
                 "menuTextColor": "#FF1deff6",
-                "textAccent": 0,
+                "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": true,
                 "lootbeamColor": "#FF1deff6"
@@ -44,7 +44,7 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF1deff6",
                 "menuTextColor": "#FFbb6cff",
-                "textAccent": 0,
+                "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": true,
                 "lootbeamColor": "#FF141010"
@@ -68,7 +68,7 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF1deff6",
                 "menuTextColor": "#FF78d1c4",
-                "textAccent": 0,
+                "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": true,
                 "lootbeamColor": "#FF3c6f67"
@@ -92,7 +92,7 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF1deff6",
                 "menuTextColor": "#FFb5b588",
-                "textAccent": 0,
+                "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": true,
                 "lootbeamColor": "#FF66664e"
@@ -116,7 +116,7 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF1deff6",
                 "menuTextColor": "#ffdffffb",
-                "textAccent": 0,
+                "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": true,
                 "lootbeamColor": "#FF697170"
@@ -140,7 +140,7 @@
                 "textAccentColor": "#FF000000",
                 "textColor": "#FF1deff6",
                 "menuTextColor": "#FFecc1aa",
-                "textAccent": 0,
+                "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": true,
                 "lootbeamColor": "#FF816a5e"
@@ -164,7 +164,7 @@
                   "textAccentColor": "#FF000000",
                   "textColor": "#FF1deff6",
                   "menuTextColor": "#FF7ec4c4",
-                  "textAccent": 0,
+                  "textAccent": 1,
                   "fontType": 1,
                   "showLootBeam": true,
                   "lootbeamColor": "#FF926b0a"
@@ -188,7 +188,7 @@
                     "textAccentColor": "#FF000000",
                     "textColor": "#FF1deff6",
                     "menuTextColor": "#FF11bb48",
-                    "textAccent": 0,
+                    "textAccent": 1,
                     "fontType": 1,
                     "showLootBeam": true,
                     "lootbeamColor": "#FF304a1e"
@@ -212,7 +212,7 @@
                       "textAccentColor": "#FF000000",
                       "textColor": "#FF1deff6",
                       "menuTextColor": "#FF44bf7c",
-                      "textAccent": 0,
+                      "textAccent": 1,
                       "fontType": 1,
                       "showLootBeam": true,
                       "lootbeamColor": "#FF266e47"
@@ -236,7 +236,7 @@
                       "textAccentColor": "#FF000000",
                       "textColor": "#FF1deff6",
                       "menuTextColor": "#FFc6bd5c",
-                      "textAccent": 0,
+                      "textAccent": 1,
                       "fontType": 1,
                       "showLootBeam": true,
                       "lootbeamColor": "#FF869049"
@@ -260,7 +260,7 @@
                       "textAccentColor": "#FF000000",
                       "textColor": "#FF1deff6",
                       "menuTextColor": "#FFefed79",
-                      "textAccent": 0,
+                      "textAccent": 1,
                       "fontType": 1,
                       "showLootBeam": true,
                       "lootbeamColor": "#FF33627b"
@@ -286,7 +286,7 @@
                       "textAccentColor": "#FF000000",
                       "textColor": "#FF1deff6",
                       "menuTextColor": "#FFFF3F38",
-                      "textAccent": 0,
+                      "textAccent": 1,
                       "fontType": 1,
                       "showLootBeam": true,
                       "lootbeamColor": "#FF7d0000"
@@ -310,7 +310,7 @@
                       "textAccentColor": "#FF000000",
                       "textColor": "#FF1deff6",
                       "menuTextColor": "#FFFF3F38",
-                      "textAccent": 0,
+                      "textAccent": 1,
                       "fontType": 1,
                       "showLootBeam": true,
                       "lootbeamColor": "#FFc90000"
