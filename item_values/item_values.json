@@ -93,7 +93,7 @@
             "default": {
                 "textColor": "#FFffffff",
                 "menuTextColor": "#FF787878",
-                "textAccent": 0,
+                "textAccent": 1,
                 "textAccentColor": "#FF000000",
                 "showLootbeam": false
             }
@@ -113,7 +113,7 @@
             "default": {
                 "textColor": "#FF21EB41",
                 "menuTextColor": "#FF21EB41",
-                "textAccent": 0,
+                "textAccent": 1,
                 "textAccentColor": "#FF000000",
                 "showLootbeam": false
             }
@@ -135,7 +135,7 @@
                 "borderColor": "#FFD4D4D4",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFD4D4D4",
-                "textAccent": 0,
+                "textAccent": 1,
                 "textAccentColor": "#FF000000",
                 "lootbeamColor": "#FFD4D4D4",
                 "showLootbeam": true
@@ -158,7 +158,7 @@
                 "borderColor": "#FF32DC95",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FF32DC95",
-                "textAccent": 0,
+                "textAccent": 1,
                 "textAccentColor": "#FF000000",
                 "lootbeamColor": "#FF32DC95",
                 "showLootbeam": true
@@ -181,7 +181,7 @@
                 "borderColor": "#FFF0D337",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFF0D337",
-                "textAccent": 0,
+                "textAccent": 1,
                 "textAccentColor": "#FF000000",
                 "lootbeamColor": "#FFF0D337",
                 "showLootbeam": true
@@ -204,7 +204,7 @@
                 "borderColor": "#FFE83131",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFE83131",
-                "textAccent": 0,
+                "textAccent": 1,
                 "textAccentColor": "#FF000000",
                 "lootbeamColor": "#FFE83131",
                 "showLootbeam": true
@@ -227,7 +227,7 @@
                 "borderColor": "#FFA74FFF",
                 "textColor": "#FFF2F2F2",
                 "menuTextColor": "#FFA74FFF",
-                "textAccent": 0,
+                "textAccent": 1,
                 "textAccentColor": "#FF000000",
                 "lootbeamColor": "#FFA74FFF",
                 "showLootbeam": true
