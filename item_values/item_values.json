@@ -33,7 +33,8 @@
       "textAccentColor": "#FF000000",
       "menuTextColor": "#FF787878",
       "textAccent": 1,
-      "howLootbeam": false
+      "howLootbeam": false,
+      "hideOverlay": false
     }
   },
     { "macroName": "VALUES_TIER_3_CUSTOMSTYLE", "label": "Tier 3: Display", "type": "style",
@@ -42,7 +43,8 @@
       "textAccentColor": "#FF000000",
       "menuTextColor": "#FF21EB41",
       "textAccent": 1,
-      "howLootbeam": false
+      "howLootbeam": false,
+      "hideOverlay": false
     }
   },
     { "macroName": "VALUES_TIER_4_CUSTOMSTYLE", "label": "Tier 4: Display", "type": "style",
@@ -54,7 +56,8 @@
       "lootbeamColor": "#FFD4D4D4",
       "menuTextColor": "#FFD4D4D4",
       "textAccent": 1,
-      "howLootbeam": true
+      "howLootbeam": true,
+      "hideOverlay": false
     }
   },
     { "macroName": "VALUES_TIER_5_CUSTOMSTYLE", "label": "Tier 5: Display", "type": "style",
@@ -66,7 +69,8 @@
         "lootbeamColor": "#FF32DC95",
         "menuTextColor": "#FF32DC95",
         "textAccent": 1,
-        "howLootbeam": true
+        "howLootbeam": true,
+        "hideOverlay": false
       }
     },
     { "macroName": "VALUES_TIER_6_CUSTOMSTYLE", "label": "Tier 6: Display", "type": "style",
@@ -78,7 +82,8 @@
         "lootbeamColor": "#FFF0D337",
         "menuTextColor": "#FFF0D337",
         "textAccent": 1,
-        "howLootbeam": true
+        "howLootbeam": true,
+        "hideOverlay": false
       }
     },
     { "macroName": "VALUES_TIER_7_CUSTOMSTYLE", "label": "Tier 7: Display", "type": "style",
@@ -90,7 +95,8 @@
         "lootbeamColor": "#FFE83131",
         "menuTextColor": "#FFE83131",
         "textAccent": 1,
-        "howLootbeam": true
+        "howLootbeam": true,
+        "hideOverlay": false
       }
     },
     { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "label": "Tier 8: Display", "type": "style",
@@ -102,7 +108,8 @@
         "lootbeamColor": "#FFA74FFF",
         "menuTextColor": "#FFA74FFF",
         "textAccent": 1,
-        "howLootbeam": true
+        "howLootbeam": true,
+        "hideOverlay": false
       }
     }
   ]
