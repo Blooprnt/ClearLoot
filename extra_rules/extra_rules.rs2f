@@ -1,0 +1,30 @@
+// module:extra
+
+#define UNTRADABLE_SHOW_ENABLED true
+#define UNTRADABLE_HIDE_ITEMS []
+#define UNTRADABLE_SHOW_CUSTOMSTYLE
+#define GLOBAL_VALUE_HIDE []
+
+
+if (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
+    hidden = false;,
+    UNTRADABLE_SHOW_CUSTOMSTYLE
+}
+
+if (name:UNTRADABLE_HIDE_ITEMS) { 
+    hidden = true; 
+}
+
+if (UNTRADABLE_SHOW_ENABLED && name:UNTRADABLE_SHOW_ITEMS) {
+  UNTRADABLE_SHOW_CUSTOMSTYLE
+}
+
+apply (name:"*") {
+    hidden = true;
+}
+
+apply (value:<GLOBAL_VALUE_HIDE) {
+    hidden = false;
+}
+
+// endmodule:extra

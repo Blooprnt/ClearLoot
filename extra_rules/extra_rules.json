@@ -1,0 +1,37 @@
+{
+    "name": "Extra Rules",
+    "rs2fPath": "extra_rules.rs2f",
+    "inputs": [
+      {
+        "type": "boolean",
+        "group": "Show Untradables",
+        "label": "Enabled",
+        "macroName": "UNTRADABLE_SHOW_ENABLED",
+        "default": true
+      },
+      {
+        "type": "stringlist",
+        "group": "Show Untradables",
+        "label": "Hidden Untradables",
+        "macroName": "UNTRADABLE_HIDE_ITEMS",
+        "default": []
+      },
+      {
+        "type": "style",
+        "group": "Show Untradables",
+        "label": "Style",
+        "macroName": "UNTRADABLE_SHOW_CUSTOMSTYLE",
+        "default": {
+          "textColor": "#FF000000",
+          "showDespawn": true
+        }
+      },
+      {
+        "macroName": "GLOBAL_VALUE_HIDE",
+        "group": "Hide Items Below",
+        "label": ":",
+        "type": "number",
+        "default": 550
+      }
+    ]
+  }
