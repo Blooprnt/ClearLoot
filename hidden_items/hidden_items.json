@@ -95,7 +95,7 @@
       "type": "stringlist",
       "group": "Hide based on ground item's stack VALUE",
       "description": "Hide ammo stack if it costs less than 1600",
-      "label": "Under 1600 GP stack"",
+      "label": "Under 1600 GP stack",
       "macroName": "HIDE_VALUE_1600",
       "default": [
         "Bronze bolts*",
