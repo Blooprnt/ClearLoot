@@ -14,11 +14,6 @@
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/hidden_items/hidden_items.rs2f"
     },
     {
-      "name": "Miscellaneous",
-      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/miscellaneous/miscellaneous.json",
-      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/miscellaneous/miscellaneous.rs2f"
-    },
-    {
       "name": "Catacombs",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/catacombs/catacombs.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/catacombs/catacombs.rs2f"
