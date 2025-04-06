@@ -10,15 +10,17 @@
     { "macroName": "VALUES_TIER_7_ENABLED", "label": "Tier 7: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_8_ENABLED", "label": "Tier 8: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_9_ENABLED", "label": "Tier 9: Enabled", "type": "boolean", "default": true },
+    { "macroName": "VALUES_TIER_10_ENABLED", "label": "Tier 10: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_1_VALUE", "label": "Tier 1: Min value", "type": "number", "default": 550 },
     { "macroName": "VALUES_TIER_2_VALUE", "label": "Tier 2: Min value", "type": "number", "default": 1300 },
     { "macroName": "VALUES_TIER_3_VALUE", "label": "Tier 3: Min value", "type": "number", "default": 5500 },
     { "macroName": "VALUES_TIER_4_VALUE", "label": "Tier 4: Min value", "type": "number", "default": 18000 },
-    { "macroName": "VALUES_TIER_5_VALUE", "label": "Tier 5: Min value", "type": "number", "default": 80000 },
-    { "macroName": "VALUES_TIER_6_VALUE", "label": "Tier 6: Min value", "type": "number", "default": 300000 },
-    { "macroName": "VALUES_TIER_7_VALUE", "label": "Tier 7: Min value", "type": "number", "default": 1000000 },
-    { "macroName": "VALUES_TIER_8_VALUE", "label": "Tier 8: Min value", "type": "number", "default": 10000000 },
-    { "macroName": "VALUES_TIER_9_VALUE", "label": "Tier 9: Min value", "type": "number", "default": 70000000 },
+    { "macroName": "VALUES_TIER_5_VALUE", "label": "Tier 5: Min value", "type": "number", "default": 45000 },
+    { "macroName": "VALUES_TIER_6_VALUE", "label": "Tier 6: Min value", "type": "number", "default": 80000 },
+    { "macroName": "VALUES_TIER_7_VALUE", "label": "Tier 7: Min value", "type": "number", "default": 300000 },
+    { "macroName": "VALUES_TIER_8_VALUE", "label": "Tier 8: Min value", "type": "number", "default": 1000000 },
+    { "macroName": "VALUES_TIER_9_VALUE", "label": "Tier 9: Min value", "type": "number", "default": 10000000 },
+    { "macroName": "VALUES_TIER_10_VALUE", "label": "Tier 10: Min value", "type": "number", "default": 70000000 },
     { "macroName": "VALUES_TIER_1_CUSTOMSTYLE", "label": "Tier 1: Display", "type": "style",
     "default": {
       "textColor": "#FF000000",
@@ -61,6 +63,17 @@
   },
     { "macroName": "VALUES_TIER_5_CUSTOMSTYLE", "label": "Tier 5: Display", "type": "style",
     "default": {
+      "textColor": "#FF21EB41",
+      "textAccentColor": "#FF000000",
+      "menuTextColor": "#FF21EB41",
+      "textAccent": 1,
+      "howLootbeam": false,
+      "hideOverlay": false,
+      "notify": true
+    }
+  },
+    { "macroName": "VALUES_TIER_6_CUSTOMSTYLE", "label": "Tier 6: Display", "type": "style",
+    "default": {
       "textColor": "#FFF2F2F2",
       "backgroundColor": "#67A3A3A3",
       "borderColor": "#FFD4D4D4",
@@ -69,10 +82,11 @@
       "menuTextColor": "#FFD4D4D4",
       "textAccent": 1,
       "howLootbeam": true,
-      "hideOverlay": false
+      "hideOverlay": false,
+      "notify": true
     }
   },
-    { "macroName": "VALUES_TIER_6_CUSTOMSTYLE", "label": "Tier 6: Display", "type": "style",
+    { "macroName": "VALUES_TIER_7_CUSTOMSTYLE", "label": "Tier 7: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#6700D97E",
@@ -82,10 +96,11 @@
         "menuTextColor": "#FF32DC95",
         "textAccent": 1,
         "howLootbeam": true,
-        "hideOverlay": false
+        "hideOverlay": false,
+        "notify": true
       }
     },
-    { "macroName": "VALUES_TIER_7_CUSTOMSTYLE", "label": "Tier 7: Display", "type": "style",
+    { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "label": "Tier 8: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#67FFA800",
@@ -95,10 +110,11 @@
         "menuTextColor": "#FFF0D337",
         "textAccent": 1,
         "howLootbeam": true,
-        "hideOverlay": false
+        "hideOverlay": false,
+        "notify": true
       }
     },
-    { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "label": "Tier 8: Display", "type": "style",
+    { "macroName": "VALUES_TIER_9_CUSTOMSTYLE", "label": "Tier 9: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#67FF0000",
@@ -108,10 +124,11 @@
         "menuTextColor": "#FFE83131",
         "textAccent": 1,
         "howLootbeam": true,
-        "hideOverlay": false
+        "hideOverlay": false,
+        "notify": true
       }
     },
-    { "macroName": "VALUES_TIER_9_CUSTOMSTYLE", "label": "Tier 9: Display", "type": "style",
+    { "macroName": "VALUES_TIER_10_CUSTOMSTYLE", "label": "Tier 10: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#678000FF",
@@ -121,7 +138,8 @@
         "menuTextColor": "#FFA74FFF",
         "textAccent": 1,
         "howLootbeam": true,
-        "hideOverlay": false
+        "hideOverlay": false,
+        "notify": true
       }
     }
   ]
