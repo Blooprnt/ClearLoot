@@ -1,9 +1,10 @@
 {
   "name": "Hidden Items",
-  "description": "Hide items based on quantity",
+  "description": "Hide items",
   "inputs": [
     {
       "type": "stringlist",
+      "group": "Hide based on ground item's stack AMOUNT",
       "description": "Hide items with quantity 1 or less",
       "label": "Hide if less than 1",
       "macroName": "HIDE_1",
@@ -18,6 +19,7 @@
     },
     {
       "type": "stringlist",
+      "group": "Hide based on ground item's stack AMOUNT",
       "description": "Hide items with quantity 5 or less",
       "label": "Hide if less than a stack of 5",
       "macroName": "HIDE_5",
@@ -45,6 +47,7 @@
     },
     {
       "type": "stringlist",
+      "group": "Hide based on ground item's stack AMOUNT",
       "description": "Hide items with quantity 40 or less",
       "label": "Hide if less than a stack of 40",
       "macroName": "HIDE_40",
@@ -58,6 +61,7 @@
     },
     {
       "type": "stringlist",
+      "group": "Hide based on ground item's stack AMOUNT",
       "description": "Hide items with quantity 60 or less",
       "label": "Hide if less than a stack of 60",
       "macroName": "HIDE_60",
@@ -85,6 +89,157 @@
         "Fishing bait",
         "Raw mackerel",
         "Wildblood seed"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "group": "Hide based on ground item's stack VALUE",
+      "description": "Hide ammo stack if it costs less than 1600",
+      "label": "Under 1600 GP stack"",
+      "macroName": "HIDE_VALUE_1600",
+      "default": [
+        "Bronze bolts*",
+        "Silver bolts*",
+        "Iron bolts*",
+        "Bone bolts*",
+        "Steel bolts*",
+        "Mithril bolts*",
+        "Broad bolts*",
+        "Adamant bolts*",
+        "Runite bolts*",
+        "Bolt rack",
+        "Opal bolts (e)",
+        "Pearl bolts (e)",
+        "Topaz bolts (e)",
+        "Sapphire bolts (e)",
+        "Emerald bolts (e)",
+        "Ruby bolts (e)",
+        "Diamond bolts (e)",
+        "Kebbit",
+        "Long kebbit",
+        "Sunlight antler",
+        "Training arrows",
+        "Fire arrows",
+        "Broad arrows",
+        "Ice arrows",
+        "Bronze arrow*",
+        "Iron arrow*",
+        "Steel arrow*",
+        "Mithril arrow*",
+        "Adamant arrow*",
+        "Rune arrow*",
+        "Bronze dart*",
+        "Iron dart*",
+        "Steel dart*",
+        "Mithril dart*",
+        "Adamant dart*",
+        "Bronze javelin*",
+        "Iron javelin*",
+        "Steel javelin*",
+        "Mithril javelin*",
+        "Adamant javelin*",
+        "Bronze knife*",
+        "Iron knife*",
+        "Steel knife*",
+        "Black knife*",
+        "Bronze thrownaxe",
+        "Iron thrownaxe",
+        "Steel thrownaxe"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "group": "Hide based on ground item's stack VALUE",
+      "description": "Hide ammo stack if it costs less than 2000",
+      "label": "Under 2000 GP stack",
+      "macroName": "HIDE_VALUE_2000",
+      "default": [
+        "Moonlight antler",
+        "Ogre arrow",
+        "Amethyst arrow*",
+        "Rune dart*",
+        "Atlatl dart",
+        "Bronze brutal",
+        "Iron brutal",
+        "Steel brutal",
+        "Rune javelin*",
+        "Amethyst javelin*",
+        "Mithril brutal",
+        "Mithril knife*",
+        "Rune knife*",
+        "Mithril thrownaxe",
+        "Rune thrownaxe"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "group": "Hide based on ground item's stack VALUE",
+      "description": "Hide ammo stack if it costs less than 3500",
+      "label": "Under 3500 GP stack",
+      "macroName": "HIDE_VALUE_3500",
+      "default": [
+        "Amethyst broad bolts*",
+        "Dragonstone bolts (e)",
+        "Adamant brutal",
+        "Adamant knife*",
+        "Adamant thrownaxe",
+        "Dragon thrownaxe"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "group": "Hide based on ground item's stack VALUE",
+      "description": "Hide ammo stack if it costs less than 4500",
+      "label": "Under 4500 GP stack",
+      "macroName": "HIDE_VALUE_4500",
+      "default": [
+        "Black brutal",
+        "Rune brutal"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "group": "Hide based on ground item's stack VALUE",
+      "description": "Hide ammo stack if it costs less than 9000",
+      "label": "Under 9000 GP stack",
+      "macroName": "HIDE_VALUE_9000",
+      "default": [
+        "Jade dragon bolts (e)",
+        "Topaz dragon bolts (e)",
+        "Dragon arrow*",
+        "Toktz-xil-ul"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "group": "Hide based on ground item's stack VALUE",
+      "description": "Hide ammo stack if it costs less than 18000",
+      "label": "Under 1800 GP stack",
+      "macroName": "HIDE_VALUE_18000",
+      "default": [
+        "Emerald dragon bolts (e)",
+        "Dragonstone dragon bolts (e)",
+        "Dragon knife*"
+      ]
+    },
+    {
+      "type": "stringlist",
+      "group": "Hide based on ground item's stack VALUE",
+      "description": "Hide ammo stack if it costs less than 25000",
+      "label": "Under 2500 GP stack",
+      "macroName": "HIDE_VALUE_25000",
+      "default": [
+        "Dragon bolts*",
+        "Onyx bolts (e)",
+        "Opal dragon bolts (e)",
+        "Pearl dragon bolts (e)",
+        "Sapphire dragon bolts (e)",
+        "Ruby dragon bolts (e)",
+        "Diamond dragon bolts (e)",
+        "Onyx dragon bolts (e)",
+        "Black dart*",
+        "Dragon dart*",
+        "Morrigan's javelin*"
       ]
     }
   ]
