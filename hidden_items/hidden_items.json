@@ -214,7 +214,7 @@
       "type": "stringlist",
       "group": "Hide based on ground item's stack VALUE",
       "description": "Hide ammo stack if it costs less than 18000",
-      "label": "Under 1800 GP stack",
+      "label": "Under 18000 GP stack",
       "macroName": "HIDE_VALUE_18000",
       "default": [
         "Emerald dragon bolts (e)",
@@ -226,7 +226,7 @@
       "type": "stringlist",
       "group": "Hide based on ground item's stack VALUE",
       "description": "Hide ammo stack if it costs less than 25000",
-      "label": "Under 2500 GP stack",
+      "label": "Under 25000 GP stack",
       "macroName": "HIDE_VALUE_25000",
       "default": [
         "Dragon bolts*",
