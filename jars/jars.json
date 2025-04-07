@@ -1,5 +1,6 @@
 {
   "name": "Jars",
+  "rs2fPath": "jars.rs2f",
   "description": "Customize jars",
   "inputs": [
       {
