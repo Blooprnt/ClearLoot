@@ -1,5 +1,6 @@
 {
   "name": "Miscellaneous",
+  "rs2fPath": "miscellaneous.rs2f",
   "description": "Customize MISCELLANEOUS items",
   "inputs": [
       {
