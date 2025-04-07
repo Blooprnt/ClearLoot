@@ -1,7 +1,3 @@
 // module:plugin_settings
 
-apply (name:"*") {
-
-}
-
 // endmodule:plugin_settings
