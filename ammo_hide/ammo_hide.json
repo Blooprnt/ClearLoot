@@ -1,5 +1,6 @@
 {
   "name": "Hidde Ammo Based on Stack Value",
+  "rs2fPath": "ammo_hide.json",
   "description": "The ground stack price needs to add up to a certain value",
   "inputs": [
     {
