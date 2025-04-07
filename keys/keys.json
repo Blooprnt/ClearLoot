@@ -1,5 +1,6 @@
 {
   "name": "Keys",
+  "rs2fPath": "keys.rs2f",
   "description": "Customize keys",
   "inputs": [
       {
