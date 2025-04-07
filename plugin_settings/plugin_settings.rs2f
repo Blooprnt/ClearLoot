@@ -1,6 +1,6 @@
 // module:plugin_settings
 
-if (name:"*") {
+apply (name:"*") {
 
 }
 
