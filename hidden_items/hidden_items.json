@@ -1,5 +1,6 @@
 {
   "name": "Hidden Items",
+  "rs2fPath": "hidden_items.rs2f",
   "description": "Hide items",
   "inputs": [
     {
