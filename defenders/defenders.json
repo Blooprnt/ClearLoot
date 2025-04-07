@@ -1,5 +1,6 @@
 {
   "name": "Defenders",
+  "rs2fPath": "defenders.rs2f",
   "description": "Customize defenders",
   "inputs": [
     {
