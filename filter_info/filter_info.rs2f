@@ -1,7 +1,3 @@
 // module:filter_info
 
-apply (name:"*") {
-
-}
-
 // endmodule:filter_info
