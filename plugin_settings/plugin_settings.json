@@ -1,0 +1,5 @@
+{
+    "name": "Do this first",
+    "rs2fPath": "plugin_settings.rs2f",
+    "description": "On Runelite, click on the wrench "configuration" on the side bar and search for the "Loot filters" plugin, click on the cog to edit the plugin. Under the "general" category, switch font mode from "runelite" to "plugin." Under "Display settings", turn on "Menu: deprioritize hidden items." Under the "Item Value Rules" category, untick insane, high, medium, and low tier boxes. These two are optional, Under "Item Lists", you can turn on "Highlight notification" and under "Display settings" switch "Despawn time" from "ticks" to "seconds." "Overlay priority" is for if you want the loot filters to appear under or over your character."
+}
