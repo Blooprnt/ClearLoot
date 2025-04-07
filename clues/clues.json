@@ -1,5 +1,6 @@
 {
   "name": "Clue",
+  "rs2fPath": "clues.rs2f",
   "description": "Customize clues",
   "inputs": [
       {
