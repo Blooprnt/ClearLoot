@@ -1,5 +1,6 @@
 {
   "name": "Catacombs Items",
+  "rs2fPath": "catacombs.rs2f",
   "description": "Customize Catacombs items",
   "inputs": [
       {
