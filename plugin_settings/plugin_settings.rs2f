@@ -1,7 +1,7 @@
-// module:filter_info
+// module:plugin_settings
 
 if (name:"*") {
 
 }
 
-// endmodule:filter_info
+// endmodule:plugin_settings
