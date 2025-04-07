@@ -1,5 +1,6 @@
 {
   "name": "Color based on item value",
+  "rs2fPath": "item_values.rs2f",
   "inputs": [
     { "macroName": "VALUES_TIER_1_ENABLED", "label": "Tier 1: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_2_ENABLED", "label": "Tier 2: Enabled", "type": "boolean", "default": true },
