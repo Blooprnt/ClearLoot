@@ -1,10 +1,15 @@
 # ClearLoot
-This is for customizing your own custom filter for Riktenx's Loot Filters plugin on https://filterscape.xyz/
+This is for customizing your own custom filter for Riktenx's Loot Filters plugin on:
 
-A special thank you to Rikten X, Kaqemeex, and typical-whack for making this filter possible! 
+• https://filterscape.xyz/
 
 If you have any questions you can join the FilterScape discord:
-https://discord.gg/ESbA28wPnt
+
+• [Discord invite](https://discord.gg/ESbA28wPnt)
 
 For an in-depth user guide: 
-[click here](https://github.com/riktenx/loot-filters/blob/userguide/README.md)
+
+• [Click here](https://github.com/riktenx/loot-filters/blob/userguide/README.md)
+
+
+A special thank you to Rikten X, Kaqemeex, and typical-whack for making this filter possible! 
