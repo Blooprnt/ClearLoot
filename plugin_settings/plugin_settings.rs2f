@@ -1,3 +1,7 @@
 // module:filter_info
 
+if (name:"*") {
+
+}
+
 // endmodule:filter_info
