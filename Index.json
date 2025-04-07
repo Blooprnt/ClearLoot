@@ -9,6 +9,11 @@
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/filter_info/filter_info.rs2f"
     },
     {
+      "name": "Do this first",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/plugin_settings/plugin_settings.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/plugin_settings/plugin_settings.rs2f"
+    },
+    {
       "name": "Global Rules",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/global_rules/global_rules.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/global_rules/global_rules.rs2f"
