@@ -7,6 +7,9 @@
             "modulePath": "filter_info/filter_info.json"
         },
         {
+            "modulePath": "plugin_settings/plugin_settings.json"
+        },
+        {
             "modulePath": "global_rules/global_rules.json"
         },
         {
