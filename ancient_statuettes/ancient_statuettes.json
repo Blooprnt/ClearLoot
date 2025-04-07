@@ -1,5 +1,6 @@
 {
   "name": "Statuettes",
+  "rs2fPath": "ancient_statuettes.json",
   "description": "Customize statuettes",
   "inputs": [
       {
