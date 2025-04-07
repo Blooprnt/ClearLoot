@@ -1,5 +1,6 @@
 {
   "name": "Bosses",
+  "rs2fPath": "bosses.rs2f",
   "description": "Customize bosses",
   "inputs": [
     {
