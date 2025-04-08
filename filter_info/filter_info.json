@@ -2,5 +2,6 @@
     "name": "About this filter",
     "rs2fPath": "filter_info.rs2f",
     "description": "This filter has less options than others on purpose. It prioritizes reducing visual ground item clutter (G.E, slayer, minigames) and saving the good colors for the nice drops. There's a high emphasis on text readability & clarity. It was built around a main account that loves slayer and PVM. All boss uniques have a custom color based on the boss, some non-boss items do have colors where it matters, and then everything else is color coded based on their value. I don't use icons to prevent lag. You can track which version of this filter you have by this: Version 1.0",
+    "description": "test",
     "inputs": []
 }
