@@ -2,7 +2,8 @@
     "name": "Do this first",
     "rs2fPath": "plugin_settings.rs2f",
     "description": "A filter that allows you to test markdown",
-    "modules": [{
+    "modules": [
+        {
             "name": "Markdown Test",
             "moduleJson": {
                 "name": "Markdown Test",
@@ -11,5 +12,6 @@
                 "inputs": [],
     },
     "moduleRs2fText": "",
-    },],
+    },
+    ],
  }
