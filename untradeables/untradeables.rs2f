@@ -1,0 +1,15 @@
+// module:untradeables
+
+#define UNTRADABLE_SHOW_ENABLED true
+#define UNTRADABLE_HIDE_ITEMS []
+#define UNTRADABLE_SHOW_CUSTOMSTYLE
+
+apply (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
+    hidden = false;
+    UNTRADABLE_SHOW_CUSTOMSTYLE
+}
+
+apply (name:UNTRADABLE_HIDE_ITEMS) { 
+    hidden = true; 
+}
+// endmodule:untradeables
