@@ -5,7 +5,7 @@
         "inputs": [
           {
             "macroName": "JARS_LIST_1",
-            "label": "Jar of chemicals",
+            "label": "Alchemical Hydra",
             "type": "stringlist",
             "default": [
               "Jar of chemicals"
@@ -13,7 +13,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_1",
-            "label": "Jar of chemicals",
+            "label": "Alchemical Hydra",
             "type": "style",
             "exampleItem": "Jar of chemicals",
             "default": {
@@ -30,7 +30,7 @@
           },
           {
             "macroName": "JARS_LIST_2",
-            "label": "Jar of darkness",
+            "label": "Skotizo",
             "type": "stringlist",
             "default": [
               "Jar of darkness"
@@ -38,7 +38,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_2",
-            "label": "Jar of darkness",
+            "label": "Skotizo",
             "type": "style",
             "exampleItem": "Jar of darkness",
             "default": {
@@ -55,7 +55,7 @@
           },
           {
             "macroName": "JARS_LIST_3",
-            "label": "Jar of decay",
+            "label": "Vorkath",
             "type": "stringlist",
             "default": [
               "Jar of decay"
@@ -63,7 +63,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_3",
-            "label": "Jar of decay",
+            "label": "Vorkath",
             "type": "style",
             "exampleItem": "Jar of decay",
             "default": {
@@ -80,7 +80,7 @@
           },
           {
             "macroName": "JARS_LIST_4",
-            "label": "Jar of dirt",
+            "label": "Kraken",
             "type": "stringlist",
             "default": [
               "Jar of dirt"
@@ -88,7 +88,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_4",
-            "label": "Jar of dirt",
+            "label": "Kraken",
             "type": "style",
             "exampleItem": "Jar of dirt",
             "default": {
@@ -105,7 +105,7 @@
           },
           {
             "macroName": "JARS_LIST_5",
-            "label": "Jar of dreams",
+            "label": "The Nightmare",
             "type": "stringlist",
             "default": [
               "Jar of dreams"
@@ -113,7 +113,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_5",
-            "label": "Jar of dreams",
+            "label": "The Nightmare",
             "type": "style",
             "exampleItem": "Jar of dreams",
             "default": {
@@ -130,7 +130,7 @@
           },
           {
             "macroName": "JARS_LIST_6",
-            "label": "Jar of spirits",
+            "label": "Corporeal Beast",
             "type": "stringlist",
             "default": [
               "Jar of spirits"
@@ -138,7 +138,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_6",
-            "label": "Jar of spirits",
+            "label": "Corporeal Beast",
             "type": "style",
             "exampleItem": "Jar of spirits",
             "default": {
@@ -155,7 +155,7 @@
           },
           {
             "macroName": "JARS_LIST_7",
-            "label": "Jar of stone",
+            "label": "Grotesque Guardians",
             "type": "stringlist",
             "default": [
               "Jar of stone"
@@ -163,7 +163,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_7",
-            "label": "Jar of stone",
+            "label": "Grotesque Guardians",
             "type": "style",
             "exampleItem": "Jar of stone",
             "default": {
@@ -180,7 +180,7 @@
           },
           {
             "macroName": "JARS_LIST_8",
-            "label": "Jar of swamp",
+            "label": "Zulrah",
             "type": "stringlist",
             "default": [
               "Jar of swamp"
@@ -188,7 +188,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_8",
-            "label": "Jar of swamp",
+            "label": "Zulrah",
             "type": "style",
             "exampleItem": "Jar of swamp",
             "default": {
@@ -205,7 +205,7 @@
           },
           {
             "macroName": "JARS_LIST_9",
-            "label": "Jar of venom",
+            "label": "Araxxor",
             "type": "stringlist",
             "default": [
               "Jar of venom"
@@ -213,7 +213,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_9",
-            "label": "Jar of venom",
+            "label": "Araxxor",
             "type": "style",
             "exampleItem": "Jar of venom",
             "default": {
@@ -230,7 +230,7 @@
           },
           {
             "macroName": "JARS_LIST_10",
-            "label": "Jar of sand",
+            "label": "Kalphite Queen",
             "type": "stringlist",
             "default": [
               "Jar of sand"
@@ -238,7 +238,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_10",
-            "label": "Jar of sand",
+            "label": "Kalphite Queen",
             "type": "style",
             "exampleItem": "Jar of sand",
             "default": {
@@ -255,7 +255,7 @@
           },
           {
             "macroName": "JARS_LIST_11",
-            "label": "Jar of smoke",
+            "label": "Thermonuclear Smoke Devil",
             "type": "stringlist",
             "default": [
               "Jar of smoke"
@@ -263,7 +263,7 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_11",
-            "label": "Jar of smoke",
+            "label": "Thermonuclear Smoke Devil",
             "type": "style",
             "exampleItem": "Jar of smoke",
             "default": {
@@ -280,7 +280,7 @@
           },
           {
             "macroName": "JARS_LIST_12",
-            "label": "Jar of souls, eyes, miasma",
+            "label": "Cerb, Sarachnis, Sire",
             "type": "stringlist",
             "default": [
               "Jar of souls",
