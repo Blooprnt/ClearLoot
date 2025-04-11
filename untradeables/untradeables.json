@@ -5,14 +5,12 @@
     "inputs": [
       {
         "type": "boolean",
-        "group": "Unhide All Untradables",
         "label": "Enabled",
         "macroName": "UNTRADABLE_SHOW_ENABLED",
         "default": true
       },
       {
         "type": "stringlist",
-        "group": "Unhide All Untradables",
         "label": "Add item exceptions here to hide",
         "macroName": "UNTRADABLE_HIDE_ITEMS",
         "default": []
@@ -20,7 +18,6 @@
       {
         "type": "style",
         "exampleItem": "Untradeable",
-        "group": "Unhide All Untradables",
         "label": "Style",
         "macroName": "UNTRADABLE_SHOW_CUSTOMSTYLE",
         "default": {
