@@ -1,7 +1,7 @@
 {
   "name": "Bosses",
   "rs2fPath": "bosses.rs2f",
-  "description": "Customize bosses",
+  "description": "All boss uniques will have these filters applied. Drops shared with other bosses aren't unique (such as Virtues robes). The Tormented Demon isn't a boss so only smouldering drops get unique colors. Bosses like Araxxor & Royal Titans don't drop items on the ground so they're left out",
   "inputs": [
     {
       "macroName": "ALCHEMICAL_HYDRA_LIST",
@@ -81,7 +81,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFc91515"
+        "menuTextColor": "#FFff3d3d"
       }
     },
     {
@@ -294,7 +294,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FF73e7ce"
+        "menuTextColor": "#FFff3d3d"
       }
     },
     {
@@ -426,7 +426,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FF8abd00"
+        "menuTextColor": "#FFc91515"
       }
     },
     {
@@ -660,7 +660,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFc91515"
+        "menuTextColor": "#FFff3d3d"
       }
     },
     {
@@ -685,7 +685,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFc91515"
+        "menuTextColor": "#FFff3d3d"
       }
     },
     {
@@ -759,7 +759,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFc91515"
+        "menuTextColor": "#FFff3d3d"
       }
     },
     {
@@ -947,7 +947,7 @@
         "showLootBeam": false,
         "showDespawn": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFab7378"
+        "menuTextColor": "#FFf7a1a8"
       }
     },
     {
@@ -973,7 +973,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFc91515"
+        "menuTextColor": "#FFff3d3d"
       }
     },
     {
