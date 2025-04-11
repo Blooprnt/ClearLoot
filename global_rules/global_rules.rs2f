@@ -4,7 +4,6 @@
 
 #define GLOBAL_DESPAWN_HIDE
 #define GLOBAL_VALUE_HIDE
-#define HERBS_SHOW
 
 apply (name:GLOBAL_HIDE) {
     hideOverlay = true;
@@ -26,10 +25,4 @@ apply (value:<GLOBAL_VALUE_HIDE) {
     showValue = false;
 }
 
-if (name:"Grimy*" && value:<HERBS_SHOW) { 
-    hidden = false;
-    color = "0eee00"; 
-}
-
 // endmodule:global
-
