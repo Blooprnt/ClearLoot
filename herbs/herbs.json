@@ -1,13 +1,13 @@
 {
   "name": "Herbs",
   "rs2fPath": "herbs.rs2f",
-  "description": "",
+  "description": "This section exists to unhide weed due to herb sacks being able to pick them up. The \"*\" acts as a wild card, so \"Grimy*\" applies to all grimy herbs, but not clean ones. If you want to include clean ones you could do \"*weed\" instead.",
   "inputs": [
     {
       "macroName": "HERBS_SHOW",
       "label": "Show herbs that cost more than:",
       "type": "number",
-      "default": 1500
+      "default": 1200
     },
     {
       "macroName": "HERBS_LIST",
@@ -19,6 +19,7 @@
     },
     {
       "macroName": "HERBS_CUSTOMSTYLE",
+      "exampleItem": "Grimy ranarr weed",
       "label": "Herb color",
       "type": "style",
       "default": {
