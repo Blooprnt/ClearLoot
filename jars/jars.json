@@ -307,7 +307,7 @@
           },
           {
             "macroName": "JARS_LIST_13",
-            "label": "Other Jars",
+            "label": "Future Release Jars",
             "type": "stringlist",
             "default": [
               "Jar of*"
@@ -315,9 +315,9 @@
           },
           {
             "macroName": "JARS_CUSTOMSTYLE_13",
-            "label": "Other Jars",
+            "label": "Future Release Jars",
             "type": "style",
-            "exampleItem": "Future Release Jars",
+            "exampleItem": "Other Jars",
             "default": {
               "backgroundColor": "#99141010",
               "borderColor": "#99f41d1d",
