@@ -30,7 +30,8 @@
       "menuTextColor": "#FF787878",
       "textAccent": 2,
       "howLootbeam": false,
-      "hideOverlay": true
+      "hideOverlay": true,
+      "exampleItem": "Mithril kiteshield"
     }
   },
     { "macroName": "VALUES_TIER_2_CUSTOMSTYLE", "label": "Tier 2: Display", "type": "style",
@@ -40,7 +41,8 @@
       "menuTextColor": "#FF787878",
       "textAccent": 1,
       "howLootbeam": false,
-      "hideOverlay": false
+      "hideOverlay": false,
+      "exampleItem": "Adamant scimitar"
     }
   },
     { "macroName": "VALUES_TIER_3_CUSTOMSTYLE", "label": "Tier 3: Display", "type": "style",
@@ -50,7 +52,8 @@
       "menuTextColor": "#FF787878",
       "textAccent": 1,
       "howLootbeam": false,
-      "hideOverlay": false
+      "hideOverlay": false,
+      "exampleItem": "Rune med helm"
     }
   },
     { "macroName": "VALUES_TIER_4_CUSTOMSTYLE", "label": "Tier 4: Display", "type": "style",
@@ -60,7 +63,8 @@
       "menuTextColor": "#FF21EB41",
       "textAccent": 1,
       "howLootbeam": false,
-      "hideOverlay": false
+      "hideOverlay": false,
+      "exampleItem": "Rune platelegs"
     }
   },
     { "macroName": "VALUES_TIER_5_CUSTOMSTYLE", "label": "Tier 5: Display", "type": "style",
@@ -71,7 +75,8 @@
       "textAccent": 1,
       "howLootbeam": false,
       "hideOverlay": false,
-      "notify": true
+      "notify": true,
+      "exampleItem": "Dragon scimitar"
     }
   },
     { "macroName": "VALUES_TIER_6_CUSTOMSTYLE", "label": "Tier 6: Display", "type": "style",
@@ -85,7 +90,8 @@
       "textAccent": 1,
       "howLootbeam": true,
       "hideOverlay": false,
-      "notify": true
+      "notify": true,
+      "exampleItem": "Dragon platelegs"
     }
   },
     { "macroName": "VALUES_TIER_7_CUSTOMSTYLE", "label": "Tier 7: Display", "type": "style",
@@ -99,7 +105,8 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true
+        "notify": true,
+        "exampleItem": "Granite maul"
       }
     },
     { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "label": "Tier 8: Display", "type": "style",
@@ -113,7 +120,8 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true
+        "notify": true,
+      "exampleItem": "Abyssal whip"
       }
     },
     { "macroName": "VALUES_TIER_9_CUSTOMSTYLE", "label": "Tier 9: Display", "type": "style",
@@ -127,7 +135,8 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true
+        "notify": true,
+      "exampleItem": "Virtus robe top"
       }
     },
     { "macroName": "VALUES_TIER_10_CUSTOMSTYLE", "label": "Tier 10: Display", "type": "style",
@@ -141,7 +150,8 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true
+        "notify": true,
+        "exampleItem": "Amulet of rancour"
       }
     }
   ]
