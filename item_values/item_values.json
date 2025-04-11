@@ -1,7 +1,7 @@
 {
   "name": "Color based on item value",
   "rs2fPath": "item_values.rs2f",
-  "description": "Tier 1 = hidden, but clickable\n Tier 2 = low value items are grey for less visual clutter\n Tier 3 = white, default color\n Tier 4 = green, might wanna pick it up\n Tier 5 = green, but plays a notification sound\n Tier 6-10 = worth picking up",
+  "description": "Tier 1 = hidden, but clickable \n Tier 2 = low value items are grey for less visual clutter\n Tier 3 = white, default color\n Tier 4 = green, might wanna pick it up\n Tier 5 = green, but plays a notification sound\n Tier 6-10 = worth picking up",
   "inputs": [
     { "macroName": "VALUES_TIER_1_ENABLED", "label": "Tier 1: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_2_ENABLED", "label": "Tier 2: Enabled", "type": "boolean", "default": true },
@@ -34,15 +34,14 @@
       "exampleItem": "Mithril kiteshield"
     }
   },
-    { "macroName": "VALUES_TIER_2_CUSTOMSTYLE", "label": "Tier 2: Display", "type": "style",
+    { "macroName": "VALUES_TIER_2_CUSTOMSTYLE", "exampleItem": "Adamant scimitar", "label": "Tier 2: Display", "type": "style",
     "default": {
       "textColor": "#95808080",
       "textAccentColor": "#FF000000",
       "menuTextColor": "#FF787878",
       "textAccent": 1,
       "howLootbeam": false,
-      "hideOverlay": false,
-      "exampleItem": "Adamant scimitar"
+      "hideOverlay": false
     }
   },
     { "macroName": "VALUES_TIER_3_CUSTOMSTYLE", "label": "Tier 3: Display", "type": "style",
