@@ -1,7 +1,7 @@
 {
   "name": "Clue",
   "rs2fPath": "clues.rs2f",
-  "description": "Customize clues",
+  "description": "The overlay doesn't have a background to reduce clutter (in case of juggling)",
   "inputs": [
       {
           "macroName": "CLUE_LIST_1",
