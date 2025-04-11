@@ -1,5 +1,7 @@
 // module:item_values
 
+#define GLOBAL_VALUE_HIDE []
+
 #define VALUES_TIER_1_ENABLED true
 #define VALUES_TIER_2_ENABLED true
 #define VALUES_TIER_3_ENABLED true
@@ -62,5 +64,13 @@ apply (VALUES_TIER_9_ENABLED && value:>=VALUES_TIER_9_VALUE) {
 }
 apply (VALUES_TIER_10_ENABLED && value:>=VALUES_TIER_10_VALUE) {
   VALUES_TIER_10_CUSTOMSTYLE
+}
+
+apply (tradeable: true && name:"*") {
+    hidden = true;
+}
+
+apply (value:>GLOBAL_VALUE_HIDE) {
+    hidden = false;
 }
 // endmodule:item_values
