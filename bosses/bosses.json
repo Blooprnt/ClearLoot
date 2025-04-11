@@ -584,6 +584,32 @@
       }
     },
     {
+      "macroName": "OSTO_AYAK_LIST",
+      "label": "Osto-Ayak",
+      "type": "stringlist",
+      "default": [
+        "The eye of ayak",
+        "Avernic treads",
+        "Mokhaiotl cloth"
+      ]
+    },
+    {
+      "macroName": "OSTO_AYAK_CUSTOMSTYLE",
+      "label": "Osto-Ayak",
+      "type": "style",
+      "default": {
+        "textColor": "#FFF2F2F2",
+        "borderColor": "#FFffbd24",
+        "backgroundColor": "#67FF0000",
+        "lootbeamColor": "#FFE83131",
+        "textAccent": 1,
+        "fontType": 2,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFE83131"
+      }
+    },
+    {
       "macroName": "PHANTOM_MUSPAH_LIST",
       "label": "Phantom Muspah",
       "type": "stringlist",
@@ -1001,6 +1027,34 @@
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
         "menuTextColor": "#FFadebff"
+      }
+    },
+    {
+      "macroName": "YAMA_LIST",
+      "label": "Yama",
+      "type": "stringlist",
+      "default": [
+        "Demonic tallow",
+        "Cosmic catalysts",
+        "Soulflame horn",
+        "*Oathplate*",
+        "Diabolic worms"
+      ]
+    },
+    {
+      "macroName": "YAMA_CUSTOMSTYLE",
+      "label": "Yama",
+      "type": "style",
+      "default": {
+        "textColor": "#FFF2F2F2",
+        "borderColor": "#FF4d0400",
+        "backgroundColor": "#67FF0000",
+        "lootbeamColor": "#FFE83131",
+        "textAccent": 1,
+        "fontType": 3,
+        "showLootBeam": true,
+        "textAccentColor": "#FF000000",
+        "menuTextColor": "#FFE83131"
       }
     },
     {
