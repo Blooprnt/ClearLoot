@@ -17,18 +17,10 @@
             "default": 2000
         },
         {
-            "macroName": "HERBS_SHOW",
-            "label": "Show herbs that cost more than:",
-            "type": "number",
-            "default": 1500
-        },
-        {
             "type": "stringlist",
             "macroName": "GLOBAL_HIDE",
             "label": "Hidden, but still clickable items:",
-            "default": [
-                
-              ]
+            "default": []
         }
     ]
 }
