@@ -1,7 +1,7 @@
 {
   "name": "Keys",
   "rs2fPath": "keys.rs2f",
-  "description": "Customize keys",
+  "description": "The overlay filters are based on the color of the keys",
   "inputs": [
       {
           "macroName": "KEYS_LIST_1",
