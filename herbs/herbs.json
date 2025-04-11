@@ -12,7 +12,7 @@
     },
     {
       "macroName": "HERBS_LIST",
-      "label": "List of herbs to unhide:",
+      "label": "List of herbs to unhide",
       "type": "stringlist",
       "default": [
         "Grimy*"
@@ -21,7 +21,7 @@
     {
       "macroName": "HERBS_CUSTOMSTYLE",
       "exampleItem": "Grimy ranarr weed",
-      "label": "Herb color",
+      "label": "List of herbs to unhide",
       "type": "style",
       "default": {
         "textColor": "#FF0eee00",
