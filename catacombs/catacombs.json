@@ -1,7 +1,7 @@
 {
   "name": "Catacombs Items",
   "rs2fPath": "catacombs.rs2f",
-  "description": "Customize Catacombs items",
+  "description": "Untradeable Catacomb of Kourend ground items",
   "inputs": [
       {
           "macroName": "CATACOMBS_LIST",
