@@ -1,7 +1,7 @@
 {
   "name": "Herbs",
   "rs2fPath": "herbs.rs2f",
-  "description": "******This section exists to unhide weed due to herb sacks being able to pick them up. The \"***\" acts as a wild card, so \"Grimy***\" applies to all grimy herbs, but not clean ones. If you want to include clean ones you could do \"***weed\" instead.",
+  "description": "This section exists to unhide weed due to herb sacks being able to pick them up. The \"\\*\" acts as a wild card, so \"Grimy\\*\" applies to all grimy herbs, but not clean ones. If you want to include clean ones you could do \"\\*weed\" instead.",
   "inputs": [
     { "macroName": "HERB_ICON_ENABLED", "label": "Icons: Enabled", "type": "boolean", "default": true },
     {
