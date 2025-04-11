@@ -1,5 +1,6 @@
 {
     "name": "Untradeables",
+    "description": "Enabled by default is all untradeables show as white text as opposed to hidden. You can add which untradeables to hide by adding them to the text box or disabling this all together",
     "rs2fPath": "untradeables.rs2f",
     "inputs": [
       {
