@@ -1,7 +1,7 @@
 {
   "name": "Color based on item value",
   "rs2fPath": "item_values.rs2f",
-  "description": "Tier 1 = hidden, but clickable \n Tier 2 = low value items are grey for less visual clutter\n\n Tier 3 = white, default color\n Tier 4 = green, might wanna pick it up \n\n Tier 5 = green, but plays a notification sound \n\nTier 6-10 = worth picking up",
+  "description": "Items below Tier 1 are hidden\n\nTier 1 = hidden, but clickable\n\nTier 2 = low value items are grey for less visual clutter\n\nTier 3 = white, default color\n\nTier 4 = green, might wanna pick it up\n\nTier 5 = green, but plays a notification sound\n\nTier 6-10 = worth picking up",
   "inputs": [
     { "macroName": "VALUES_TIER_1_ENABLED", "label": "Tier 1: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_2_ENABLED", "label": "Tier 2: Enabled", "type": "boolean", "default": true },
@@ -25,10 +25,10 @@
     { "macroName": "VALUES_TIER_10_VALUE", "label": "Tier 10: Min value", "type": "number", "default": 70000000 },
     { "macroName": "VALUES_TIER_1_CUSTOMSTYLE", "exampleItem": "Mithril kiteshield", "label": "Tier 1: Display", "type": "style",
     "default": {
-      "textColor": "#FF000000",
+      "textColor": "#FFFFFFFF",
       "textAccentColor": "#FF000000",
       "menuTextColor": "#FF787878",
-      "textAccent": 2,
+      "textAccent": 3,
       "howLootbeam": false,
       "hideOverlay": true
     }
