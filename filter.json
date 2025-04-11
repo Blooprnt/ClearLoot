@@ -16,6 +16,9 @@
             "modulePath": "hidden_items/hidden_items.json"
         },
         {
+            "modulePath": "herbs/herbs.json"
+        },
+        {
             "modulePath": "miscellaneous/miscellaneous.json"
         },
         {
