@@ -2,12 +2,15 @@
 
 #define HERBS_LIST []
 #define HERBS_SHOW
-
+#define HERB_ICON_ENABLED true
 
 if (name:HERBS_LIST && value:<HERBS_SHOW) { 
     hidden = false;
     HERBS_CUSTOMSTYLE 
 }
 
+apply (name:HERBS_LIST && HERB_ICON_ENABLED && value:<HERBS_SHOW && name:["Grimy ranarr weed","Grimy dwarf weed"]) {
+    icon = CurrentItem();
+}
 
 // endmodule:herbs
