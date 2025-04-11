@@ -26,7 +26,7 @@
         "borderColor": "#FF9db304",
         "textAccentColor": "#FF000000",
         "textColor": "#FFf0f0f0",
-        "menuTextColor": "#FFcbc4c4",
+        "menuTextColor": "#FF9db304",
         "textAccent": 1,
         "fontType": 2,
         "showLootBeam": true,
@@ -55,7 +55,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFadebff"
       }
     },
     {
@@ -81,7 +81,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc91515"
       }
     },
     {
@@ -105,7 +105,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF9db304"
       }
     },
     {
@@ -131,7 +131,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFd5a5ff"
       }
     },
     {
@@ -158,7 +158,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFff443d"
       }
     },
     {
@@ -183,7 +183,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFd5a5ff"
       }
     },
     {
@@ -210,7 +210,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFb4c6ff"
       }
     },
     {
@@ -239,7 +239,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffbdbd"
       }
     },
     {
@@ -257,7 +257,7 @@
       "label": "Crazy Archaeologist",
       "type": "style",
       "default": {
-        "textColor": "#FFE8DFDF",
+        "textColor": "#FFffffff",
         "borderColor": "#FFd3cbc8",
         "backgroundColor": "#70d3914b",
         "lootbeamColor": "#FFb8752d",
@@ -265,7 +265,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffd3a3"
       }
     },
     {
@@ -294,7 +294,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF73e7ce"
       }
     },
     {
@@ -321,7 +321,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFba9aea"
       }
     },
     {
@@ -348,7 +348,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF31dd39"
       }
     },
     {
@@ -375,7 +375,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFfdd46e"
       }
     },
     {
@@ -399,7 +399,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF8abd00"
       }
     },
     {
@@ -426,7 +426,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF8abd00"
       }
     },
     {
@@ -474,7 +474,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc91515"
       }
     },
     {
@@ -499,7 +499,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffba70"
       }
     },
     {
@@ -526,7 +526,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffba70"
       }
     },
     {
@@ -556,7 +556,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc88aff"
       }
     },
     {
@@ -580,7 +580,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffba70"
       }
     },
     {
@@ -607,7 +607,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF8ae4ea"
       }
     },
     {
@@ -634,7 +634,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF13e3eb"
       }
     },
     {
@@ -660,7 +660,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc91515"
       }
     },
     {
@@ -685,7 +685,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc91515"
       }
     },
     {
@@ -709,7 +709,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffba70"
       }
     },
     {
@@ -733,7 +733,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc888ff"
       }
     },
     {
@@ -759,7 +759,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc91515"
       }
     },
     {
@@ -778,7 +778,7 @@
       "label": "The Hueycoatl",
       "type": "style",
       "default": {
-        "textColor": "#FFffb4b4",
+        "textColor": "#FFffc7c7",
         "borderColor": "#99ff8a87",
         "backgroundColor": "#7044c3c6",
         "lootbeamColor": "#FFff2520",
@@ -786,7 +786,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFade5e6"
       }
     },
     {
@@ -813,7 +813,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffbdbd"
       }
     },
     {
@@ -837,7 +837,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFffba70"
       }
     },
     {
@@ -870,7 +870,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF61bdff"
       }
     },
     {
@@ -895,7 +895,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFf8f066"
       }
     },
     {
@@ -922,7 +922,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FF46c0ec"
       }
     },
     {
@@ -947,7 +947,7 @@
         "showLootBeam": false,
         "showDespawn": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFab7378"
       }
     },
     {
@@ -973,7 +973,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFc91515"
       }
     },
     {
@@ -1000,7 +1000,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFadebff"
       }
     },
     {
@@ -1028,7 +1028,7 @@
         "fontType": 2,
         "showLootBeam": true,
         "textAccentColor": "#FF000000",
-        "menuTextColor": "#FFcbc4c4"
+        "menuTextColor": "#FFebf79c"
       }
     }
   ]
