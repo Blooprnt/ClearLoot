@@ -1,7 +1,7 @@
 {
   "name": "Color based on item value",
   "rs2fPath": "item_values.rs2f",
-  "description": "Items below Tier 1 are hidden\n\nTier 1 = hidden, but clickable\n\nTier 2 = low value items are grey for less visual clutter\n\nTier 3 = white, default color\n\nTier 4 = green, might wanna pick it up\n\nTier 5 = green, but plays a notification sound\n\nTier 6-10 = worth picking up",
+  "description": "Items below Tier 1 are hidden & not clikcable\n\nTier 1 = hidden overlay, but clickable\n\nTier 2 = low value items are grey for less visual clutter\n\nTier 3 = white\n\nTier 4 = green, might wanna pick it up\n\nTier 5 = green, but plays a notification sound\n\nTier 6-10 = worth picking up",
   "inputs": [
     { "macroName": "VALUES_TIER_1_ENABLED", "label": "Tier 1: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_2_ENABLED", "label": "Tier 2: Enabled", "type": "boolean", "default": true },
@@ -102,7 +102,7 @@
         "notify": true
       }
     },
-    { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "exampleItem": "Abyssal whip", "label": "Tier 8: Display", "type": "style",
+    { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "exampleItem": "Eternal crystal", "label": "Tier 8: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#67FFA800",
