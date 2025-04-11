@@ -1,11 +1,11 @@
 {
   "name": "Hidden Items",
   "rs2fPath": "hidden_items.rs2f",
-  "description": "Hide items",
+  "description": "There are two ways to hide ground items:\n\n- The 1st category: hide ground items based on stack amount regardless of stack value\n\n- The 2nd category: hide ground items based on stack value regardless of stack amount\n\n\nI put all ammo under stack value hide so that you don't get clutter of 1-2 bolts in minigames/wildy/slayer",
   "inputs": [
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack AMOUNT",
+      "group": "Stack amount hide",
       "description": "Hide items with quantity 1 or less",
       "label": "Hide if less than 1",
       "macroName": "HIDE_1",
@@ -20,7 +20,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack AMOUNT",
+      "group": "Stack amount hide",
       "description": "Hide items with quantity 5 or less",
       "label": "Hide if less than a stack of 5",
       "macroName": "HIDE_5",
@@ -48,7 +48,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack AMOUNT",
+      "group": "Stack amount hide",
       "description": "Hide items with quantity 40 or less",
       "label": "Hide if less than a stack of 40",
       "macroName": "HIDE_40",
@@ -62,7 +62,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack AMOUNT",
+      "group": "Stack amount hide",
       "description": "Hide items with quantity 60 or less",
       "label": "Hide if less than a stack of 60",
       "macroName": "HIDE_60",
@@ -94,7 +94,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack VALUE",
+      "group": "Stack value hide",
       "description": "Hide ammo stack if it costs less than 1600",
       "label": "Under 1600 GP stack",
       "macroName": "HIDE_VALUE_1600",
@@ -150,7 +150,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack VALUE",
+      "group": "Stack value hide",
       "description": "Hide ammo stack if it costs less than 2000",
       "label": "Under 2000 GP stack",
       "macroName": "HIDE_VALUE_2000",
@@ -174,7 +174,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack VALUE",
+      "group": "Stack value hide",
       "description": "Hide ammo stack if it costs less than 3500",
       "label": "Under 3500 GP stack",
       "macroName": "HIDE_VALUE_3500",
@@ -189,7 +189,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack VALUE",
+      "group": "Stack value hide",
       "description": "Hide ammo stack if it costs less than 4500",
       "label": "Under 4500 GP stack",
       "macroName": "HIDE_VALUE_4500",
@@ -200,7 +200,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack VALUE",
+      "group": "Stack value hide",
       "description": "Hide ammo stack if it costs less than 9000",
       "label": "Under 9000 GP stack",
       "macroName": "HIDE_VALUE_9000",
@@ -213,7 +213,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack VALUE",
+      "group": "Stack value hide",
       "description": "Hide ammo stack if it costs less than 18000",
       "label": "Under 18000 GP stack",
       "macroName": "HIDE_VALUE_18000",
@@ -225,7 +225,7 @@
     },
     {
       "type": "stringlist",
-      "group": "Hide based on ground item's stack VALUE",
+      "group": "Stack value hide",
       "description": "Hide ammo stack if it costs less than 25000",
       "label": "Under 25000 GP stack",
       "macroName": "HIDE_VALUE_25000",
