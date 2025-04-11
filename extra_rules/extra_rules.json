@@ -26,13 +26,6 @@
           "textColor": "#FFffffff",
           "showDespawn": true
         }
-      },
-      {
-        "macroName": "GLOBAL_VALUE_HIDE",
-        "group": "Hide Tradable Items Below",
-        "label": "Hide ground items below the value of:",
-        "type": "number",
-        "default": 550
       }
     ]
   }
