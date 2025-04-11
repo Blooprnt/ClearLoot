@@ -1,7 +1,7 @@
 {
   "name": "Color based on item value",
   "rs2fPath": "item_values.rs2f",
-  "description": "Tier 1 = hidden, but clickable \n Tier 2 = low value items are grey for less visual clutter\n Tier 3 = white, default color\n Tier 4 = green, might wanna pick it up\n Tier 5 = green, but plays a notification sound\n Tier 6-10 = worth picking up",
+  "description": "Tier 1 = hidden, but clickable \n Tier 2 = low value items are grey for less visual clutter\n\n Tier 3 = white, default color\n Tier 4 = green, might wanna pick it up \n\n Tier 5 = green, but plays a notification sound \n\nTier 6-10 = worth picking up",
   "inputs": [
     { "macroName": "VALUES_TIER_1_ENABLED", "label": "Tier 1: Enabled", "type": "boolean", "default": true },
     { "macroName": "VALUES_TIER_2_ENABLED", "label": "Tier 2: Enabled", "type": "boolean", "default": true },
@@ -23,15 +23,14 @@
     { "macroName": "VALUES_TIER_8_VALUE", "label": "Tier 8: Min value", "type": "number", "default": 1000000 },
     { "macroName": "VALUES_TIER_9_VALUE", "label": "Tier 9: Min value", "type": "number", "default": 10000000 },
     { "macroName": "VALUES_TIER_10_VALUE", "label": "Tier 10: Min value", "type": "number", "default": 70000000 },
-    { "macroName": "VALUES_TIER_1_CUSTOMSTYLE", "label": "Tier 1: Display", "type": "style",
+    { "macroName": "VALUES_TIER_1_CUSTOMSTYLE", "exampleItem": "Mithril kiteshield", "label": "Tier 1: Display", "type": "style",
     "default": {
       "textColor": "#FF000000",
       "textAccentColor": "#FF000000",
       "menuTextColor": "#FF787878",
       "textAccent": 2,
       "howLootbeam": false,
-      "hideOverlay": true,
-      "exampleItem": "Mithril kiteshield"
+      "hideOverlay": true
     }
   },
     { "macroName": "VALUES_TIER_2_CUSTOMSTYLE", "exampleItem": "Adamant scimitar", "label": "Tier 2: Display", "type": "style",
@@ -44,18 +43,27 @@
       "hideOverlay": false
     }
   },
-    { "macroName": "VALUES_TIER_3_CUSTOMSTYLE", "label": "Tier 3: Display", "type": "style",
+    { "macroName": "VALUES_TIER_3_CUSTOMSTYLE", "exampleItem": "Rune med helm", "label": "Tier 3: Display", "type": "style",
     "default": {
       "textColor": "#FFffffff",
       "textAccentColor": "#FF000000",
       "menuTextColor": "#FF787878",
       "textAccent": 1,
       "howLootbeam": false,
-      "hideOverlay": false,
-      "exampleItem": "Rune med helm"
+      "hideOverlay": false
     }
   },
-    { "macroName": "VALUES_TIER_4_CUSTOMSTYLE", "label": "Tier 4: Display", "type": "style",
+    { "macroName": "VALUES_TIER_4_CUSTOMSTYLE", "exampleItem": "Rune platelegs", "label": "Tier 4: Display", "type": "style",
+    "default": {
+      "textColor": "#FF21EB41",
+      "textAccentColor": "#FF000000",
+      "menuTextColor": "#FF21EB41",
+      "textAccent": 1,
+      "howLootbeam": false,
+      "hideOverlay": false
+    }
+  },
+    { "macroName": "VALUES_TIER_5_CUSTOMSTYLE", "exampleItem": "Dragon scimitar", "label": "Tier 5: Display", "type": "style",
     "default": {
       "textColor": "#FF21EB41",
       "textAccentColor": "#FF000000",
@@ -63,22 +71,10 @@
       "textAccent": 1,
       "howLootbeam": false,
       "hideOverlay": false,
-      "exampleItem": "Rune platelegs"
+      "notify": true
     }
   },
-    { "macroName": "VALUES_TIER_5_CUSTOMSTYLE", "label": "Tier 5: Display", "type": "style",
-    "default": {
-      "textColor": "#FF21EB41",
-      "textAccentColor": "#FF000000",
-      "menuTextColor": "#FF21EB41",
-      "textAccent": 1,
-      "howLootbeam": false,
-      "hideOverlay": false,
-      "notify": true,
-      "exampleItem": "Dragon scimitar"
-    }
-  },
-    { "macroName": "VALUES_TIER_6_CUSTOMSTYLE", "label": "Tier 6: Display", "type": "style",
+    { "macroName": "VALUES_TIER_6_CUSTOMSTYLE", "exampleItem": "Dragon platelegs", "label": "Tier 6: Display", "type": "style",
     "default": {
       "textColor": "#FFF2F2F2",
       "backgroundColor": "#67A3A3A3",
@@ -89,11 +85,10 @@
       "textAccent": 1,
       "howLootbeam": true,
       "hideOverlay": false,
-      "notify": true,
-      "exampleItem": "Dragon platelegs"
+      "notify": true
     }
   },
-    { "macroName": "VALUES_TIER_7_CUSTOMSTYLE", "label": "Tier 7: Display", "type": "style",
+    { "macroName": "VALUES_TIER_7_CUSTOMSTYLE", "exampleItem": "Granite maul", "label": "Tier 7: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#6700D97E",
@@ -104,11 +99,10 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true,
-        "exampleItem": "Granite maul"
+        "notify": true
       }
     },
-    { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "label": "Tier 8: Display", "type": "style",
+    { "macroName": "VALUES_TIER_8_CUSTOMSTYLE", "exampleItem": "Abyssal whip", "label": "Tier 8: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#67FFA800",
@@ -119,11 +113,10 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true,
-      "exampleItem": "Abyssal whip"
+        "notify": true
       }
     },
-    { "macroName": "VALUES_TIER_9_CUSTOMSTYLE", "label": "Tier 9: Display", "type": "style",
+    { "macroName": "VALUES_TIER_9_CUSTOMSTYLE", "exampleItem": "Virtus robe top", "label": "Tier 9: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#67FF0000",
@@ -134,11 +127,10 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true,
-      "exampleItem": "Virtus robe top"
+        "notify": true
       }
     },
-    { "macroName": "VALUES_TIER_10_CUSTOMSTYLE", "label": "Tier 10: Display", "type": "style",
+    { "macroName": "VALUES_TIER_10_CUSTOMSTYLE", "exampleItem": "Scythe of vitur (uncharged)", "label": "Tier 10: Display", "type": "style",
       "default": {
         "textColor": "#FFF2F2F2",
         "backgroundColor": "#678000FF",
@@ -149,8 +141,7 @@
         "textAccent": 1,
         "howLootbeam": true,
         "hideOverlay": false,
-        "notify": true,
-        "exampleItem": "Amulet of rancour"
+        "notify": true
       }
     }
   ]
