@@ -1,7 +1,7 @@
 {
   "name": "Color based on item value",
   "rs2fPath": "item_values.rs2f",
-  "description": "Items below Tier 1 are hidden & not clikcable\n\nTier 1 = hidden overlay, but clickable\n\nTier 2 = grey for less visual clutter\n\nTier 3 = default white\n\nTier 4 = green, might wanna pick it up\n\nTier 5 = green, but plays a notification sound\n\nTier 6-10 = worth picking up",
+  "description": "Items below Tier 1 are hidden & not clikcable\n\nTier 1 = hidden overlay, but clickable\n\nTier 2 = grey for less visual clutter\n\nTier 3 = default white\n\nTier 4 = green, might wanna pick it up\n\nTier 5 = green, but all tiers play a sound starting from this tier\n\nTier 6-10 = worth picking up",
   "inputs": [
     {
       "macroName": "GLOBAL_VALUE_HIDE",
