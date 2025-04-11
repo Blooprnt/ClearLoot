@@ -1,0 +1,30 @@
+{
+  "name": "Herbs",
+  "rs2fPath": "herbs.rs2f",
+  "description": "",
+  "inputs": [
+    {
+      "macroName": "HERBS_SHOW",
+      "label": "Show herbs that cost more than:",
+      "type": "number",
+      "default": 1500
+    },
+    {
+      "macroName": "HERBS_LIST",
+      "label": "List of herbs to unhide:",
+      "type": "stringlist",
+      "default": [
+        "Grimy*"
+      ]
+    },
+    {
+      "macroName": "HERBS_CUSTOMSTYLE",
+      "label": "Herb color",
+      "type": "style",
+      "default": {
+        "textColor": "#FF0eee00",
+        "menuTextColor": "#FF0eee00"
+      }
+    }
+  ]
+}
