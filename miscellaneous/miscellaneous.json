@@ -1,11 +1,11 @@
 {
   "name": "Miscellaneous",
   "rs2fPath": "miscellaneous.rs2f",
-  "description": "Customize MISCELLANEOUS items",
+  "description": "Special items mostly for slayer. Dragon Javelin is included for Araxxor and Tormented Demons fights (but with low visual clutter).",
   "inputs": [
       {
           "macroName": "MISCELLANEOUS_LIST_1",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "label": "Rare drop table",
           "type": "stringlist",
           "default": [
               "Dragon med helm",
@@ -30,7 +30,7 @@
           },
           {
           "macroName": "MISCELLANEOUS_LIST_2",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "label": "Rare bones",
           "type": "stringlist",
           "default": [
               "Long bone",
@@ -54,7 +54,7 @@
           },
           {
           "macroName": "MISCELLANEOUS_LIST_3",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "label": "Uncut Onyx",
           "type": "stringlist",
           "default": [
               "Uncut onyx"
@@ -78,7 +78,7 @@
           },
           {
           "macroName": "MISCELLANEOUS_LIST_4",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "label": "Champion scrolls",
           "type": "stringlist",
           "default": [
               "*champion scroll"
@@ -102,7 +102,7 @@
           },
           {
           "macroName": "MISCELLANEOUS_LIST_5",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "label": "Key master teleport",
           "type": "stringlist",
           "default": [
               "Key master teleport"
@@ -125,7 +125,7 @@
           },
           {
           "macroName": "MISCELLANEOUS_LIST_6",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "label": "Ancient blood ornament kit",
           "type": "stringlist",
           "default": [
               "Ancient blood ornament kit"
@@ -149,7 +149,7 @@
           },
           {
           "macroName": "MISCELLANEOUS_LIST_7",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "label": "Dragon Javelin",
           "type": "stringlist",
           "default": [
               "Dragon Javelin"
@@ -172,7 +172,8 @@
           },
           {
           "macroName": "MISCELLANEOUS_LIST_8",
-          "label": "List of miscellaneous items to apply custom unique style to",
+          "exampleItem": "Crystal shard",
+          "label": "Crystal shard (for AFK slayer)",
           "type": "stringlist",
           "default": [
               "Crystal shard"
