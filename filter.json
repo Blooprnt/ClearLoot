@@ -43,7 +43,7 @@
             "modulePath": "item_values/item_values.json"
         },
         {
-            "modulePath": "extra_rules/extra_rules.json"
+            "modulePath": "untradeables/untradeables.json"
         }
     ]
 }
