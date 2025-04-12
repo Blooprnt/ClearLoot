@@ -3,6 +3,7 @@
   "rs2fPath": "bosses.rs2f",
   "description": "All boss uniques will have these filters applied. Drops shared with other bosses aren't unique (such as Virtues robes). The Tormented Demon isn't a boss so only smouldering drops get unique colors. Bosses like Araxxor & Royal Titans don't drop items on the ground so they're left out",
   "inputs": [
+    { "macroName": "BOSS_ICONS_ENABLED", "label": "Icons: Enabled", "type": "boolean", "default": true },
     {
       "macroName": "ALCHEMICAL_HYDRA_LIST",
       "label": "Alchemical Hydra",
