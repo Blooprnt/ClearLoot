@@ -38,7 +38,7 @@
 apply (VALUES_TIER_1_ENABLED && value:>=VALUES_TIER_1_VALUE) {
   VALUES_TIER_1_CUSTOMSTYLE
 }
-apply (VALUES_TIER_2_ENABLED && value:>=VALUES_TIER_2_VALUE) {
+apply ((ownership:1 || ownership:2 || ownership:3) && VALUES_TIER_2_ENABLED && value:>=VALUES_TIER_2_VALUE) {
   VALUES_TIER_2_CUSTOMSTYLE
 }
 apply (VALUES_TIER_3_ENABLED && value:>=VALUES_TIER_3_VALUE) {
