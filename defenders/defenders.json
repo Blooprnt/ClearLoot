@@ -225,7 +225,7 @@
       "label": "Ghommal's avernic defender 5",
       "type": "stringlist",
       "default": [
-        "Ghommal's avernic defender 5"
+        "Ghommal's avernic defender 5*"
       ]
     },
     {
@@ -253,7 +253,7 @@
       "label": "Ghommal's avernic defender 6",
       "type": "stringlist",
       "default": [
-        "Ghommal's avernic defender 6"
+        "Ghommal's avernic defender 6*"
       ]
     },
     {
