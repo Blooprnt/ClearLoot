@@ -47,9 +47,12 @@
         },
         {
             "modulePath": "not_ge_tradeable/not_ge_tradeable.json"
-        }
+        },
         {
             "modulePath": "untradeables/untradeables.json"
+        },
+        {
+            "modulePath": "unhide/unhide.json"
         }
     ]
 }
