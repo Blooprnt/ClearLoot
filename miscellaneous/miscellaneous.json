@@ -376,6 +376,33 @@
                 "fontType": 1,
                 "showLootBeam": false
             }
+        },
+        {
+            "macroName": "MISCELLANEOUS_LIST_15",
+            "label": "Eternal gem",
+            "type": "stringlist",
+            "default": [
+                "Eternal gem"
+            ]
+        },
+        {
+            "macroName": "MISCELLANEOUS_CUSTOMSTYLE_15",
+            "label": "Eternal gem",
+            "type": "style",
+            "default": {
+                "backgroundColor": "#7842b7c2",
+                "borderColor": "#ff90e21b",
+                "textAccentColor": "#FF000000",
+                "textColor": "#ffffffff",
+                "menuTextColor": "#ff36c9d7",
+                "textAccent": 1,
+                "fontType": 1,
+                "showLootBeam": true,
+                "lootbeamColor": "#FF42b7c2",
+                "showDespawn": true,
+                "notify": true,
+                "hideOverlay": false
+            }
         }
     ]
 }
