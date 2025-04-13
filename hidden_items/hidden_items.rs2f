@@ -13,17 +13,17 @@
 #define HIDE_VALUE_18000 
 #define HIDE_VALUE_25000
 
-if (name:HIDE_1 && quantity:<2) { hidden = true; }
-if (name:HIDE_5 && quantity:<6) { hidden = true; }
-if (name:HIDE_40 && quantity:<41) { hidden = true; }
-if (name:HIDE_60 && quantity:<61) { hidden = true; }
+rule (name:HIDE_1 && quantity:<2) { hidden = true; }
+rule (name:HIDE_5 && quantity:<6) { hidden = true; }
+rule (name:HIDE_40 && quantity:<41) { hidden = true; }
+rule (name:HIDE_60 && quantity:<61) { hidden = true; }
 
-if (name:HIDE_VALUE_1600 && value:<1600) { hidden = true; }
-if (name:HIDE_VALUE_2000 && value:<2000) { hidden = true; }
-if (name:HIDE_VALUE_3500 && value:<3500) { hidden = true; }
-if (name:HIDE_VALUE_4500 && value:<4500) { hidden = true; }
-if (name:HIDE_VALUE_9000 && value:<9000) { hidden = true; }
-if (name:HIDE_VALUE_18000 && value:<18000) { hidden = true; }
-if (name:HIDE_VALUE_25000 && value:<25000) { hidden = true; }
+rule (name:HIDE_VALUE_1600 && value:<1600) { hidden = true; }
+rule (name:HIDE_VALUE_2000 && value:<2000) { hidden = true; }
+rule (name:HIDE_VALUE_3500 && value:<3500) { hidden = true; }
+rule (name:HIDE_VALUE_4500 && value:<4500) { hidden = true; }
+rule (name:HIDE_VALUE_9000 && value:<9000) { hidden = true; }
+rule (name:HIDE_VALUE_18000 && value:<18000) { hidden = true; }
+rule (name:HIDE_VALUE_25000 && value:<25000) { hidden = true; }
 
 // endmodule:item_values
