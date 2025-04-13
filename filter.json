@@ -46,6 +46,9 @@
             "modulePath": "item_values/item_values.json"
         },
         {
+            "modulePath": "not_ge_tradeable/not_ge_tradeable.json"
+        }
+        {
             "modulePath": "untradeables/untradeables.json"
         }
     ]
