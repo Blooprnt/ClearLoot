@@ -1,0 +1,14 @@
+// module:not_ge_tradeable
+
+#define NOT_GE_TRADEABLE_LIST []
+#define NOT_GE_TRADEABLE_ENABLED true
+
+aapply (NOT_GE_TRADEABLE_ENABLED && havalue:<=99 && name:NOT_GE_TRADEABLE_LIST) {
+  VALUES_TIER_1_CUSTOMSTYLE
+}
+
+apply (NOT_GE_TRADEABLE_ENABLED && havalue:>=100 && name:NOT_GE_TRADEABLE_LIST) {
+  VALUES_TIER_2_CUSTOMSTYLE
+}
+
+// endmodule:not_ge_tradeable
