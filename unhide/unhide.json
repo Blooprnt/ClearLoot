@@ -1,0 +1,103 @@
+{
+  "name": "Unhide",
+  "rs2fPath": "unhide.rs2f",
+  "description": "This section is to unhide items effected by the other rules. Hunter traps suffer from this the most so I created this section.",
+  "inputs": [
+    { "macroName": "HUNTER_TOOLS_UNHIDE_ENABLE", "label": "Hunter Unhide: Enabled", "type": "boolean", "default": true },
+    { "macroName": "AGILITY_TOOLS_UNHIDE_ENABLE", "label": "Agility Unhide: Enabled", "type": "boolean", "default": true },
+    { "macroName": "OTHER_UNHIDE_ENABLE", "label": "Other Unhide: Enabled", "type": "boolean", "default": true },
+    {
+      "macroName": "HUNTER_TOOLS_UNHIDE_LIST",
+      "label": "Unhide hunter skilling tools",
+      "type": "stringlist",
+      "default": [
+        "Barb-tail harpoon",
+        "Hunters' crossbow ",
+        "Hunters' sunlight crossbow ",
+        "Hunter's spear ",
+        "Bird snare ",
+        "Box trap ",
+        "Butterfly net",
+        "Falconer's glove ",
+        "Fish chunks ",
+        "Hunter kit (spell) ",
+        "Imp-in-a-box*",
+        "Unlit torch",
+        "Lit torch",
+        "Magic box ",
+        "Noose wand ",
+        "Rabbit snare ",
+        "Teasing stick",
+        "Impling jar",
+        "Butterfly jar",
+        "Small fishing net",
+        "Rope"
+      ]
+    },
+    {
+      "macroName": "HUNTER_TOOLS_UNHIDE_CUSTOMSTYLE",
+      "label": "Unhide hunter skilling tools",
+      "type": "style",
+      "default": {
+        "borderColor": "#FFffffff",
+        "textAccentColor": "#FF000000",
+        "textColor": "#FFffffff",
+        "menuTextColor": "#FFff930b",
+        "showLootBeam": false,
+        "lootbeamColor": "#FFffffff",
+        "hideOverlay": false
+      }
+    },
+    {
+      "macroName": "AGILITY_TOOLS_UNHIDE_LIST",
+      "label": "Unhide agility skilling tools",
+      "type": "stringlist",
+      "default": [
+        "Mark of grace"
+      ]
+    },
+    {
+      "macroName": "AGILITY_TOOLS_UNHIDE_CUSTOMSTYLE",
+      "label": "Unhide agility skilling tools",
+      "type": "style",
+      "default": {
+        "backgroundColor": "#75cdaf04",
+        "borderColor": "#ff001d1d",
+        "textAccentColor": "#FF000000",
+        "textColor": "#ffd42d17",
+        "menuTextColor": "#FFff930b",
+        "textAccent": 1,
+        "fontType": 1,
+        "showLootBeam": false,
+        "lootbeamColor": "#FF225a22",
+        "showDespawn": true,
+        "notify": true,
+        "hideOverlay": false
+      }
+    },
+    {
+      "macroName": "OTHER_UNHIDE_LIST",
+      "label": "Unhide other items",
+      "type": "stringlist",
+      "default": [
+      ]
+    },
+    {
+      "macroName": "OTHER_UNHIDE_CUSTOMSTYLE",
+      "label": "Unhide other items",
+      "type": "style",
+      "default": {
+        "borderColor": "#FFffffff",
+        "textAccentColor": "#FFffffff",
+        "textColor": "#FFffffff",
+        "menuTextColor": "#FFff930b",
+        "textAccent": 1,
+        "fontType": 1,
+        "showLootBeam": false,
+        "lootbeamColor": "#FFffffff",
+        "showDespawn": true,
+        "hideOverlay": false
+      }
+    },
+  ]
+}
