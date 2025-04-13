@@ -9,7 +9,7 @@
 //     icon = CurrentItem();
 // }
 
-if (name:HERBS_LIST && value:>HERBS_SHOW) { 
+rule (name:HERBS_LIST && value:>HERBS_SHOW) { 
     hidden = false;
     HERBS_CUSTOMSTYLE 
 }
