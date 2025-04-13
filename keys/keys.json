@@ -48,7 +48,7 @@
                 "borderColor": "#FF59a707",
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFededed",
-                "menuTextColor": "#FFe4d38b",
+                "menuTextColor": "#FF59a707",
                 "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": false
@@ -74,7 +74,7 @@
                 "borderColor": "#99e3c21a",
                 "textAccentColor": "#FF000000",
                 "textColor": "#FFededed",
-                "menuTextColor": "#ff0c0c1e",
+                "menuTextColor": "#ffeeda76",
                 "textAccent": 1,
                 "fontType": 1,
                 "showLootBeam": false,
