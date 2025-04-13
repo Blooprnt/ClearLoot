@@ -8,8 +8,12 @@
             "label": "Best in slot untradeables",
             "type": "stringlist",
             "default": [
-                "*izana's quiver*",
-                "*Max cape*",
+                "*Dizana's quiver",
+                "Dizana's quiver*",
+                "Blessed dizana's quiver*",
+                "*Blessed dizana's quiver",
+                "*Max cape",
+                "Max cape*",
                 "Infernal cape*"
             ]
         },
