@@ -82,6 +82,11 @@
       "name": "Untradeables",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/untradeables/untradeables.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/untradeables/untradeables.rs2f"
+    },
+    {
+      "name": "Unhide",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/unhide/unhide.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/unhide/unhide.rs2f"
     }
   ]
 }
