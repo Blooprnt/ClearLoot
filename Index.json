@@ -74,6 +74,11 @@
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/item_values/item_values.rs2f"
     },
     {
+      "name": "Not GE Tradeable",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/not_ge_tradeable/not_ge_tradeable.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/not_ge_tradeable/not_ge_tradeable.rs2f"
+    },
+    {
       "name": "Untradeables",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/untradeables/untradeables.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/untradeables/untradeables.rs2f"
