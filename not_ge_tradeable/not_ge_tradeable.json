@@ -1,13 +1,19 @@
 {
   "name": "Not G.E tradeable",
   "rs2fPath": "not_ge_tradeable.rs2f",
-  "description": "These are items that can be traded, but not on the G.E. For example: burnt food, crushed gem, half pies, etc. This section makes sure they don't bypass the filter by price checking them against their alchemy value",
+  "description": "These are items that can be traded, but not on the G.E. For example: burnt food, crushed gem, half pies, etc. This section makes sure they don't bypass the filter by price checking them against their alchemy value. You can set a value at which items below it are hidden, but still clickable as opposed to having white text. Most items in this category are hidden below 100 gp. You can price it based on barrows gloves, for iron i'd use 149, steel 299, but I find 100 to be enough.",
   "inputs": [
     {
       "macroName": "NOT_GE_TRADEABLE_ENABLED",
       "label": "Filter: Enabled",
       "type": "boolean",
       "default": true
+    },
+    {
+      "macroName": "NOT_GE_TRADEABLE_HIDE",
+      "label": "Hide tradeable items not treadeable on the GE if they cost less than:",
+      "type": "number",
+      "default": 100
     },
     {
       "macroName": "NOT_GE_TRADEABLE_LIST",
