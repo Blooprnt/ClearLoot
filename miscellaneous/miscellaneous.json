@@ -39,11 +39,12 @@
             "label": "Melee untradeables",
             "type": "stringlist",
             "default": [
-                "Fire cape*",
+                "Fire cape",
                 "Abyssal tentacle",
                 "Abyssal whip (or)",
                 "Frozen abyssal whip",
-                "Volcanic abyssal whip"
+                "Volcanic abyssal whip",
+                "Emberlight"
             ]
         },
         {
@@ -67,8 +68,16 @@
             "type": "stringlist",
             "default": [
                 "Imbued*cape",
-                "*Accursed sceptre*",
-                "*Ancient sceptre*"
+                "Accursed sceptre*",
+                "Ancient sceptre*",
+                "Blood ancient sceptre*",
+                "Ice ancient sceptre*",
+                "Shadow ancient sceptre*",
+                "Smoke ancient sceptre*",
+                "Trident of the swamp*",
+                "Trident of the seas",
+                "Warped sceptre",
+                "Purging staff"
             ]
         },
         {
@@ -91,10 +100,11 @@
             "label": "Ranged untradeables",
             "type": "stringlist",
             "default": [
-                "Ava's attractor*",
-                "Ava's accumulator*",
-                "Ava's assembler*",
-                "Masori assembler*"
+                "Ava's attractor",
+                "Ava's accumulator",
+                "Ava's assembler",
+                "Masori assembler",
+                "Scorching bow"
             ]
         },
         {
@@ -117,9 +127,15 @@
             "label": "PK untradeables",
             "type": "stringlist",
             "default": [
-                "*halo*",
-                "Barronite mace*",
-                "Decorative*armour*",
+                "*halo",
+                "*halo (l)",
+                "*halo (broken)",
+                "Barronite mace*", 
+                "Red decorative*",
+                "White decorative*",
+                "Gold decorative*",
+                "Decorative magic*",
+                "Decorative ranged*",   
                 "Fighter torso*",
                 "Looting bag",
                 "Rune pouch*",
@@ -146,11 +162,12 @@
             "label": "Void robes",
             "type": "stringlist",
             "default": [
-                "*oid*robe*",
-                "*oid*top*",
-                "*oid*gloves*",
-                "*oid*helm*",
-                "Void knight mace"
+                "Void melee helm*",
+                "Void mage helm*",
+                "Void ranger helm*",
+                "Void knight*",
+                "Elite void*",
+                "Void knight mace*"
             ]
         },
         {
