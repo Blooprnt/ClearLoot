@@ -53,6 +53,9 @@
         },
         {
             "modulePath": "unhide/unhide.json"
+        },
+        {
+            "modulePath": "unhide_food/unhide_food.json"
         }
     ]
 }
