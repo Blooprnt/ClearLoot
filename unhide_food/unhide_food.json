@@ -113,7 +113,7 @@
         },
         {
             "macroName": "FOOD_UNHIDE_LIST_EXTRA",
-            "label": "Hide if less than 1",
+            "label": "Forcibly unhide food not on the list",
             "type": "stringlist",
             "description": "Forcibly unhide food not on the list",
             "default": [
