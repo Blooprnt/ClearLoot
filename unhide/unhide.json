@@ -1,5 +1,5 @@
 {
-  "name": "Unhide",
+  "name": "Unhide Skilling",
   "rs2fPath": "unhide.rs2f",
   "description": "This section is to unhide items effected by the other rules. Hunter traps suffer from this the most so I created this section.",
   "inputs": [
