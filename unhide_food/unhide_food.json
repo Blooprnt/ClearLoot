@@ -1,8 +1,9 @@
 {
-    "name": "Food",
+    "name": "Unhide Food",
     "rs2fPath": "unhide_food.rs2f",
     "description": "This section is for allowing certain food to bypass the filter so that it does not get hidden",
     "inputs": [
+        { "macroName": "FOOD_UNHIDE_ENABLED", "label": "Unhide Food: Enabled", "type": "boolean", "default": true },
         {
             "macroName": "FOOD_UNHIDE_LIST",
             "label": "Forcibly unhide food",
