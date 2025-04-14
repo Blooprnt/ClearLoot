@@ -33,20 +33,20 @@ description: |
 
 /*@ define:input:global_rules
 type: stringlist
-label: Hidden, but still clickable items:
+label: Hidden, but still clickable items
 */
 #define GLOBAL_HIDE []
 
 
 /*@ define:input:global_rules
 type: number
-label: Hide despawn timer for items that cost less than:
+label: Hide despawn timer for items that cost less than
 */
 #define GLOBAL_DESPAWN_HIDE 1000
 
 /*@ define:input:global_rules
 type: number
-label: Hide item prices for items that cost less than:
+label: Hide item prices for items that cost less than
 */
 #define GLOBAL_VALUE_HIDE 2000
 
@@ -76,7 +76,7 @@ apply (value:<GLOBAL_VALUE_HIDE) {
 ---
 name: Hidden Items
 description: |
-  There are two ways to hide ground items:
+  There are two ways to hide ground items
   
   - The 1st category: hide ground items based on stack amount regardless of stack value
   
@@ -195,7 +195,7 @@ label: List of herbs to unhide
 
 /*@ define:input:herbs
 type: number
-label: Show herbs that cost more than:
+label: Show herbs that cost more than
 */
 #define HERBS_SHOW 1200
 
@@ -1797,7 +1797,7 @@ label: Zulrah
 
 /*@ define:input:bosses
 type: boolean
-label: Icons: Enabled
+label: Icons Enabled
 */
 #define BOSS_ICONS_ENABLED true
 
@@ -2553,7 +2553,7 @@ description: |
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Hide ground items below the value of:
+label: Hide ground items below the value of
 group: Hide Tradable Items Below
 */
 #define GLOBAL_VALUE_HIDE 550
@@ -2561,129 +2561,129 @@ group: Hide Tradable Items Below
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 1: Enabled
+label: Tier 1 Enabled
 */
 #define VALUES_TIER_1_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 2: Enabled
+label: Tier 2 Enabled
 */
 #define VALUES_TIER_2_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 3: Enabled
+label: Tier 3 Enabled
 */
 #define VALUES_TIER_3_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 4: Enabled
+label: Tier 4 Enabled
 */
 #define VALUES_TIER_4_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 5: Enabled
+label: Tier 5 Enabled
 */
 #define VALUES_TIER_5_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 6: Enabled
+label: Tier 6 Enabled
 */
 #define VALUES_TIER_6_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 7: Enabled
+label: Tier 7 Enabled
 */
 #define VALUES_TIER_7_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 8: Enabled
+label: Tier 8 Enabled
 */
 #define VALUES_TIER_8_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 9: Enabled
+label: Tier 9 Enabled
 */
 #define VALUES_TIER_9_ENABLED true
 
 /*@ define:input:color_based_on_item_value
 type: boolean
-label: Tier 10: Enabled
+label: Tier 10 Enabled
 */
 #define VALUES_TIER_10_ENABLED true
 
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 1: Min value
+label: Tier 1 Min value
 */
 #define VALUES_TIER_1_VALUE 550
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 2: Min value
+label: Tier 2 Min value
 */
 #define VALUES_TIER_2_VALUE 1300
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 3: Min value
+label: Tier 3 Min value
 */
 #define VALUES_TIER_3_VALUE 5500
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 4: Min value
+label: Tier 4 Min value
 */
 #define VALUES_TIER_4_VALUE 18000
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 5: Min value
+label: Tier 5 Min value
 */
 #define VALUES_TIER_5_VALUE 45000
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 6: Min value
+label: Tier 6 Min value
 */
 #define VALUES_TIER_6_VALUE 80000
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 7: Min value
+label: Tier 7 Min value
 */
 #define VALUES_TIER_7_VALUE 300000
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 8: Min value
+label: Tier 8 Min value
 */
 #define VALUES_TIER_8_VALUE 1000000
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 9: Min value
+label: Tier 9 Min value
 */
 #define VALUES_TIER_9_VALUE 10000000
 
 /*@ define:input:color_based_on_item_value
 type: number
-label: Tier 10: Min value
+label: Tier 10 Min value
 */
 #define VALUES_TIER_10_VALUE 70000000
 
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 1: Display
+label: Tier 1 Display
 exampleItem: Mithril kiteshield
 */
 #define VALUES_TIER_1_CUSTOMSTYLE \
@@ -2695,7 +2695,7 @@ exampleItem: Mithril kiteshield
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 2: Display
+label: Tier 2 Display
 exampleItem: Adamant scimitar
 */
 #define VALUES_TIER_2_CUSTOMSTYLE \
@@ -2707,7 +2707,7 @@ exampleItem: Adamant scimitar
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 3: Display
+label: Tier 3 Display
 exampleItem: Rune med helm
 */
 #define VALUES_TIER_3_CUSTOMSTYLE \
@@ -2719,7 +2719,7 @@ exampleItem: Rune med helm
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 4: Display
+label: Tier 4 Display
 exampleItem: Rune platelegs
 */
 #define VALUES_TIER_4_CUSTOMSTYLE \
@@ -2731,7 +2731,7 @@ exampleItem: Rune platelegs
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 5: Display
+label: Tier 5 Display
 exampleItem: Dragon scimitar
 */
 #define VALUES_TIER_5_CUSTOMSTYLE \
@@ -2744,7 +2744,7 @@ exampleItem: Dragon scimitar
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 6: Display
+label: Tier 6 Display
 exampleItem: Dragon platelegs
 */
 #define VALUES_TIER_6_CUSTOMSTYLE \
@@ -2760,7 +2760,7 @@ exampleItem: Dragon platelegs
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 7: Display
+label: Tier 7 Display
 exampleItem: Granite maul
 */
 #define VALUES_TIER_7_CUSTOMSTYLE \
@@ -2776,7 +2776,7 @@ exampleItem: Granite maul
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 8: Display
+label: Tier 8 Display
 exampleItem: Eternal crystal
 */
 #define VALUES_TIER_8_CUSTOMSTYLE \
@@ -2792,7 +2792,7 @@ exampleItem: Eternal crystal
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 9: Display
+label: Tier 9 Display
 exampleItem: Virtus robe top
 */
 #define VALUES_TIER_9_CUSTOMSTYLE \
@@ -2808,7 +2808,7 @@ exampleItem: Virtus robe top
 
 /*@ define:input:color_based_on_item_value
 type: style
-label: Tier 10: Display
+label: Tier 10 Display
 exampleItem: Scythe of vitur (uncharged)
 */
 #define VALUES_TIER_10_CUSTOMSTYLE \
@@ -2877,13 +2877,13 @@ label: Not tradeable on GE
 
 /*@ define:input:not_g.e_tradeable
 type: number
-label: Hide tradeable items not treadeable on the GE if they cost less than:
+label: Hide tradeable items not treadeable on the GE if they cost less than
 */
 #define NOT_GE_TRADEABLE_HIDE 100
 
 /*@ define:input:not_g.e_tradeable
 type: boolean
-label: Filter: Enabled
+label: Filter Enabled
 */
 #define NOT_GE_TRADEABLE_ENABLED true
 
@@ -2963,19 +2963,19 @@ label: Unhide other items
 
 /*@ define:input:unhide_skilling
 type: boolean
-label: Hunter Unhide: Enabled
+label: Hunter Unhide Enabled
 */
 #define HUNTER_TOOLS_UNHIDE_ENABLE true
 
 /*@ define:input:unhide_skilling
 type: boolean
-label: Agility Unhide: Enabled
+label: Agility Unhide Enabled
 */
 #define AGILITY_TOOLS_UNHIDE_ENABLE true
 
 /*@ define:input:unhide_skilling
 type: boolean
-label: Other Unhide: Enabled
+label: Other Unhide Enabled
 */
 #define OTHER_UNHIDE_ENABLE true
 
@@ -3048,7 +3048,7 @@ description: |
 
 /*@ define:input:unhide_food
 type: boolean
-label: Unhide Food: Enabled
+label: Unhide Food Enabled
 */
 #define FOOD_UNHIDE_ENABLED true
 
