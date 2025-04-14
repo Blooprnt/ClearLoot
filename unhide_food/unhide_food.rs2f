@@ -1,0 +1,12 @@
+// module:unhide_food
+
+#define FOOD_UNHIDE_LIST []
+#define FOOD_UNHIDE_LIST_EXTRA []
+#define FOOD_UNHIDE_CUSTOMSTYLE 
+
+apply (name:FOOD_UNHIDE_LIST || FOOD_UNHIDE_LIST_EXTRA) {
+    hidden = true;
+    FOOD_UNHIDE_CUSTOMSTYLE 
+}
+
+// endmodule:unhide_food
