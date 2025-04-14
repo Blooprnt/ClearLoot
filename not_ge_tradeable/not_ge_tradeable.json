@@ -1,7 +1,7 @@
 {
   "name": "Not G.E tradeable",
   "rs2fPath": "not_ge_tradeable.rs2f",
-  "description": "These are items that can be traded, but not on the G.E. For example: burnt food, crushed gem, half pies, etc. This section makes sure they don't bypass the filter by price checking them against their alchemy value. You can set a value at which items below it are hidden, but still clickable as opposed to having white text. Most items in this category are hidden below 100 gp. You can price it based on Culinaromancer's gloves, for iron gloves I'd pick 149 GP, for steel gloves 299 GP, etc, which is based on their HA value. I find 100 to be enough.",
+  "description": "These are items that can be traded, but not on the G.E. For example: burnt food, crushed gem, half pies, etc. This section makes sure they don't bypass the filter by price checking them against their alchemy value. You can set a value at which items below it are hidden, but still clickable as opposed to having white text. Most items in this category are hidden below 100 gp.",
   "inputs": [
     {
       "macroName": "NOT_GE_TRADEABLE_ENABLED",
