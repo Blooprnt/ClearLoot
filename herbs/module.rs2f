@@ -1,0 +1,40 @@
+
+/*@ define:module:herbs
+---
+name: Herbs
+description: |
+  This section exists to unhide weed due to herb sacks being able to pick them up. The "\*" acts as a wild card, so "Grimy\*" applies to all grimy herbs, but not clean ones. If you want to include clean ones you could do "\*weed" instead.
+*/
+
+// #define HERB_ICON_ENABLED true
+/*@ define:input:herbs
+type: stringlist
+label: List of herbs to unhide
+*/
+#define HERBS_LIST ["Grimy*"]
+
+/*@ define:input:herbs
+type: number
+label: Show herbs that cost more than:
+*/
+#define HERBS_SHOW 1200
+
+/*@ define:input:herbs
+type: style
+label: List of herbs to unhide
+exampleItem: Grimy ranarr weed
+*/
+#define HERBS_CUSTOMSTYLE \
+  textColor = "#FF0eee00";\
+  menuTextColor = "#FF0eee00";
+
+
+// apply (HERB_ICON_ENABLED && value:>HERBS_SHOW && name:HERBS_LIST && name:["Grimy ranarr weed","Grimy dwarf weed"]) {
+//     icon = CurrentItem();
+// }
+
+rule (name:HERBS_LIST && value:>HERBS_SHOW) { 
+    hidden = false;
+    HERBS_CUSTOMSTYLE 
+}
+

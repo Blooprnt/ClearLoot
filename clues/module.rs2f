@@ -1,0 +1,140 @@
+
+/*@ define:module:clue
+---
+name: Clue
+description: |
+  The overlay doesn't have a background to reduce clutter (in case of juggling)
+*/
+
+/*@ define:input:clue
+type: stringlist
+label: clue scroll (beginner)
+*/
+#define CLUE_LIST_1 ["clue scroll (beginner)"]
+
+/*@ define:input:clue
+type: stringlist
+label: clue scroll (easy)
+*/
+#define CLUE_LIST_2 ["clue scroll (easy)"]
+
+/*@ define:input:clue
+type: stringlist
+label: clue scroll (medium)
+*/
+#define CLUE_LIST_3 ["clue scroll (medium)"]
+
+/*@ define:input:clue
+type: stringlist
+label: clue scroll (hard)
+*/
+#define CLUE_LIST_4 ["clue scroll (hard)"]
+
+/*@ define:input:clue
+type: stringlist
+label: clue scroll (elite)
+*/
+#define CLUE_LIST_5 ["clue scroll (elite)"]
+
+/*@ define:input:clue
+type: stringlist
+label: clue scroll (master)
+*/
+#define CLUE_LIST_6 ["clue scroll (master)"]
+
+
+/*@ define:input:clue
+type: style
+label: clue scroll (beginner)
+*/
+#define CLUE_CUSTOMSTYLE_1 \
+  textColor = "#FFffffff";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#FFffffff";\
+  textAccent = 1;\
+  fontType = 1;
+
+apply (name:CLUE_LIST_1) {
+    CLUE_CUSTOMSTYLE_1
+}
+
+/*@ define:input:clue
+type: style
+label: clue scroll (easy)
+*/
+#define CLUE_CUSTOMSTYLE_2 \
+  textColor = "#FF21EB41";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#FF21EB41";\
+  textAccent = 1;\
+  fontType = 1;
+
+apply (name:CLUE_LIST_2) {
+    CLUE_CUSTOMSTYLE_2
+}
+
+/*@ define:input:clue
+type: style
+label: clue scroll (medium)
+*/
+#define CLUE_CUSTOMSTYLE_3 \
+  textColor = "#FF00F5C8";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FF070711";\
+  menuTextColor = "#FF00F5C8";\
+  textAccent = 1;\
+  fontType = 1;
+
+apply (name:CLUE_LIST_3) {
+    CLUE_CUSTOMSTYLE_3
+}
+
+/*@ define:input:clue
+type: style
+label: clue scroll (hard)
+*/
+#define CLUE_CUSTOMSTYLE_4 \
+  textColor = "#FFF2E905";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FF070711";\
+  menuTextColor = "#FFF2E905";\
+  textAccent = 1;\
+  fontType = 1;
+
+apply (name:CLUE_LIST_4) {
+    CLUE_CUSTOMSTYLE_4
+}
+
+/*@ define:input:clue
+type: style
+label: clue scroll (elite)
+*/
+#define CLUE_CUSTOMSTYLE_5 \
+  textColor = "#FFFF3F38";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FF000000";\
+  menuTextColor = "#FFFF3F38";\
+  textAccent = 1;\
+  fontType = 1;
+
+apply (name:CLUE_LIST_5) {
+    CLUE_CUSTOMSTYLE_5
+}
+
+/*@ define:input:clue
+type: style
+label: clue scroll (master)
+*/
+#define CLUE_CUSTOMSTYLE_6 \
+  textColor = "#FFCB46FA";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FF000000";\
+  menuTextColor = "#FFCB46FA";\
+  textAccent = 1;\
+  fontType = 1;
+
+apply (name:CLUE_LIST_6) {
+    CLUE_CUSTOMSTYLE_6
+}
+
+

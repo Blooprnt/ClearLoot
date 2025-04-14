@@ -1,0 +1,48 @@
+
+/*@ define:module:global_rules
+---
+name: Global Rules
+description: |
+  Rules that apply globally
+*/
+
+/*@ define:input:global_rules
+type: stringlist
+label: Hidden, but still clickable items:
+*/
+#define GLOBAL_HIDE []
+
+
+/*@ define:input:global_rules
+type: number
+label: Hide despawn timer for items that cost less than:
+*/
+#define GLOBAL_DESPAWN_HIDE 1000
+
+/*@ define:input:global_rules
+type: number
+label: Hide item prices for items that cost less than:
+*/
+#define GLOBAL_VALUE_HIDE 2000
+
+
+apply (name:GLOBAL_HIDE) {
+    hideOverlay = true;
+}
+
+apply (name:"*") {
+    showDespawn = true;
+}
+
+apply (value:<GLOBAL_DESPAWN_HIDE) {
+    showDespawn = false;
+}
+
+apply (name:"*") {
+    showValue = true;
+}
+
+apply (value:<GLOBAL_VALUE_HIDE) {
+    showValue = false;
+}
+

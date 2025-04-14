@@ -1,6 +1,0 @@
-{
-    "name": "Do this first",
-    "rs2fPath": "plugin_settings.rs2f",
-    "description": "\n1. On Runelite, click the wrench (configuration) on the side bar\n2. Search for the \"Loot filters\" plugin & go to the settings\n3. In the \"General\" section, change the font mode from \"runelite\" to \"plugin\" \n4. In the \"Display settings\" section, turn on \"Menu: deprioritize hidden items\" \n5. In the \"Item Value Rules\" section, deselect the checkboxes for insane, high, medium, and low tiers \n6. Optional: enabling \"Highlight notification\" for client wide notifications",
-    "inputs": []
-}

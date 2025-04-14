@@ -1,0 +1,330 @@
+
+/*@ define:module:color_based_on_item_value
+---
+name: Color based on item value
+description: |
+  Items below Tier 1 are hidden & not clikcable
+  
+  Tier 1 = hidden overlay, but clickable
+  
+  Tier 2 = grey for less visual clutter
+  
+  Tier 3 = default white
+  
+  Tier 4 = green, might wanna pick it up
+  
+  Tier 5 = green, but all tiers play a sound starting from this tier
+  
+  Tier 6-10 = worth picking up
+*/
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Hide ground items below the value of:
+group: Hide Tradable Items Below
+*/
+#define GLOBAL_VALUE_HIDE 550
+
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 1: Enabled
+*/
+#define VALUES_TIER_1_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 2: Enabled
+*/
+#define VALUES_TIER_2_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 3: Enabled
+*/
+#define VALUES_TIER_3_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 4: Enabled
+*/
+#define VALUES_TIER_4_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 5: Enabled
+*/
+#define VALUES_TIER_5_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 6: Enabled
+*/
+#define VALUES_TIER_6_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 7: Enabled
+*/
+#define VALUES_TIER_7_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 8: Enabled
+*/
+#define VALUES_TIER_8_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 9: Enabled
+*/
+#define VALUES_TIER_9_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 10: Enabled
+*/
+#define VALUES_TIER_10_ENABLED true
+
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 1: Min value
+*/
+#define VALUES_TIER_1_VALUE 550
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 2: Min value
+*/
+#define VALUES_TIER_2_VALUE 1300
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 3: Min value
+*/
+#define VALUES_TIER_3_VALUE 5500
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 4: Min value
+*/
+#define VALUES_TIER_4_VALUE 18000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 5: Min value
+*/
+#define VALUES_TIER_5_VALUE 45000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 6: Min value
+*/
+#define VALUES_TIER_6_VALUE 80000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 7: Min value
+*/
+#define VALUES_TIER_7_VALUE 300000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 8: Min value
+*/
+#define VALUES_TIER_8_VALUE 1000000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 9: Min value
+*/
+#define VALUES_TIER_9_VALUE 10000000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 10: Min value
+*/
+#define VALUES_TIER_10_VALUE 70000000
+
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 1: Display
+exampleItem: Mithril kiteshield
+*/
+#define VALUES_TIER_1_CUSTOMSTYLE \
+  textColor = "#FFFFFFFF";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#FF787878";\
+  textAccent = 3;\
+  hideOverlay = true;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 2: Display
+exampleItem: Adamant scimitar
+*/
+#define VALUES_TIER_2_CUSTOMSTYLE \
+  textColor = "#95808080";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#FF787878";\
+  textAccent = 1;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 3: Display
+exampleItem: Rune med helm
+*/
+#define VALUES_TIER_3_CUSTOMSTYLE \
+  textColor = "#FFffffff";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#FF787878";\
+  textAccent = 1;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 4: Display
+exampleItem: Rune platelegs
+*/
+#define VALUES_TIER_4_CUSTOMSTYLE \
+  textColor = "#FF21EB41";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#FF21EB41";\
+  textAccent = 1;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 5: Display
+exampleItem: Dragon scimitar
+*/
+#define VALUES_TIER_5_CUSTOMSTYLE \
+  textColor = "#FF21EB41";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#FF21EB41";\
+  textAccent = 1;\
+  notify = true;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 6: Display
+exampleItem: Dragon platelegs
+*/
+#define VALUES_TIER_6_CUSTOMSTYLE \
+  textColor = "#FFF2F2F2";\
+  backgroundColor = "#67A3A3A3";\
+  borderColor = "#FFD4D4D4";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FFD4D4D4";\
+  menuTextColor = "#FFD4D4D4";\
+  textAccent = 1;\
+  notify = true;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 7: Display
+exampleItem: Granite maul
+*/
+#define VALUES_TIER_7_CUSTOMSTYLE \
+  textColor = "#FFF2F2F2";\
+  backgroundColor = "#6700D97E";\
+  borderColor = "#FF32DC95";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FF32DC95";\
+  menuTextColor = "#FF32DC95";\
+  textAccent = 1;\
+  notify = true;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 8: Display
+exampleItem: Eternal crystal
+*/
+#define VALUES_TIER_8_CUSTOMSTYLE \
+  textColor = "#FFF2F2F2";\
+  backgroundColor = "#67FFA800";\
+  borderColor = "#FFF0D337";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FFF0D337";\
+  menuTextColor = "#FFF0D337";\
+  textAccent = 1;\
+  notify = true;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 9: Display
+exampleItem: Virtus robe top
+*/
+#define VALUES_TIER_9_CUSTOMSTYLE \
+  textColor = "#FFF2F2F2";\
+  backgroundColor = "#67FF0000";\
+  borderColor = "#FFE83131";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FFE83131";\
+  menuTextColor = "#FFE83131";\
+  textAccent = 1;\
+  notify = true;\
+  hideOverlay = false;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 10: Display
+exampleItem: Scythe of vitur (uncharged)
+*/
+#define VALUES_TIER_10_CUSTOMSTYLE \
+  textColor = "#FFF2F2F2";\
+  backgroundColor = "#678000FF";\
+  borderColor = "#FFA74FFF";\
+  textAccentColor = "#FF000000";\
+  lootbeamColor = "#FFA74FFF";\
+  menuTextColor = "#FFA74FFF";\
+  textAccent = 1;\
+  notify = true;\
+  hideOverlay = false;
+
+
+apply (VALUES_TIER_1_ENABLED && value:>=VALUES_TIER_1_VALUE) {
+  VALUES_TIER_1_CUSTOMSTYLE
+}
+apply ((ownership:1 || ownership:2 || ownership:3) && VALUES_TIER_2_ENABLED && value:>=VALUES_TIER_2_VALUE) {
+  VALUES_TIER_2_CUSTOMSTYLE
+}
+apply (VALUES_TIER_3_ENABLED && value:>=VALUES_TIER_3_VALUE) {
+  VALUES_TIER_3_CUSTOMSTYLE
+}
+apply (VALUES_TIER_4_ENABLED && value:>=VALUES_TIER_4_VALUE) {
+  VALUES_TIER_4_CUSTOMSTYLE
+}
+apply (VALUES_TIER_5_ENABLED && value:>=VALUES_TIER_5_VALUE) {
+  VALUES_TIER_5_CUSTOMSTYLE
+}
+apply (VALUES_TIER_6_ENABLED && value:>=VALUES_TIER_6_VALUE) {
+  VALUES_TIER_6_CUSTOMSTYLE
+}
+apply (VALUES_TIER_7_ENABLED && value:>=VALUES_TIER_7_VALUE) {
+  VALUES_TIER_7_CUSTOMSTYLE
+}
+apply (VALUES_TIER_8_ENABLED && value:>=VALUES_TIER_8_VALUE) {
+  VALUES_TIER_8_CUSTOMSTYLE
+}
+apply (VALUES_TIER_9_ENABLED && value:>=VALUES_TIER_9_VALUE) {
+  VALUES_TIER_9_CUSTOMSTYLE
+}
+apply (VALUES_TIER_10_ENABLED && value:>=VALUES_TIER_10_VALUE) {
+  VALUES_TIER_10_CUSTOMSTYLE
+}
+
+apply (tradeable: true && name:"*") {
+    hidden = true;
+}
+
+apply (value:>GLOBAL_VALUE_HIDE) {
+    hidden = false;
+}

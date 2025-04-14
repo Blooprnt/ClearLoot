@@ -1,0 +1,34 @@
+
+/*@ define:module:catacombs_items
+---
+name: Catacombs Items
+description: |
+  Untradeable Catacomb of Kourend ground items
+*/
+
+/*@ define:input:catacombs_items
+type: stringlist
+label: List of Catacombs items
+*/
+#define CATACOMBS_LIST ["Dark totem","Dark totem top","Dark totem base","Dark totem middle","Ancient shard"]
+
+
+/*@ define:input:catacombs_items
+type: style
+label: Catacombs items
+*/
+#define CATACOMBS_CUSTOMSTYLE \
+  textColor = "#FFdfdfdf";\
+  backgroundColor = "#387f1fd5";\
+  borderColor = "#90000000";\
+  textAccentColor = "#FF000000";\
+  menuTextColor = "#ff975eff";\
+  textAccent = 1;\
+  fontType = 1;
+
+
+apply (name:CATACOMBS_LIST) {
+    CATACOMBS_CUSTOMSTYLE
+}
+
+
