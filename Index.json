@@ -84,9 +84,14 @@
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/untradeables/untradeables.rs2f"
     },
     {
-      "name": "Unhide",
+      "name": "Unhide Skilling",
       "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/unhide/unhide.json",
       "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/unhide/unhide.rs2f"
+    }
+    {
+      "name": "Unhide Food",
+      "moduleJsonUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/unhide_food/unhide_food.json",
+      "moduleRs2fUrl": "https://raw.githubusercontent.com/Blooprnt/ClearLoot/refs/heads/main/unhide_food/unhide_food.rs2f"
     }
   ]
 }
