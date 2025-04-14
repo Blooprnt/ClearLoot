@@ -1,8 +1,7 @@
 {
     "name": "Food",
     "rs2fPath": "unhide_food.rs2f",
-    "subtitle": "The stuff you eat",
-    "description": "This module provides filters based on food groups with some sane defaults. It also provides styling options available for every food group that has a filter. This can be done at the group level or on a food-by-food basis. A few popular foods have been given custom styling out of the box.",
+    "description": "This section is for allowing certain food to bypass the filter so that it does not get hidden",
     "inputs": [
         {
             "macroName": "FOOD_UNHIDE_LIST",
@@ -106,11 +105,9 @@
             "type": "style",
             "exampleItem": "Shark",
             "default": {
-                "backgroundColor": "#504a5e4b",
-                "borderColor": "#FF4a5e4b",
                 "textColor": "#FFFFFFFF",
                 "textAccentColor": "#FF000000",
-                "menuTextColor": "#FF9aff90"
+                "menuTextColor": "#FFff930b"
             }
         },
         {
