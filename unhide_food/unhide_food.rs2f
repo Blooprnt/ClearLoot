@@ -4,8 +4,8 @@
 #define FOOD_UNHIDE_LIST_EXTRA []
 #define FOOD_UNHIDE_CUSTOMSTYLE 
 
-apply (name:FOOD_UNHIDE_LIST || FOOD_UNHIDE_LIST_EXTRA) {
-    hidden = true;
+apply (name:FOOD_UNHIDE_LIST || name:FOOD_UNHIDE_LIST_EXTRA) {
+    hidden = false;
     FOOD_UNHIDE_CUSTOMSTYLE 
 }
 
