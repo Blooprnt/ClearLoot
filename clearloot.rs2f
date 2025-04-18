@@ -1,14 +1,12 @@
-meta {
-  name = "ClearLoot";
-}
-
 /*@ define:module:about_this_filter
 ---
 name: About this filter
 description: |
   This filter has less options than others as it prioritizes reducing visual ground item clutter while saving the nice colors for the nice PVM drops. The colors aren't extreme to keep the text readable. When it comes to unique drops, the colors are influenced by the boss it's from, otherwise ground item colors are based on their value with some special exceptions. This is version: 1.0
 */
-
+meta {
+  name = "ClearLoot";
+}
 
 /*@ define:module:do_this_first
 ---
