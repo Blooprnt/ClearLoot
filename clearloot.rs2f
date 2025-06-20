@@ -1773,6 +1773,10 @@ label: Icons Enabled
 apply (BOSS_ICONS_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:NEX_LIST || name:OBOR_LIST || name:OSTO_AYAK_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_DOOM_OF_MOKHAIOTL_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:TORMENTED_DEMON_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
     icon = CurrentItem();
 }
+
+apply (BOSS_BEAM_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:NEX_LIST || name:OBOR_LIST || name:OSTO_AYAK_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_DOOM_OF_MOKHAIOTL_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:TORMENTED_DEMON_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
+    showLootbeam = true;
+}
 /* #endregion */
 
 /* #region [5] bosses */
@@ -1780,7 +1784,7 @@ apply (BOSS_ICONS_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST 
 type: style
 label: Alchemical Hydra
 */
-#define ALCHEMICAL_HYDRA_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FF9db304";textAccent = 1;fontType = 2;
+#define ALCHEMICAL_HYDRA_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF1ba91b";menuTextColor = "#FF9db304";textAccent = 1;fontType = 2;
 
 apply (name:ALCHEMICAL_HYDRA_LIST) {
     ALCHEMICAL_HYDRA_CUSTOMSTYLE
@@ -1810,7 +1814,7 @@ apply (name:ARTIO_AND_CALLISTO_LIST) {
 type: style
 label: Bryophyta
 */
-#define BRYOPHYTA_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FF9db304";textAccent = 1;fontType = 2;
+#define BRYOPHYTA_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF1ba91b";menuTextColor = "#FF9db304";textAccent = 1;fontType = 2;
 
 apply (name:BRYOPHYTA_LIST) {
     BRYOPHYTA_CUSTOMSTYLE
@@ -1820,7 +1824,7 @@ apply (name:BRYOPHYTA_LIST) {
 type: style
 label: Calvar'ion & Vet'ion
 */
-#define CALVARION_AND_VETION_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFd5a5ff";textAccent = 1;fontType = 2;
+#define CALVARION_AND_VETION_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8431dd";menuTextColor = "#FFd5a5ff";textAccent = 1;fontType = 2;
 
 apply (name:CALVARION_AND_VETION_LIST) {
     CALVARION_AND_VETION_CUSTOMSTYLE
@@ -1830,7 +1834,7 @@ apply (name:CALVARION_AND_VETION_LIST) {
 type: style
 label: Cerberus
 */
-#define CERBERUS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff443d";textAccent = 1;fontType = 2;
+#define CERBERUS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFff443d";textAccent = 1;fontType = 2;
 
 apply (name:CERBERUS_LIST) {
     CERBERUS_CUSTOMSTYLE
@@ -1840,7 +1844,7 @@ apply (name:CERBERUS_LIST) {
 type: style
 label: Chaos Elemental
 */
-#define CHAOS_ELEMENTAL_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFd5a5ff";textAccent = 1;fontType = 2;
+#define CHAOS_ELEMENTAL_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8431dd";menuTextColor = "#FFd5a5ff";textAccent = 1;fontType = 2;
 
 apply (name:CHAOS_ELEMENTAL_LIST) {
     CHAOS_ELEMENTAL_CUSTOMSTYLE
@@ -1850,7 +1854,7 @@ apply (name:CHAOS_ELEMENTAL_LIST) {
 type: style
 label: Commander Zilyana
 */
-#define COMMANDER_ZILYANA_CUSTOMSTYLE textColor = "#FFf6d05b";backgroundColor = "#70557eff";borderColor = "#95f6d05b";textAccentColor = "#FF000000";lootbeamColor = "#FF2c5fff";menuTextColor = "#FFb4c6ff";textAccent = 1;fontType = 2;
+#define COMMANDER_ZILYANA_CUSTOMSTYLE textColor = "#FFffe491";backgroundColor = "#582778ff";borderColor = "#70f6d05b";textAccentColor = "#FF000000";lootbeamColor = "#FF8eceff";menuTextColor = "#FFb4c6ff";textAccent = 1;fontType = 2;
 
 apply (name:COMMANDER_ZILYANA_LIST) {
     COMMANDER_ZILYANA_CUSTOMSTYLE
@@ -1860,7 +1864,7 @@ apply (name:COMMANDER_ZILYANA_LIST) {
 type: style
 label: Corporeal Beast
 */
-#define CORPOREAL_BEAST_CUSTOMSTYLE textColor = "#FFe3d8c8";backgroundColor = "#80af898f";borderColor = "#FFf7e3c7";textAccentColor = "#FF000000";lootbeamColor = "#FFEDD9B7";menuTextColor = "#FFffbdbd";textAccent = 1;fontType = 2;
+#define CORPOREAL_BEAST_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#80af898f";borderColor = "#FFf6e3c9";textAccentColor = "#FF000000";lootbeamColor = "#FF898989";menuTextColor = "#FFffbdbd";textAccent = 1;fontType = 2;
 
 apply (name:CORPOREAL_BEAST_LIST) {
     CORPOREAL_BEAST_CUSTOMSTYLE
@@ -1880,7 +1884,7 @@ apply (name:CRAZY_ARCHAEOLOGIST_LIST) {
 type: style
 label: Dagannoth Kings
 */
-#define DAGANNOTH_KINGS_CUSTOMSTYLE textColor = "#FFf75227";backgroundColor = "#705b503c";borderColor = "#9900a34e";textAccentColor = "#FF000000";lootbeamColor = "#FF675e4f";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
+#define DAGANNOTH_KINGS_CUSTOMSTYLE textColor = "#FFfc5337";backgroundColor = "#289d8b67";borderColor = "#9900a34e";textAccentColor = "#FF000000";lootbeamColor = "#FF675e4f";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:DAGANNOTH_KINGS_LIST) {
     DAGANNOTH_KINGS_CUSTOMSTYLE
@@ -1890,7 +1894,7 @@ apply (name:DAGANNOTH_KINGS_LIST) {
 type: style
 label: Duke Sucellus
 */
-#define DUKE_SUCELLUS_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#655d369a";borderColor = "#992cc5e8";textAccentColor = "#FF000000";lootbeamColor = "#FF306a79";menuTextColor = "#FFba9aea";textAccent = 1;fontType = 2;
+#define DUKE_SUCELLUS_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#655d369a";borderColor = "#992cc5e8";textAccentColor = "#FF000000";lootbeamColor = "#FF1595b6";menuTextColor = "#FFba9aea";textAccent = 1;fontType = 2;
 
 apply (name:DUKE_SUCELLUS_LIST) {
     DUKE_SUCELLUS_CUSTOMSTYLE
@@ -1900,7 +1904,7 @@ apply (name:DUKE_SUCELLUS_LIST) {
 type: style
 label: General Graardor
 */
-#define GENERAL_GRAARDOR_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#80121211";borderColor = "#FF326d35";textAccentColor = "#FF000000";lootbeamColor = "#FF318c34";menuTextColor = "#FF31dd39";textAccent = 1;fontType = 2;
+#define GENERAL_GRAARDOR_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#68121211";borderColor = "#992d9332";textAccentColor = "#FF000000";lootbeamColor = "#FF1ba91b";menuTextColor = "#FF31dd39";textAccent = 1;fontType = 2;
 
 apply (name:GENERAL_GRAARDOR_LIST) {
     GENERAL_GRAARDOR_CUSTOMSTYLE
@@ -1910,7 +1914,7 @@ apply (name:GENERAL_GRAARDOR_LIST) {
 type: style
 label: Grotesque Guardians
 */
-#define GROTESQUE_GUARDIANS_CUSTOMSTYLE textColor = "#FFFCB80D";backgroundColor = "#60763EF0";borderColor = "#99FCB80D";textAccentColor = "#FF000000";lootbeamColor = "#FF6B6B6B";menuTextColor = "#FFfdd46e";textAccent = 1;fontType = 2;
+#define GROTESQUE_GUARDIANS_CUSTOMSTYLE textColor = "#FFffc940";backgroundColor = "#60763EF0";borderColor = "#99FCB80D";textAccentColor = "#FF000000";lootbeamColor = "#FF888888";menuTextColor = "#FFfdd46e";textAccent = 1;fontType = 2;
 
 apply (name:GROTESQUE_GUARDIANS_LIST) {
     GROTESQUE_GUARDIANS_CUSTOMSTYLE
@@ -1920,7 +1924,7 @@ apply (name:GROTESQUE_GUARDIANS_LIST) {
 type: style
 label: Hespori
 */
-#define HESPORI_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FF8abd00";textAccent = 1;fontType = 2;
+#define HESPORI_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF1ba91b";menuTextColor = "#FF8abd00";textAccent = 1;fontType = 2;
 
 apply (name:HESPORI_LIST) {
     HESPORI_CUSTOMSTYLE
@@ -1930,7 +1934,7 @@ apply (name:HESPORI_LIST) {
 type: style
 label: K'ril Tsutsaroth
 */
-#define KRIL_TSUTSAROTH_CUSTOMSTYLE textColor = "#f0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFc91515";textAccent = 1;fontType = 2;
+#define KRIL_TSUTSAROTH_CUSTOMSTYLE textColor = "#f0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFc91515";textAccent = 1;fontType = 2;
 
 apply (name:KRIL_TSUTSAROTH_LIST) {
     KRIL_TSUTSAROTH_CUSTOMSTYLE
@@ -1950,7 +1954,7 @@ apply (name:KALPHITE_QUEEN_LIST) {
 type: style
 label: King Black Dragon
 */
-#define KING_BLACK_DRAGON_CUSTOMSTYLE textColor = "#FFdedede";backgroundColor = "#99110e0e";borderColor = "#99c91515";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFc91515";textAccent = 1;fontType = 2;
+#define KING_BLACK_DRAGON_CUSTOMSTYLE textColor = "#FFdedede";backgroundColor = "#79110e0e";borderColor = "#99ff0000";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFc91515";textAccent = 2;fontType = 2;
 
 apply (name:KING_BLACK_DRAGON_LIST) {
     KING_BLACK_DRAGON_CUSTOMSTYLE
@@ -1960,7 +1964,7 @@ apply (name:KING_BLACK_DRAGON_LIST) {
 type: style
 label: Kraken
 */
-#define KRAKEN_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
+#define KRAKEN_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#90d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFa25500";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:KRAKEN_LIST) {
     KRAKEN_CUSTOMSTYLE
@@ -1970,7 +1974,7 @@ apply (name:KRAKEN_LIST) {
 type: style
 label: Kree'arra
 */
-#define KREEARRA_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
+#define KREEARRA_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#90d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFa25500";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:KREEARRA_LIST) {
     KREEARRA_CUSTOMSTYLE
@@ -1980,7 +1984,7 @@ apply (name:KREEARRA_LIST) {
 type: style
 label: Nex
 */
-#define NEX_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFc88aff";textAccent = 1;fontType = 2;
+#define NEX_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#709823ff";borderColor = "#99ffb01e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFc88aff";textAccent = 1;fontType = 2;
 
 apply (name:NEX_LIST) {
     NEX_CUSTOMSTYLE
@@ -1990,7 +1994,7 @@ apply (name:NEX_LIST) {
 type: style
 label: Obor
 */
-#define OBOR_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
+#define OBOR_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFa25500";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:OBOR_LIST) {
     OBOR_CUSTOMSTYLE
@@ -2000,7 +2004,7 @@ apply (name:OBOR_LIST) {
 type: style
 label: Osto-Ayak
 */
-#define OSTO_AYAK_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FFffbd24";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;fontType = 2;
+#define OSTO_AYAK_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#65f60718";borderColor = "#FFe9a60b";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFE83131";textAccent = 1;fontType = 2;
 
 apply (name:OSTO_AYAK_LIST) {
     OSTO_AYAK_CUSTOMSTYLE
@@ -2010,7 +2014,7 @@ apply (name:OSTO_AYAK_LIST) {
 type: style
 label: Phantom Muspah
 */
-#define PHANTOM_MUSPAH_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#650e66b4";borderColor = "#9900e580";textAccentColor = "#FF000000";lootbeamColor = "#FF1d8859";menuTextColor = "#FF8ae4ea";textAccent = 1;fontType = 2;
+#define PHANTOM_MUSPAH_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#690f62bf";borderColor = "#6000e580";textAccentColor = "#FF000000";lootbeamColor = "#FF166844";menuTextColor = "#FF8ae4ea";textAccent = 1;fontType = 2;
 
 apply (name:PHANTOM_MUSPAH_LIST) {
     PHANTOM_MUSPAH_CUSTOMSTYLE
@@ -2020,7 +2024,7 @@ apply (name:PHANTOM_MUSPAH_LIST) {
 type: style
 label: Revenant maledictus
 */
-#define REVENANT_MALEDICTUS_CUSTOMSTYLE textColor = "#FF7FF6FA";backgroundColor = "#75C3C0CC";borderColor = "#FF13E3EB";textAccentColor = "#FF000000";lootbeamColor = "#FF7CEEF2";menuTextColor = "#FF13e3eb";textAccent = 1;fontType = 2;
+#define REVENANT_MALEDICTUS_CUSTOMSTYLE textColor = "#FF0ae2ff";backgroundColor = "#35C3C0CC";borderColor = "#35dddddd";textAccentColor = "#FF000000";lootbeamColor = "#FF66d0d4";menuTextColor = "#FF13e3eb";textAccent = 1;fontType = 2;
 
 apply (name:REVENANT_MALEDICTUS_LIST) {
     REVENANT_MALEDICTUS_CUSTOMSTYLE
@@ -2030,7 +2034,7 @@ apply (name:REVENANT_MALEDICTUS_LIST) {
 type: style
 label: Sarachnis
 */
-#define SARACHNIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
+#define SARACHNIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FFd00000";menuTextColor = "#FFff443d";textAccent = 1;fontType = 2;
 
 apply (name:SARACHNIS_LIST) {
     SARACHNIS_CUSTOMSTYLE
@@ -2040,7 +2044,7 @@ apply (name:SARACHNIS_LIST) {
 type: style
 label: Scorpia
 */
-#define SCORPIA_CUSTOMSTYLE textColor = "#FFdedede";backgroundColor = "#99110e0e";borderColor = "#99c91515";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
+#define SCORPIA_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#99110e0e";borderColor = "#99c91515";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:SCORPIA_LIST) {
     SCORPIA_CUSTOMSTYLE
@@ -2050,7 +2054,7 @@ apply (name:SCORPIA_LIST) {
 type: style
 label: Scurrius
 */
-#define SCURRIUS_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
+#define SCURRIUS_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFa25500";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:SCURRIUS_LIST) {
     SCURRIUS_CUSTOMSTYLE
@@ -2060,7 +2064,7 @@ apply (name:SCURRIUS_LIST) {
 type: style
 label: Skotizo
 */
-#define SKOTIZO_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#687f1fd5";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF0c0c0d";menuTextColor = "#FFc888ff";textAccent = 1;fontType = 2;
+#define SKOTIZO_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#687f1fd5";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF120f19";menuTextColor = "#FFc888ff";textAccent = 1;fontType = 2;
 
 apply (name:SKOTIZO_LIST) {
     SKOTIZO_CUSTOMSTYLE
@@ -2070,7 +2074,7 @@ apply (name:SKOTIZO_LIST) {
 type: style
 label: Spindel & Venenatis
 */
-#define SPINDEL_AND_VENENATIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
+#define SPINDEL_AND_VENENATIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:SPINDEL_AND_VENENATIS_LIST) {
     SPINDEL_AND_VENENATIS_CUSTOMSTYLE
@@ -2081,7 +2085,7 @@ apply (name:SPINDEL_AND_VENENATIS_LIST) {
 type: style
 label: The Doom of Mokhaiotl
 */
-#define THE_DOOM_OF_MOKHAIOTL_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FF4d0400";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;fontType = 3;
+#define THE_DOOM_OF_MOKHAIOTL_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FF4d0400";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFE83131";textAccent = 1;fontType = 3;
 
 apply (name:THE_DOOM_OF_MOKHAIOTL_LIST) {
     THE_DOOM_OF_MOKHAIOTL_CUSTOMSTYLE
@@ -2092,7 +2096,7 @@ apply (name:THE_DOOM_OF_MOKHAIOTL_LIST) {
 type: style
 label: The Hueycoatl
 */
-#define THE_HUEYCOATL_CUSTOMSTYLE textColor = "#FFffc7c7";backgroundColor = "#7044c3c6";borderColor = "#99ff8a87";textAccentColor = "#FF000000";lootbeamColor = "#FFff2520";menuTextColor = "#FFade5e6";textAccent = 1;fontType = 2;
+#define THE_HUEYCOATL_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#6544c3c6";borderColor = "#99ff8a87";textAccentColor = "#FF000000";lootbeamColor = "#FFff5c45";menuTextColor = "#FFade5e6";textAccent = 1;fontType = 2;
 
 apply (name:THE_HUEYCOATL_LIST) {
     THE_HUEYCOATL_CUSTOMSTYLE
@@ -2102,7 +2106,7 @@ apply (name:THE_HUEYCOATL_LIST) {
 type: style
 label: The Leviathan
 */
-#define THE_LEVIATHAN_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#65e17c67";borderColor = "#FF72ca4e";textAccentColor = "#FF000000";lootbeamColor = "#FFff2520";menuTextColor = "#FFffbdbd";textAccent = 1;fontType = 2;
+#define THE_LEVIATHAN_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#65e17c67";borderColor = "#9972ca4e";textAccentColor = "#FF000000";lootbeamColor = "#FFe17c67";menuTextColor = "#FFffbdbd";textAccent = 1;fontType = 2;
 
 apply (name:THE_LEVIATHAN_LIST) {
     THE_LEVIATHAN_CUSTOMSTYLE
@@ -2112,7 +2116,7 @@ apply (name:THE_LEVIATHAN_LIST) {
 type: style
 label: The Mimic
 */
-#define THE_MIMIC_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
+#define THE_MIMIC_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFd47208";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:THE_MIMIC_LIST) {
     THE_MIMIC_CUSTOMSTYLE
@@ -2122,7 +2126,7 @@ apply (name:THE_MIMIC_LIST) {
 type: style
 label: The Nightmare & Phosani's Nightmare
 */
-#define THE_NIGHTMARE_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#650e66b4";borderColor = "#9900e580";textAccentColor = "#FF000000";lootbeamColor = "#FF1d8859";menuTextColor = "#FF61bdff";textAccent = 1;fontType = 2;
+#define THE_NIGHTMARE_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#650e66b4";borderColor = "#9900e580";textAccentColor = "#FF000000";lootbeamColor = "#FF00b565";menuTextColor = "#FF61bdff";textAccent = 1;fontType = 2;
 
 apply (name:THE_NIGHTMARE_LIST) {
     THE_NIGHTMARE_CUSTOMSTYLE
@@ -2132,7 +2136,7 @@ apply (name:THE_NIGHTMARE_LIST) {
 type: style
 label: Thermonuclear Smoke Devil
 */
-#define THERMONUCLEAR_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#706c7dc4";borderColor = "#99f4e600";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFf8f066";textAccent = 1;fontType = 2;
+#define THERMONUCLEAR_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#706c7dc4";borderColor = "#99f4e600";textAccentColor = "#FF000000";lootbeamColor = "#FF843ad4";menuTextColor = "#FFf8f066";textAccent = 1;fontType = 2;
 
 apply (name:THERMONUCLEAR_LIST) {
     THERMONUCLEAR_CUSTOMSTYLE
@@ -2142,7 +2146,7 @@ apply (name:THERMONUCLEAR_LIST) {
 type: style
 label: The Whisperer
 */
-#define THE_WHISPERER_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#681f4190";borderColor = "#99bbd1f0";textAccentColor = "#FF000000";lootbeamColor = "#658ddf";menuTextColor = "#FF46c0ec";textAccent = 1;fontType = 2;
+#define THE_WHISPERER_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#681f4190";borderColor = "#99bbd1f0";textAccentColor = "#FF000000";lootbeamColor = "#FF3170f2";menuTextColor = "#FF46c0ec";textAccent = 1;fontType = 2;
 
 apply (name:THE_WHISPERER_LIST) {
     THE_WHISPERER_CUSTOMSTYLE
@@ -2157,7 +2161,7 @@ apply (name:TORMENTED_DEMON_LIST) {
 type: style
 label: Vardorvis
 */
-#define VARDORVIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
+#define VARDORVIS_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#70FF3F38";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFff443d";textAccent = 1;fontType = 2;
 
 apply (name:VARDORVIS_LIST) {
     VARDORVIS_CUSTOMSTYLE
@@ -2167,7 +2171,7 @@ apply (name:VARDORVIS_LIST) {
 type: style
 label: Vorkath
 */
-#define VORKATH_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#6541BDE7";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FF40b1d0";menuTextColor = "#FFadebff";textAccent = 1;fontType = 2;
+#define VORKATH_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#6541BDE7";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FF00c8ff";menuTextColor = "#FFadebff";textAccent = 1;fontType = 2;
 
 apply (name:VORKATH_LIST) {
     VORKATH_CUSTOMSTYLE
@@ -2177,7 +2181,7 @@ apply (name:VORKATH_LIST) {
 type: style
 label: Yama
 */
-#define YAMA_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FF4d0400";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;fontType = 3;
+#define YAMA_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FF4d0400";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFE83131";textAccent = 1;fontType = 3;
 
 apply (name:YAMA_LIST) {
     YAMA_CUSTOMSTYLE
