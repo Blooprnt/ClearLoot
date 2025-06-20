@@ -2,52 +2,91 @@
 ---
 name: About this filter
 description: |
-  This filter has less options than others as it prioritizes reducing visual ground item clutter while saving the nice colors for the nice PVM drops. The colors aren't extreme to keep the text readable. When it comes to unique drops, the colors are influenced by the boss it's from, otherwise ground item colors are based on their value with some special exceptions. This is version: 1.0
+  This filter prioritizes readable text & reducing visual ground item clutter while saving the nice colors for the nice PVM drops. Unique drops colors are influenced by the boss they're from, otherwise ground item colors are based on their value with some special exceptions. 
+    * This is version: 1.0
 */
 meta { name = "ClearLoot"; }
 
 /* #region  [1] do this first */
 /*@ define:module:do_this_first
 ---
-name: Do this first
+name: Settings
 description: |
-  
   1. On Runelite, click the wrench (configuration) on the side bar
   2. Search for the "Loot filters" plugin & go to the settings
-  3. In the "General" section, change the font mode from "runelite" to "plugin" 
-  4. In the "Display settings" section, turn on "Menu: deprioritize hidden items" 
-  5. In the "Item Value Rules" section, deselect the checkboxes for insane, high, medium, and low tiers 
-  6. Optional: enabling "Highlight notification" for client wide notifications
+  
+    ### Plugin panel: 
+    * Enabled [ **yes** ]
+
+    ### General: 
+    * Fetch default filters [ **no** ]
+    * Show unmatched items [ **yes** ]
+    * Ownership filter [ **no** ]
+    * Item spawn filter [ **no** ]
+    * Font mode [ **plugin** ]
+    * Sound volume [ **100%** ]
+
+    ### Hotkey
+    * Hotkey:  [ **Alt** ]
+    * Press: Show hidden items [ **yes** ]
+    * Press: Show hide/ highlight box [ **yes** ]
+    * Press: Show item values [ **no** ]
+    * Double-tap: toggle overlay [ **yes** ]
+    * Double-tap delay [ **250ms** ]
+
+    ### Display settings	
+    * Show value [ **no** ]
+    * Value display [ **G.E** ]
+    * Dual-value display [ **compact** ]
+    * Show despawn [ **no** ]
+    * Despawn type [ **seconds** ]
+    * Despawn threshold [ **0 ticks** ]
+    * Text accent [ **use filter** ]
+    * Menu: collapse entries [ **no** ]
+    * Menu: deprioritize hidden items [ **yes** ]
+    * Menu: recolor hidden items [ **yes** ]
+    * Hidden color [ **#808080** ]
+    * Overlay priority [ **Low** ]
+    * Overlay z -offset [ **16** ]
+
+    ### Item lists
+    * Highlight lootbeam [ **no** ]
+    * Highlight notification [ **yes** ]
 */
 /* #endregion */
-
 
 /* #region [1] global rules*/
 /*@ define:module:global_rules
 ---
 name: Global Rules
 description: |
-  Rules that apply globally
+    * Hidden + Clickable = 
+    ground item have no text, but can be left-clicked
+        * Write item names seperated by commas
+    * Despawn timer = Hides the **timer** for items that cost less than
+    * Show GE price = Hide item **prices** for items that cost less than
 */
 
 /*@ define:input:global_rules
 type: stringlist
-label: Hidden, but still clickable items
+label: Hidden + Clickable
 */
 #define GLOBAL_HIDE []
 
 
-/*@ define:input:global_rules
-type: number
-label: Hide despawn timer for items that cost less than
-*/
-#define GLOBAL_DESPAWN_HIDE 1000
 
 /*@ define:input:global_rules
 type: number
-label: Hide item prices for items that cost less than
+label: Despawn timer - value
+*/
+#define GLOBAL_DESPAWN_HIDE 1200
+
+/*@ define:input:global_rules
+type: number
+label: Show GE price - value
 */
 #define GLOBAL_VALUE_HIDE 2000
+
 
 
 apply (name:GLOBAL_HIDE) {
@@ -58,9 +97,6 @@ apply (name:"*") {
     showDespawn = true;
 }
 
-apply (value:<GLOBAL_DESPAWN_HIDE) {
-    showDespawn = false;
-}
 
 apply (name:"*") {
     showValue = true;
@@ -70,7 +106,6 @@ apply (value:<GLOBAL_VALUE_HIDE) {
     showValue = false;
 }
 /* #endregion */
-
 
 /* #region [1] hidden items desc*/
 /*@ define:module:hidden_items
@@ -181,7 +216,6 @@ rule (name:HIDE_VALUE_18000 && value:<18000) { hidden = true; }
 rule (name:HIDE_VALUE_25000 && value:<25000) { hidden = true; }
 /* #endregion */
 
-
 /* #region [1] untradeable */
 /*@ define:module:untradeables
 ---
@@ -221,7 +255,6 @@ apply (name:UNTRADABLE_HIDE_ITEMS) {
 /* #endregion */
 
 
-
 /* #region [6] value */
 /*@ define:module:color_based_on_item_value
 ---
@@ -229,7 +262,7 @@ name: Color based on item value
 description: |
   Items below Tier 1 are hidden & not clikcable
   
-  Tier 1 = hidden overlay, but clickable
+  Tier 1 = grey for less visual clutter
   
   Tier 2 = grey for less visual clutter
   
@@ -247,7 +280,7 @@ type: number
 label: Hide ground items below the value of
 group: Hide Tradable Items Below
 */
-#define GLOBAL_VALUE_HIDE 900
+#define GLOBAL_VALUE_HIDE 1000
 
 
 /*@ define:input:color_based_on_item_value
@@ -379,7 +412,7 @@ type: style
 label: Tier 1 Display
 exampleItem: Mithril kiteshield
 */
-#define VALUES_TIER_1_CUSTOMSTYLE textColor = "#FFFFFFFF";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 3;
+#define VALUES_TIER_1_CUSTOMSTYLE textColor = "#95808080";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 1;
 
 /*@ define:input:color_based_on_item_value
 type: style
@@ -487,7 +520,6 @@ apply (value:>GLOBAL_VALUE_HIDE) {
 /* #endregion */
 
 
-
 /* #region [2] herbs */
 /*@ define:module:herbs
 ---
@@ -529,13 +561,12 @@ rule (name:HERBS_LIST && value:>HERBS_SHOW) {
 }
 /* #endregion */
 
-
 /* #region [2] miscellaneous */
 /*@ define:module:miscellaneous
 ---
 name: Miscellaneous
 description: |
-  Special items mostly for slayer. Dragon Javelin is included for Araxxor and Tormented Demons fights (but with low visual clutter).
+  Special untradeable items mostly for slayer. Dragon Javelin is included for Araxxor and Tormented Demons fights (but with low visual clutter).
 */
 /* #endregion */
 
@@ -800,11 +831,12 @@ apply (name:CATACOMBS_LIST) {
 }
 /* #endregion */
 
-
 /* #region [3] defenders */
 /*@ define:module:defenders
 ---
 name: Defenders
+description: |
+  Untradeable Defenders are obtained from the Warriors' Guild
 */
 
 /*@ define:input:defenders
@@ -992,7 +1024,7 @@ apply (name:DEFENDER_LIST_11) {
 ---
 name: Clue
 description: |
-  The overlay doesn't have a background to reduce clutter (in case of juggling)
+  The overlay for clues doesn't have a background to reduce clutter (in case of juggling)
 */
 
 /*@ define:input:clue
@@ -1093,7 +1125,6 @@ apply (name:CLUE_LIST_6) {
     CLUE_CUSTOMSTYLE_6
 }
 /* #endregion */
-
 
 /* #region [4] keys */
 /*@ define:module:keys
@@ -1208,7 +1239,7 @@ apply (name:KEYS_LIST_6) {
 ---
 name: Statuettes
 description: |
-  Customize statuettes
+  Customize ancient statuette dropped by revenants (Revenant Caves)
 */
 
 /*@ define:input:statuettes
@@ -1237,13 +1268,12 @@ apply (name:STATUETTES_LIST_1) {
 }
 /* #endregion */
 
-
 /* #region [5] jars */
 /*@ define:module:jars
 ---
 name: Jars
 description: |
-  Customize jars
+  Customize jars dropped from bosses
 */
 
 /*@ define:input:jars
@@ -1470,13 +1500,14 @@ apply (name:JARS_LIST_13) {
 }
 /* #endregion */
 
-
 /* #region [5] bosses */
 /*@ define:module:bosses
 ---
 name: Bosses
 description: |
-  All boss uniques will have these filters applied. Drops shared with other bosses aren't unique (such as Virtues robes). The Tormented Demon isn't a boss so only smouldering drops get unique colors. Bosses like Araxxor & Royal Titans don't drop items on the ground so they're left out
+  1. All boss uniques will have these filters applied. Drops shared with other bosses aren't unique (such as Virtues robes)
+  2. Torm Demons aren't bosses so only smouldering drops are styled
+  3. Bosses like Araxxor & Royal Titans don't drop items on the ground so they're left out
 */
 
 /*@ define:input:bosses
@@ -2164,7 +2195,6 @@ apply (name:ZULRAH_LIST) {
 /* #endregion */
 
 
-
 /* #region [7] unhide skilling */
 /*@ define:module:unhide_skilling
 ---
@@ -2226,7 +2256,7 @@ label: Unhide agility skilling tools
 type: style
 label: Unhide other items
 */
-#define OTHER_UNHIDE_CUSTOMSTYLE textColor = "#FFffffff";borderColor = "#FFffffff";textAccentColor = "#FFffffff";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;hidden = false;
+#define OTHER_UNHIDE_CUSTOMSTYLE textColor = "#FFffffff";borderColor = "#40ffffff";textAccentColor = "#FFffffff";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;hidden = false;
 
 
 
@@ -2242,7 +2272,6 @@ apply (OTHER_UNHIDE_ENABLE && name:OTHER_UNHIDE_LIST) {
     OTHER_UNHIDE_CUSTOMSTYLE
 }
 /* #endregion */
-
 
 /* #region [7] unhide food */
 /*@ define:module:unhide_food
@@ -2342,8 +2371,6 @@ apply (FOOD_UNHIDE_ENABLED && (name:FOOD_UNHIDE_LIST || name:FOOD_UNHIDE_LIST_EX
     FOOD_UNHIDE_CUSTOMSTYLE 
 }
 /* #endregion */
-
-
 
 /* #region [7] GE untradeable */
 /*@ define:module:not_g.e_tradeable
