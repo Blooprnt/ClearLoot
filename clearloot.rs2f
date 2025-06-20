@@ -4,10 +4,9 @@ name: About this filter
 description: |
   This filter has less options than others as it prioritizes reducing visual ground item clutter while saving the nice colors for the nice PVM drops. The colors aren't extreme to keep the text readable. When it comes to unique drops, the colors are influenced by the boss it's from, otherwise ground item colors are based on their value with some special exceptions. This is version: 1.0
 */
-meta {
-  name = "ClearLoot";
-}
+meta { name = "ClearLoot"; }
 
+/* #region  [1] do this first */
 /*@ define:module:do_this_first
 ---
 name: Do this first
@@ -20,8 +19,10 @@ description: |
   5. In the "Item Value Rules" section, deselect the checkboxes for insane, high, medium, and low tiers 
   6. Optional: enabling "Highlight notification" for client wide notifications
 */
+/* #endregion */
 
 
+/* #region [1] global rules*/
 /*@ define:module:global_rules
 ---
 name: Global Rules
@@ -68,8 +69,10 @@ apply (name:"*") {
 apply (value:<GLOBAL_VALUE_HIDE) {
     showValue = false;
 }
+/* #endregion */
 
 
+/* #region [1] hidden items desc*/
 /*@ define:module:hidden_items
 ---
 name: Hidden Items
@@ -83,7 +86,9 @@ description: |
   
   I put all ammo under stack value hide so that you don't get clutter of 1-2 bolts in minigames/wildy/slayer
 */
+/* #endregion */
 
+/* #region [1] hidden items */
 /*@ define:input:hidden_items
 type: stringlist
 label: Hide if less than 1
@@ -111,7 +116,6 @@ label: Hide if less than a stack of 60
 group: Stack amount hide
 */
 #define HIDE_60 ["Logs","Vile ashes","Fiendish ashes","Ashes","Oyster pearl","Calcite","Numulite","Volcanic ash","Vial","Bucket","Jug","Seaweed","Green egg","Red egg","Blue egg","Yellow egg","Raw chicken","Empty oyster","Edible seaweed","Tin ore","Fishing bait","Raw mackerel","Wildblood seed"]
-
 
 /*@ define:input:hidden_items
 type: stringlist
@@ -175,15 +179,325 @@ rule (name:HIDE_VALUE_4500 && value:<4500) { hidden = true; }
 rule (name:HIDE_VALUE_9000 && value:<9000) { hidden = true; }
 rule (name:HIDE_VALUE_18000 && value:<18000) { hidden = true; }
 rule (name:HIDE_VALUE_25000 && value:<25000) { hidden = true; }
+/* #endregion */
 
 
+/* #region [1] untradeable */
+/*@ define:module:untradeables
+---
+name: Untradeables
+description: |
+  Enabled by default is all untradeables show as white text as opposed to hidden. You can add which untradeables to hide by adding them to the text box or disabling this all together
+*/
+
+/*@ define:input:untradeables
+type: boolean
+label: Enabled
+*/
+#define UNTRADABLE_SHOW_ENABLED true
+
+/*@ define:input:untradeables
+type: stringlist
+label: Add item exceptions here to hide
+*/
+#define UNTRADABLE_HIDE_ITEMS []
+
+/*@ define:input:untradeables
+type: style
+label: Style
+exampleItem: Untradeable
+*/
+#define UNTRADABLE_SHOW_CUSTOMSTYLE textColor = "#FFffffff";showDespawn = true;
+
+
+apply (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
+    hidden = false;
+    UNTRADABLE_SHOW_CUSTOMSTYLE
+}
+
+apply (name:UNTRADABLE_HIDE_ITEMS) { 
+    hidden = true; 
+}
+/* #endregion */
+
+
+
+/* #region [6] value */
+/*@ define:module:color_based_on_item_value
+---
+name: Color based on item value
+description: |
+  Items below Tier 1 are hidden & not clikcable
+  
+  Tier 1 = hidden overlay, but clickable
+  
+  Tier 2 = grey for less visual clutter
+  
+  Tier 3 = default white
+  
+  Tier 4 = green, might wanna pick it up
+  
+  Tier 5 = green, but all tiers play a sound starting from this tier
+  
+  Tier 6-10 = worth picking up
+*/
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Hide ground items below the value of
+group: Hide Tradable Items Below
+*/
+#define GLOBAL_VALUE_HIDE 900
+
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 1 Enabled
+*/
+#define VALUES_TIER_1_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 2 Enabled
+*/
+#define VALUES_TIER_2_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 3 Enabled
+*/
+#define VALUES_TIER_3_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 4 Enabled
+*/
+#define VALUES_TIER_4_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 5 Enabled
+*/
+#define VALUES_TIER_5_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 6 Enabled
+*/
+#define VALUES_TIER_6_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 7 Enabled
+*/
+#define VALUES_TIER_7_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 8 Enabled
+*/
+#define VALUES_TIER_8_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 9 Enabled
+*/
+#define VALUES_TIER_9_ENABLED true
+
+/*@ define:input:color_based_on_item_value
+type: boolean
+label: Tier 10 Enabled
+*/
+#define VALUES_TIER_10_ENABLED true
+/* #endregion */
+
+/* #region [6] value */
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 1 Min value
+*/
+#define VALUES_TIER_1_VALUE 550
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 2 Min value
+*/
+#define VALUES_TIER_2_VALUE 1300
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 3 Min value
+*/
+#define VALUES_TIER_3_VALUE 5500
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 4 Min value
+*/
+#define VALUES_TIER_4_VALUE 18000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 5 Min value
+*/
+#define VALUES_TIER_5_VALUE 45000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 6 Min value
+*/
+#define VALUES_TIER_6_VALUE 80000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 7 Min value
+*/
+#define VALUES_TIER_7_VALUE 300000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 8 Min value
+*/
+#define VALUES_TIER_8_VALUE 1000000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 9 Min value
+*/
+#define VALUES_TIER_9_VALUE 10000000
+
+/*@ define:input:color_based_on_item_value
+type: number
+label: Tier 10 Min value
+*/
+#define VALUES_TIER_10_VALUE 70000000
+/* #endregion */
+
+/* #region [6] value */
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 1 Display
+exampleItem: Mithril kiteshield
+*/
+#define VALUES_TIER_1_CUSTOMSTYLE textColor = "#FFFFFFFF";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 3;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 2 Display
+exampleItem: Adamant scimitar
+*/
+#define VALUES_TIER_2_CUSTOMSTYLE textColor = "#95808080";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 1;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 3 Display
+exampleItem: Rune med helm
+*/
+#define VALUES_TIER_3_CUSTOMSTYLE textColor = "#FFffffff";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 1;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 4 Display
+exampleItem: Rune platelegs
+*/
+#define VALUES_TIER_4_CUSTOMSTYLE textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 5 Display
+exampleItem: Dragon scimitar
+*/
+#define VALUES_TIER_5_CUSTOMSTYLE textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;notify = true;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 6 Display
+exampleItem: Dragon platelegs
+*/
+#define VALUES_TIER_6_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67A3A3A3";borderColor = "#FFD4D4D4";textAccentColor = "#FF000000";lootbeamColor = "#FFD4D4D4";menuTextColor = "#FFD4D4D4";textAccent = 1;notify = true;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 7 Display
+exampleItem: Granite maul
+*/
+#define VALUES_TIER_7_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#6700D97E";borderColor = "#FF32DC95";textAccentColor = "#FF000000";lootbeamColor = "#FF32DC95";menuTextColor = "#FF32DC95";textAccent = 1;notify = true;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 8 Display
+exampleItem: Eternal crystal
+*/
+#define VALUES_TIER_8_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FFA800";borderColor = "#FFF0D337";textAccentColor = "#FF000000";lootbeamColor = "#FFF0D337";menuTextColor = "#FFF0D337";textAccent = 1;notify = true;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 9 Display
+exampleItem: Virtus robe top
+*/
+#define VALUES_TIER_9_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FFE83131";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;notify = true;
+
+/*@ define:input:color_based_on_item_value
+type: style
+label: Tier 10 Display
+exampleItem: Scythe of vitur (uncharged)
+*/
+#define VALUES_TIER_10_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#678000FF";borderColor = "#FFA74FFF";textAccentColor = "#FF000000";lootbeamColor = "#FFA74FFF";menuTextColor = "#FFA74FFF";textAccent = 1;notify = true;
+/* #endregion */
+
+/* #region [6] value */
+apply (VALUES_TIER_1_ENABLED && value:>=VALUES_TIER_1_VALUE) {
+  VALUES_TIER_1_CUSTOMSTYLE
+}
+apply ((ownership:1 || ownership:2 || ownership:3) && VALUES_TIER_2_ENABLED && value:>=VALUES_TIER_2_VALUE) {
+  VALUES_TIER_2_CUSTOMSTYLE
+}
+apply (VALUES_TIER_3_ENABLED && value:>=VALUES_TIER_3_VALUE) {
+  VALUES_TIER_3_CUSTOMSTYLE
+}
+apply (VALUES_TIER_4_ENABLED && value:>=VALUES_TIER_4_VALUE) {
+  VALUES_TIER_4_CUSTOMSTYLE
+}
+apply (VALUES_TIER_5_ENABLED && value:>=VALUES_TIER_5_VALUE) {
+  VALUES_TIER_5_CUSTOMSTYLE
+}
+apply (VALUES_TIER_6_ENABLED && value:>=VALUES_TIER_6_VALUE) {
+  VALUES_TIER_6_CUSTOMSTYLE
+}
+apply (VALUES_TIER_7_ENABLED && value:>=VALUES_TIER_7_VALUE) {
+  VALUES_TIER_7_CUSTOMSTYLE
+}
+apply (VALUES_TIER_8_ENABLED && value:>=VALUES_TIER_8_VALUE) {
+  VALUES_TIER_8_CUSTOMSTYLE
+}
+apply (VALUES_TIER_9_ENABLED && value:>=VALUES_TIER_9_VALUE) {
+  VALUES_TIER_9_CUSTOMSTYLE
+}
+apply (VALUES_TIER_10_ENABLED && value:>=VALUES_TIER_10_VALUE) {
+  VALUES_TIER_10_CUSTOMSTYLE
+}
+
+apply (tradeable: true && name:"*") {
+    hidden = true;
+}
+
+apply (value:>GLOBAL_VALUE_HIDE) {
+    hidden = false;
+}
+/* #endregion */
+
+
+
+/* #region [2] herbs */
 /*@ define:module:herbs
 ---
 name: Herbs
 description: |
   This section exists to unhide weed due to herb sacks being able to pick them up. The "\*" acts as a wild card, so "Grimy\*" applies to all grimy herbs, but not clean ones. If you want to include clean ones you could do "\*weed" instead.
 */
+/* #endregion */
 
+/* #region [2] herbs */
 // #define HERB_ICON_ENABLED true
 /*@ define:input:herbs
 type: stringlist
@@ -202,9 +516,7 @@ type: style
 label: List of herbs to unhide
 exampleItem: Grimy ranarr weed
 */
-#define HERBS_CUSTOMSTYLE \
-  textColor = "#FF0eee00";\
-  menuTextColor = "#FF0eee00";
+#define HERBS_CUSTOMSTYLE textColor = "#FF0eee00";menuTextColor = "#FF0eee00";
 
 
 // apply (HERB_ICON_ENABLED && value:>HERBS_SHOW && name:HERBS_LIST && name:["Grimy ranarr weed","Grimy dwarf weed"]) {
@@ -215,15 +527,19 @@ rule (name:HERBS_LIST && value:>HERBS_SHOW) {
     hidden = false;
     HERBS_CUSTOMSTYLE 
 }
+/* #endregion */
 
 
+/* #region [2] miscellaneous */
 /*@ define:module:miscellaneous
 ---
 name: Miscellaneous
 description: |
   Special items mostly for slayer. Dragon Javelin is included for Araxxor and Tormented Demons fights (but with low visual clutter).
 */
+/* #endregion */
 
+/* #region [2] miscellaneous */
 /*@ define:input:miscellaneous
 type: stringlist
 label: Best in slot untradeables
@@ -308,22 +624,14 @@ type: stringlist
 label: Key master teleport
 */
 #define MISCELLANEOUS_LIST_14 ["Key master teleport"]
+/* #endregion */
 
-
+/* #region [2] miscellaneous style */
 /*@ define:input:miscellaneous
 type: style
 label: Best in slot untradeables
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_1 \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#67FF0000";\
-  borderColor = "#FFe8ae30";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFE83131";\
-  menuTextColor = "#FFE83131";\
-  textAccent = 1;\
-  notify = true;\
-  hideOverlay = false;
+#define MISCELLANEOUS_CUSTOMSTYLE_1 textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FFe8ae30";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;notify = true;
 
 apply (name:MISCELLANEOUS_LIST_1) {
     MISCELLANEOUS_CUSTOMSTYLE_1
@@ -333,14 +641,7 @@ apply (name:MISCELLANEOUS_LIST_1) {
 type: style
 label: Melee untradeables
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_2 \
-  textColor = "#FFf2f2f2";\
-  borderColor = "#FFef1515";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFE83131";\
-  textAccent = 1;\
-  fontType = 1;\
-  hideOverlay = false;
+#define MISCELLANEOUS_CUSTOMSTYLE_2 textColor = "#FFf2f2f2";borderColor = "#FFef1515";textAccentColor = "#FF000000";menuTextColor = "#FFE83131";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_2) {
     MISCELLANEOUS_CUSTOMSTYLE_2
@@ -350,14 +651,7 @@ apply (name:MISCELLANEOUS_LIST_2) {
 type: style
 label: Magic untradeables
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_3 \
-  textColor = "#FFf2f2f2";\
-  borderColor = "#FF4255ff";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF7b88fe";\
-  textAccent = 1;\
-  fontType = 1;\
-  hideOverlay = false;
+#define MISCELLANEOUS_CUSTOMSTYLE_3 textColor = "#FFf2f2f2";borderColor = "#FF4255ff";textAccentColor = "#FF000000";menuTextColor = "#FF7b88fe";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_3) {
     MISCELLANEOUS_CUSTOMSTYLE_3
@@ -367,14 +661,7 @@ apply (name:MISCELLANEOUS_LIST_3) {
 type: style
 label: Ranged untradeables
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_4 \
-  textColor = "#FFf2f2f2";\
-  borderColor = "#FF33ff55";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF32dc95";\
-  textAccent = 1;\
-  fontType = 1;\
-  hideOverlay = false;
+#define MISCELLANEOUS_CUSTOMSTYLE_4 textColor = "#FFf2f2f2";borderColor = "#FF33ff55";textAccentColor = "#FF000000";menuTextColor = "#FF32dc95";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_4) {
     MISCELLANEOUS_CUSTOMSTYLE_4
@@ -384,14 +671,7 @@ apply (name:MISCELLANEOUS_LIST_4) {
 type: style
 label: PK untradeables
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_5 \
-  textColor = "#FFf2f2f2";\
-  borderColor = "#FFffffff";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFff85ef";\
-  textAccent = 1;\
-  fontType = 1;\
-  hideOverlay = false;
+#define MISCELLANEOUS_CUSTOMSTYLE_5 textColor = "#FFf2f2f2";borderColor = "#FFffffff";textAccentColor = "#FF000000";menuTextColor = "#FFff85ef";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_5) {
     MISCELLANEOUS_CUSTOMSTYLE_5
@@ -401,15 +681,7 @@ apply (name:MISCELLANEOUS_LIST_5) {
 type: style
 label: Void robes
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_6 \
-  textColor = "#FFf2f2f2";\
-  backgroundColor = "#67A3A3A3";\
-  borderColor = "#FF707070";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFaddaff";\
-  textAccent = 1;\
-  fontType = 1;\
-  hideOverlay = false;
+#define MISCELLANEOUS_CUSTOMSTYLE_6 textColor = "#FFf2f2f2";backgroundColor = "#67A3A3A3";borderColor = "#FF707070";textAccentColor = "#FF000000";menuTextColor = "#FFaddaff";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_6) {
     MISCELLANEOUS_CUSTOMSTYLE_6
@@ -419,16 +691,11 @@ apply (name:MISCELLANEOUS_LIST_6) {
 type: style
 label: Dragon javelin
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_7 \
-  textColor = "#60787878";\
-  backgroundColor = "#00000000";\
-  borderColor = "#00000000";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF787878";\
-  textAccent = 1;\
-  fontType = 1;
+#define MISCELLANEOUS_CUSTOMSTYLE_7 textColor = "#60787878";backgroundColor = "#00000000";borderColor = "#00000000";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_7) {
+    hidden = false;
+    hideOverlay = false;
     MISCELLANEOUS_CUSTOMSTYLE_7
 }
 
@@ -436,14 +703,7 @@ apply (name:MISCELLANEOUS_LIST_7) {
 type: style
 label: Rare drop table
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_8 \
-  textColor = "#FFff2d20";\
-  backgroundColor = "#08dfd9d9";\
-  borderColor = "#89f52315";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFffa693";\
-  textAccent = 1;\
-  fontType = 1;
+#define MISCELLANEOUS_CUSTOMSTYLE_8 textColor = "#FFff2d20";backgroundColor = "#08dfd9d9";borderColor = "#89f52315";textAccentColor = "#FF000000";menuTextColor = "#FFffa693";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_8) {
     MISCELLANEOUS_CUSTOMSTYLE_8
@@ -453,14 +713,7 @@ apply (name:MISCELLANEOUS_LIST_8) {
 type: style
 label: Rare bones
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_9 \
-  textColor = "#FFdfdfdf";\
-  backgroundColor = "#99b4ad8f";\
-  borderColor = "#FF3d2a09";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFe4d38b";\
-  textAccent = 1;\
-  fontType = 1;
+#define MISCELLANEOUS_CUSTOMSTYLE_9 textColor = "#FFdfdfdf";backgroundColor = "#99b4ad8f";borderColor = "#FF3d2a09";textAccentColor = "#FF000000";menuTextColor = "#FFe4d38b";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_9) {
     MISCELLANEOUS_CUSTOMSTYLE_9
@@ -470,14 +723,7 @@ apply (name:MISCELLANEOUS_LIST_9) {
 type: style
 label: Crystal shard
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_10 \
-  textColor = "#FF00F5C8";\
-  backgroundColor = "#00000000";\
-  borderColor = "#00000000";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF00F5C8";\
-  textAccent = 1;\
-  fontType = 1;
+#define MISCELLANEOUS_CUSTOMSTYLE_10 textColor = "#FF00F5C8";backgroundColor = "#00000000";borderColor = "#00000000";textAccentColor = "#FF000000";menuTextColor = "#FF00F5C8";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_10) {
     MISCELLANEOUS_CUSTOMSTYLE_10
@@ -487,15 +733,7 @@ apply (name:MISCELLANEOUS_LIST_10) {
 type: style
 label: Ancient blood ornament kit
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_11 \
-  textColor = "#FFff1414";\
-  backgroundColor = "#00000000";\
-  borderColor = "#00000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFff1414";\
-  textAccent = 1;\
-  fontType = 2;
+#define MISCELLANEOUS_CUSTOMSTYLE_11 textColor = "#FFff1414";backgroundColor = "#00000000";borderColor = "#00000000";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFff1414";textAccent = 1;fontType = 2;
 
 apply (name:MISCELLANEOUS_LIST_11) {
     MISCELLANEOUS_CUSTOMSTYLE_11
@@ -505,15 +743,7 @@ apply (name:MISCELLANEOUS_LIST_11) {
 type: style
 label: Champion scrolls
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_12 \
-  textColor = "#FFdfdfdf";\
-  backgroundColor = "#90150951";\
-  borderColor = "#99e9cb11";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFe9cb11";\
-  menuTextColor = "#FFe9cb11";\
-  textAccent = 1;\
-  fontType = 1;
+#define MISCELLANEOUS_CUSTOMSTYLE_12 textColor = "#FFdfdfdf";backgroundColor = "#90150951";borderColor = "#99e9cb11";textAccentColor = "#FF000000";lootbeamColor = "#FFe9cb11";menuTextColor = "#FFe9cb11";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_12) {
     MISCELLANEOUS_CUSTOMSTYLE_12
@@ -523,15 +753,7 @@ apply (name:MISCELLANEOUS_LIST_12) {
 type: style
 label: Uncut Onyx
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_13 \
-  textColor = "#FF9b9b9b";\
-  backgroundColor = "#FF0c0c1e";\
-  borderColor = "#FF595965";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF070711";\
-  menuTextColor = "#ff0c0c1e";\
-  textAccent = 1;\
-  fontType = 1;
+#define MISCELLANEOUS_CUSTOMSTYLE_13 textColor = "#FF9b9b9b";backgroundColor = "#FF0c0c1e";borderColor = "#FF595965";textAccentColor = "#FF000000";lootbeamColor = "#FF070711";menuTextColor = "#ff0c0c1e";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_13) {
     MISCELLANEOUS_CUSTOMSTYLE_13
@@ -541,27 +763,24 @@ apply (name:MISCELLANEOUS_LIST_13) {
 type: style
 label: Key master teleport
 */
-#define MISCELLANEOUS_CUSTOMSTYLE_14 \
-  textColor = "#FFdfdfdf";\
-  backgroundColor = "#90151111";\
-  borderColor = "#93e1a613";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFffda7d";\
-  textAccent = 1;\
-  fontType = 1;
+#define MISCELLANEOUS_CUSTOMSTYLE_14 textColor = "#FFdfdfdf";backgroundColor = "#90151111";borderColor = "#93e1a613";textAccentColor = "#FF000000";menuTextColor = "#FFffda7d";textAccent = 1;fontType = 1;
 
 apply (name:MISCELLANEOUS_LIST_14) {
     MISCELLANEOUS_CUSTOMSTYLE_14
 }
+/* #endregion */
 
 
+/* #region [3] catacombs items */
 /*@ define:module:catacombs_items
 ---
 name: Catacombs Items
 description: |
   Untradeable Catacomb of Kourend ground items
 */
+/* #endregion */
 
+/* #region [3] catacombs items */
 /*@ define:input:catacombs_items
 type: stringlist
 label: List of Catacombs items
@@ -573,22 +792,16 @@ label: List of Catacombs items
 type: style
 label: Catacombs items
 */
-#define CATACOMBS_CUSTOMSTYLE \
-  textColor = "#FFdfdfdf";\
-  backgroundColor = "#387f1fd5";\
-  borderColor = "#90000000";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#ff975eff";\
-  textAccent = 1;\
-  fontType = 1;
+#define CATACOMBS_CUSTOMSTYLE textColor = "#FFdfdfdf";backgroundColor = "#387f1fd5";borderColor = "#90000000";textAccentColor = "#FF000000";menuTextColor = "#ff975eff";textAccent = 1;fontType = 1;
 
 
 apply (name:CATACOMBS_LIST) {
     CATACOMBS_CUSTOMSTYLE
 }
+/* #endregion */
 
 
-
+/* #region [3] defenders */
 /*@ define:module:defenders
 ---
 name: Defenders
@@ -659,20 +872,14 @@ type: stringlist
 label: Ghommal's avernic defender 6
 */
 #define DEFENDER_LIST_11 ["Ghommal's avernic defender 6*"]
+/* #endregion */
 
-
+/* #region [3] defenders style*/
 /*@ define:input:defenders
 type: style
 label: Bronze defender
 */
-#define DEFENDER_CUSTOMSTYLE_1 \
-  textColor = "#FFececec";\
-  backgroundColor = "#80574328";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFffd49a";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_1 textColor = "#FFececec";backgroundColor = "#80574328";borderColor = "#99000000";textAccentColor = "#FF000000";menuTextColor = "#FFffd49a";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_1) {
     DEFENDER_CUSTOMSTYLE_1
@@ -682,14 +889,7 @@ apply (name:DEFENDER_LIST_1) {
 type: style
 label: Iron defender
 */
-#define DEFENDER_CUSTOMSTYLE_2 \
-  textColor = "#FFececec";\
-  backgroundColor = "#80585252";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFcbc4c4";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_2 textColor = "#FFececec";backgroundColor = "#80585252";borderColor = "#99000000";textAccentColor = "#FF000000";menuTextColor = "#FFcbc4c4";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_2) {
     DEFENDER_CUSTOMSTYLE_2
@@ -699,15 +899,7 @@ apply (name:DEFENDER_LIST_2) {
 type: style
 label: Steel defender
 */
-#define DEFENDER_CUSTOMSTYLE_3 \
-  textColor = "#FFececec";\
-  backgroundColor = "#808c8282";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF070711";\
-  menuTextColor = "#FFcbc4c4";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_3 textColor = "#FFececec";backgroundColor = "#808c8282";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF070711";menuTextColor = "#FFcbc4c4";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_3) {
     DEFENDER_CUSTOMSTYLE_3
@@ -717,15 +909,7 @@ apply (name:DEFENDER_LIST_3) {
 type: style
 label: Black defender
 */
-#define DEFENDER_CUSTOMSTYLE_4 \
-  textColor = "#FFececec";\
-  backgroundColor = "#80151111";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF070711";\
-  menuTextColor = "#FFcbc4c4";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_4 textColor = "#FFececec";backgroundColor = "#80151111";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF070711";menuTextColor = "#FFcbc4c4";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_4) {
     DEFENDER_CUSTOMSTYLE_4
@@ -735,15 +919,7 @@ apply (name:DEFENDER_LIST_4) {
 type: style
 label: Mithril defender
 */
-#define DEFENDER_CUSTOMSTYLE_5 \
-  textColor = "#FFececec";\
-  backgroundColor = "#80484c85";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF070711";\
-  menuTextColor = "#ff838bf6";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_5 textColor = "#FFececec";backgroundColor = "#80484c85";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF070711";menuTextColor = "#ff838bf6";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_5) {
     DEFENDER_CUSTOMSTYLE_5
@@ -753,15 +929,7 @@ apply (name:DEFENDER_LIST_5) {
 type: style
 label: Adamant defender
 */
-#define DEFENDER_CUSTOMSTYLE_6 \
-  textColor = "#FFececec";\
-  backgroundColor = "#804c5e4c";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFb2e1b2";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_6 textColor = "#FFececec";backgroundColor = "#804c5e4c";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFb2e1b2";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_6) {
     DEFENDER_CUSTOMSTYLE_6
@@ -771,15 +939,7 @@ apply (name:DEFENDER_LIST_6) {
 type: style
 label: Rune defender
 */
-#define DEFENDER_CUSTOMSTYLE_7 \
-  textColor = "#FFececec";\
-  backgroundColor = "#99728085";\
-  borderColor = "#99bad7e2";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFc2dee8";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_7 textColor = "#FFececec";backgroundColor = "#99728085";borderColor = "#99bad7e2";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFc2dee8";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_7) {
     DEFENDER_CUSTOMSTYLE_7
@@ -789,15 +949,7 @@ apply (name:DEFENDER_LIST_7) {
 type: style
 label: Dragon defender
 */
-#define DEFENDER_CUSTOMSTYLE_8 \
-  textColor = "#FFececec";\
-  backgroundColor = "#75b32413";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFb32413";\
-  menuTextColor = "#FFfc4832";\
-  textAccent = 1;\
-  fontType = 1;
+#define DEFENDER_CUSTOMSTYLE_8 textColor = "#FFececec";backgroundColor = "#75b32413";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FFb32413";menuTextColor = "#FFfc4832";textAccent = 1;fontType = 1;
 
 apply (name:DEFENDER_LIST_8) {
     DEFENDER_CUSTOMSTYLE_8
@@ -807,20 +959,7 @@ apply (name:DEFENDER_LIST_8) {
 type: style
 label: Avernic defender
 */
-#define DEFENDER_CUSTOMSTYLE_9 \
-  textColor = "#FFececec";\
-  backgroundColor = "#8f393939";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFc4bbba";\
-  tileStrokeColor = "#99ececec";\
-  textAccent = 1;\
-  fontType = 1;\
-  showLootbeam = true;\
-  showDespawn = true;\
-  notify = true;\
-  highlightTile = true;
+#define DEFENDER_CUSTOMSTYLE_9 textColor = "#FFececec";backgroundColor = "#8f393939";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFc4bbba";tileStrokeColor = "#99ececec";textAccent = 1;fontType = 1;showLootbeam = true;showDespawn = true;notify = true;highlightTile = true;
 
 apply (name:DEFENDER_LIST_9) {
     DEFENDER_CUSTOMSTYLE_9
@@ -830,20 +969,7 @@ apply (name:DEFENDER_LIST_9) {
 type: style
 label: Ghommal's avernic defender 5
 */
-#define DEFENDER_CUSTOMSTYLE_10 \
-  textColor = "#FFececec";\
-  backgroundColor = "#90303030";\
-  borderColor = "#99ff0000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#ffff3e25";\
-  tileStrokeColor = "#99ff3e25";\
-  textAccent = 1;\
-  fontType = 1;\
-  showLootbeam = true;\
-  showDespawn = true;\
-  notify = true;\
-  highlightTile = true;
+#define DEFENDER_CUSTOMSTYLE_10 textColor = "#FFececec";backgroundColor = "#90303030";borderColor = "#99ff0000";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#ffff3e25";tileStrokeColor = "#99ff3e25";textAccent = 1;fontType = 1;showLootbeam = true;showDespawn = true;notify = true;highlightTile = true;
 
 apply (name:DEFENDER_LIST_10) {
     DEFENDER_CUSTOMSTYLE_10
@@ -853,27 +979,15 @@ apply (name:DEFENDER_LIST_10) {
 type: style
 label: Ghommal's avernic defender 6
 */
-#define DEFENDER_CUSTOMSTYLE_11 \
-  textColor = "#FFececec";\
-  backgroundColor = "#90303030";\
-  borderColor = "#99ffc700";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#ffffcf00";\
-  tileStrokeColor = "#99ffd000";\
-  textAccent = 1;\
-  fontType = 1;\
-  showLootbeam = true;\
-  showDespawn = true;\
-  notify = true;\
-  highlightTile = true;
+#define DEFENDER_CUSTOMSTYLE_11 textColor = "#FFececec";backgroundColor = "#90303030";borderColor = "#99ffc700";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#ffffcf00";tileStrokeColor = "#99ffd000";textAccent = 1;fontType = 1;showLootbeam = true;showDespawn = true;notify = true;highlightTile = true;
 
 apply (name:DEFENDER_LIST_11) {
     DEFENDER_CUSTOMSTYLE_11
 }
+/* #endregion */
 
 
-
+/* #region [4] clue */
 /*@ define:module:clue
 ---
 name: Clue
@@ -916,18 +1030,14 @@ type: stringlist
 label: clue scroll (master)
 */
 #define CLUE_LIST_6 ["clue scroll (master)"]
+/* #endregion */
 
-
+/* #region [4] clue style */
 /*@ define:input:clue
 type: style
 label: clue scroll (beginner)
 */
-#define CLUE_CUSTOMSTYLE_1 \
-  textColor = "#FFffffff";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFffffff";\
-  textAccent = 1;\
-  fontType = 1;
+#define CLUE_CUSTOMSTYLE_1 textColor = "#FFffffff";textAccentColor = "#FF000000";menuTextColor = "#FFffffff";textAccent = 1;fontType = 1;
 
 apply (name:CLUE_LIST_1) {
     CLUE_CUSTOMSTYLE_1
@@ -937,12 +1047,7 @@ apply (name:CLUE_LIST_1) {
 type: style
 label: clue scroll (easy)
 */
-#define CLUE_CUSTOMSTYLE_2 \
-  textColor = "#FF21EB41";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF21EB41";\
-  textAccent = 1;\
-  fontType = 1;
+#define CLUE_CUSTOMSTYLE_2 textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;fontType = 1;
 
 apply (name:CLUE_LIST_2) {
     CLUE_CUSTOMSTYLE_2
@@ -952,13 +1057,7 @@ apply (name:CLUE_LIST_2) {
 type: style
 label: clue scroll (medium)
 */
-#define CLUE_CUSTOMSTYLE_3 \
-  textColor = "#FF00F5C8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF070711";\
-  menuTextColor = "#FF00F5C8";\
-  textAccent = 1;\
-  fontType = 1;
+#define CLUE_CUSTOMSTYLE_3 textColor = "#FF00F5C8";textAccentColor = "#FF000000";lootbeamColor = "#FF070711";menuTextColor = "#FF00F5C8";textAccent = 1;fontType = 1;
 
 apply (name:CLUE_LIST_3) {
     CLUE_CUSTOMSTYLE_3
@@ -968,13 +1067,7 @@ apply (name:CLUE_LIST_3) {
 type: style
 label: clue scroll (hard)
 */
-#define CLUE_CUSTOMSTYLE_4 \
-  textColor = "#FFF2E905";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF070711";\
-  menuTextColor = "#FFF2E905";\
-  textAccent = 1;\
-  fontType = 1;
+#define CLUE_CUSTOMSTYLE_4 textColor = "#FFF2E905";textAccentColor = "#FF000000";lootbeamColor = "#FF070711";menuTextColor = "#FFF2E905";textAccent = 1;fontType = 1;
 
 apply (name:CLUE_LIST_4) {
     CLUE_CUSTOMSTYLE_4
@@ -984,13 +1077,7 @@ apply (name:CLUE_LIST_4) {
 type: style
 label: clue scroll (elite)
 */
-#define CLUE_CUSTOMSTYLE_5 \
-  textColor = "#FFFF3F38";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFFF3F38";\
-  textAccent = 1;\
-  fontType = 1;
+#define CLUE_CUSTOMSTYLE_5 textColor = "#FFFF3F38";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFFF3F38";textAccent = 1;fontType = 1;
 
 apply (name:CLUE_LIST_5) {
     CLUE_CUSTOMSTYLE_5
@@ -1000,20 +1087,15 @@ apply (name:CLUE_LIST_5) {
 type: style
 label: clue scroll (master)
 */
-#define CLUE_CUSTOMSTYLE_6 \
-  textColor = "#FFCB46FA";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFCB46FA";\
-  textAccent = 1;\
-  fontType = 1;
+#define CLUE_CUSTOMSTYLE_6 textColor = "#FFCB46FA";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFCB46FA";textAccent = 1;fontType = 1;
 
 apply (name:CLUE_LIST_6) {
     CLUE_CUSTOMSTYLE_6
 }
+/* #endregion */
 
 
-
+/* #region [4] keys */
 /*@ define:module:keys
 ---
 name: Keys
@@ -1056,20 +1138,14 @@ type: stringlist
 label: Dark brown keys
 */
 #define KEYS_LIST_6 ["Grubby key","Muddy key"]
+/* #endregion */
 
-
+/* #region [4] keys */
 /*@ define:input:keys
 type: style
 label: Silver keys
 */
-#define KEYS_CUSTOMSTYLE_1 \
-  textColor = "#FFececec";\
-  backgroundColor = "#99728085";\
-  borderColor = "#FFbad7e2";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF728085";\
-  textAccent = 1;\
-  fontType = 1;
+#define KEYS_CUSTOMSTYLE_1 textColor = "#FFececec";backgroundColor = "#99728085";borderColor = "#FFbad7e2";textAccentColor = "#FF000000";menuTextColor = "#FF728085";textAccent = 1;fontType = 1;
 
 apply (name:KEYS_LIST_1) {
     KEYS_CUSTOMSTYLE_1
@@ -1079,14 +1155,7 @@ apply (name:KEYS_LIST_1) {
 type: style
 label: Giant & mossy key
 */
-#define KEYS_CUSTOMSTYLE_2 \
-  textColor = "#FFededed";\
-  backgroundColor = "#808f8f85";\
-  borderColor = "#FF59a707";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF59a707";\
-  textAccent = 1;\
-  fontType = 1;
+#define KEYS_CUSTOMSTYLE_2 textColor = "#FFededed";backgroundColor = "#808f8f85";borderColor = "#FF59a707";textAccentColor = "#FF000000";menuTextColor = "#FF59a707";textAccent = 1;fontType = 1;
 
 apply (name:KEYS_LIST_2) {
     KEYS_CUSTOMSTYLE_2
@@ -1096,15 +1165,7 @@ apply (name:KEYS_LIST_2) {
 type: style
 label: Yellow keys
 */
-#define KEYS_CUSTOMSTYLE_3 \
-  textColor = "#FFededed";\
-  backgroundColor = "#508f8f85";\
-  borderColor = "#99e3c21a";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF070711";\
-  menuTextColor = "#ffeeda76";\
-  textAccent = 1;\
-  fontType = 1;
+#define KEYS_CUSTOMSTYLE_3 textColor = "#FFededed";backgroundColor = "#508f8f85";borderColor = "#99e3c21a";textAccentColor = "#FF000000";lootbeamColor = "#FF070711";menuTextColor = "#ffeeda76";textAccent = 1;fontType = 1;
 
 apply (name:KEYS_LIST_3) {
     KEYS_CUSTOMSTYLE_3
@@ -1114,15 +1175,7 @@ apply (name:KEYS_LIST_3) {
 type: style
 label: Brimstone key
 */
-#define KEYS_CUSTOMSTYLE_4 \
-  textColor = "#FF358d98";\
-  backgroundColor = "#99141410";\
-  borderColor = "#FF358d98";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF358d98";\
-  menuTextColor = "#FF358d98";\
-  textAccent = 1;\
-  fontType = 1;
+#define KEYS_CUSTOMSTYLE_4 textColor = "#FF358d98";backgroundColor = "#99141410";borderColor = "#FF358d98";textAccentColor = "#FF000000";lootbeamColor = "#FF358d98";menuTextColor = "#FF358d98";textAccent = 1;fontType = 1;
 
 apply (name:KEYS_LIST_4) {
     KEYS_CUSTOMSTYLE_4
@@ -1132,12 +1185,7 @@ apply (name:KEYS_LIST_4) {
 type: style
 label: PVP keys (simple & clear)
 */
-#define KEYS_CUSTOMSTYLE_5 \
-  textColor = "#FF21EB41";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF21EB41";\
-  textAccent = 1;\
-  fontType = 1;
+#define KEYS_CUSTOMSTYLE_5 textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;fontType = 1;
 
 apply (name:KEYS_LIST_5) {
     KEYS_CUSTOMSTYLE_5
@@ -1147,22 +1195,15 @@ apply (name:KEYS_LIST_5) {
 type: style
 label: Dark brown keys
 */
-#define KEYS_CUSTOMSTYLE_6 \
-  textColor = "#FFececec";\
-  backgroundColor = "#90765037";\
-  borderColor = "#00ececec";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFF5A672";\
-  textAccent = 1;\
-  fontType = 1;
+#define KEYS_CUSTOMSTYLE_6 textColor = "#FFececec";backgroundColor = "#90765037";borderColor = "#00ececec";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFF5A672";textAccent = 1;fontType = 1;
 
 apply (name:KEYS_LIST_6) {
     KEYS_CUSTOMSTYLE_6
 }
+/* #endregion */
 
 
-
+/* #region [5] statuettes */
 /*@ define:module:statuettes
 ---
 name: Statuettes
@@ -1189,21 +1230,15 @@ label: Ancient statuettes
 type: style
 label: Ancient statuettes
 */
-#define STATUETTES_CUSTOMSTYLE_1 \
-  textColor = "#FF7FF6FA";\
-  backgroundColor = "#75C3C0CC";\
-  borderColor = "#FF13E3EB";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF7CEEF2";\
-  menuTextColor = "#FF7FF6FA";\
-  textAccent = 1;\
-  fontType = 1;
+#define STATUETTES_CUSTOMSTYLE_1 textColor = "#FF7FF6FA";backgroundColor = "#75C3C0CC";borderColor = "#FF13E3EB";textAccentColor = "#FF000000";lootbeamColor = "#FF7CEEF2";menuTextColor = "#FF7FF6FA";textAccent = 1;fontType = 1;
 
 apply (name:STATUETTES_LIST_1) {
     STATUETTES_CUSTOMSTYLE_1
 }
+/* #endregion */
 
 
+/* #region [5] jars */
 /*@ define:module:jars
 ---
 name: Jars
@@ -1288,23 +1323,15 @@ type: stringlist
 label: Future Release Jars
 */
 #define JARS_LIST_13 ["Jar of*"]
+/* #endregion */
 
-
-
+/* #region [5] jars */
 /*@ define:input:jars
 type: style
 label: Alchemical Hydra
 exampleItem: Jar of chemicals
 */
-#define JARS_CUSTOMSTYLE_1 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99000000";\
-  borderColor = "#FF6f8688";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF1deff6";\
-  menuTextColor = "#FF1deff6";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_1 textColor = "#FF1deff6";backgroundColor = "#99000000";borderColor = "#FF6f8688";textAccentColor = "#FF000000";lootbeamColor = "#FF1deff6";menuTextColor = "#FF1deff6";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_1) {
     JARS_CUSTOMSTYLE_1
@@ -1315,15 +1342,7 @@ type: style
 label: Skotizo
 exampleItem: Jar of darkness
 */
-#define JARS_CUSTOMSTYLE_2 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#88a035ff";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF141010";\
-  menuTextColor = "#FFbb6cff";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_2 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#88a035ff";textAccentColor = "#FF000000";lootbeamColor = "#FF141010";menuTextColor = "#FFbb6cff";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_2) {
     JARS_CUSTOMSTYLE_2
@@ -1334,15 +1353,7 @@ type: style
 label: Vorkath
 exampleItem: Jar of decay
 */
-#define JARS_CUSTOMSTYLE_3 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#996af3de";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF3c6f67";\
-  menuTextColor = "#FF78d1c4";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_3 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#996af3de";textAccentColor = "#FF000000";lootbeamColor = "#FF3c6f67";menuTextColor = "#FF78d1c4";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_3) {
     JARS_CUSTOMSTYLE_3
@@ -1353,15 +1364,7 @@ type: style
 label: Kraken
 exampleItem: Jar of dirt
 */
-#define JARS_CUSTOMSTYLE_4 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#FFa5a362";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF66664e";\
-  menuTextColor = "#FFb5b588";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_4 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#FFa5a362";textAccentColor = "#FF000000";lootbeamColor = "#FF66664e";menuTextColor = "#FFb5b588";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_4) {
     JARS_CUSTOMSTYLE_4
@@ -1372,15 +1375,7 @@ type: style
 label: The Nightmare
 exampleItem: Jar of dreams
 */
-#define JARS_CUSTOMSTYLE_5 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#995cafa2";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF697170";\
-  menuTextColor = "#ffdffffb";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_5 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#995cafa2";textAccentColor = "#FF000000";lootbeamColor = "#FF697170";menuTextColor = "#ffdffffb";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_5) {
     JARS_CUSTOMSTYLE_5
@@ -1391,15 +1386,7 @@ type: style
 label: Corporeal Beast
 exampleItem: Jar of spirits
 */
-#define JARS_CUSTOMSTYLE_6 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#99f7e3c7";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF816a5e";\
-  menuTextColor = "#FFecc1aa";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_6 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99f7e3c7";textAccentColor = "#FF000000";lootbeamColor = "#FF816a5e";menuTextColor = "#FFecc1aa";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_6) {
     JARS_CUSTOMSTYLE_6
@@ -1410,15 +1397,7 @@ type: style
 label: Grotesque Guardians
 exampleItem: Jar of stone
 */
-#define JARS_CUSTOMSTYLE_7 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#998148fe";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF926b0a";\
-  menuTextColor = "#FF7ec4c4";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_7 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#998148fe";textAccentColor = "#FF000000";lootbeamColor = "#FF926b0a";menuTextColor = "#FF7ec4c4";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_7) {
     JARS_CUSTOMSTYLE_7
@@ -1429,15 +1408,7 @@ type: style
 label: Zulrah
 exampleItem: Jar of swamp
 */
-#define JARS_CUSTOMSTYLE_8 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#99bdd319";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF304a1e";\
-  menuTextColor = "#FF11bb48";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_8 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99bdd319";textAccentColor = "#FF000000";lootbeamColor = "#FF304a1e";menuTextColor = "#FF11bb48";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_8) {
     JARS_CUSTOMSTYLE_8
@@ -1448,15 +1419,7 @@ type: style
 label: Araxxor
 exampleItem: Jar of venom
 */
-#define JARS_CUSTOMSTYLE_9 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#99d8772f";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF266e47";\
-  menuTextColor = "#FF44bf7c";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_9 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99d8772f";textAccentColor = "#FF000000";lootbeamColor = "#FF266e47";menuTextColor = "#FF44bf7c";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_9) {
     JARS_CUSTOMSTYLE_9
@@ -1467,15 +1430,7 @@ type: style
 label: Kalphite Queen
 exampleItem: Jar of sand
 */
-#define JARS_CUSTOMSTYLE_10 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#9984cf10";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF869049";\
-  menuTextColor = "#FFc6bd5c";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_10 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#9984cf10";textAccentColor = "#FF000000";lootbeamColor = "#FF869049";menuTextColor = "#FFc6bd5c";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_10) {
     JARS_CUSTOMSTYLE_10
@@ -1486,15 +1441,7 @@ type: style
 label: Thermonuclear Smoke Devil
 exampleItem: Jar of smoke
 */
-#define JARS_CUSTOMSTYLE_11 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#99d3cf13";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF33627b";\
-  menuTextColor = "#FFefed79";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_11 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99d3cf13";textAccentColor = "#FF000000";lootbeamColor = "#FF33627b";menuTextColor = "#FFefed79";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_11) {
     JARS_CUSTOMSTYLE_11
@@ -1505,15 +1452,7 @@ type: style
 label: Cerb, Sarachnis, Sire
 exampleItem: Jar of souls, eyes, miasma
 */
-#define JARS_CUSTOMSTYLE_12 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#99f41d1d";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF7d0000";\
-  menuTextColor = "#FFFF3F38";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_12 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99f41d1d";textAccentColor = "#FF000000";lootbeamColor = "#FF7d0000";menuTextColor = "#FFFF3F38";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_12) {
     JARS_CUSTOMSTYLE_12
@@ -1524,21 +1463,15 @@ type: style
 label: Future Release Jars
 exampleItem: Other Jars
 */
-#define JARS_CUSTOMSTYLE_13 \
-  textColor = "#FF1deff6";\
-  backgroundColor = "#99141010";\
-  borderColor = "#99f41d1d";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFc90000";\
-  menuTextColor = "#FFFF3F38";\
-  textAccent = 1;\
-  fontType = 1;
+#define JARS_CUSTOMSTYLE_13 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99f41d1d";textAccentColor = "#FF000000";lootbeamColor = "#FFc90000";menuTextColor = "#FFFF3F38";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_13) {
     JARS_CUSTOMSTYLE_13
 }
+/* #endregion */
 
 
+/* #region [5] bosses */
 /*@ define:module:bosses
 ---
 name: Bosses
@@ -1728,6 +1661,12 @@ label: Spindel & Venenatis
 
 /*@ define:input:bosses
 type: stringlist
+label: The Doom of Mokhaiotl
+*/
+#define THE_DOOM_OF_MOKHAIOTL_LIST ["Confliction Gauntlets","Avernic Treads","*Eye of Ayak"]
+
+/*@ define:input:bosses
+type: stringlist
 label: The Hueycoatl
 */
 #define THE_HUEYCOATL_LIST ["Dragon hunter wand","Hueycoatl hide","Tome of earth (empty)","Huasca seed"]
@@ -1800,23 +1739,17 @@ label: Icons Enabled
 #define BOSS_ICONS_ENABLED true
 
 
-apply (BOSS_ICONS_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:NEX_LIST || name:OBOR_LIST || name:OSTO_AYAK_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:TORMENTED_DEMON_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
+apply (BOSS_ICONS_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:NEX_LIST || name:OBOR_LIST || name:OSTO_AYAK_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_DOOM_OF_MOKHAIOTL_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:TORMENTED_DEMON_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
     icon = CurrentItem();
 }
+/* #endregion */
 
+/* #region [5] bosses */
 /*@ define:input:bosses
 type: style
 label: Alchemical Hydra
 */
-#define ALCHEMICAL_HYDRA_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70105f10";\
-  borderColor = "#FF9db304";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF225a22";\
-  menuTextColor = "#FF9db304";\
-  textAccent = 1;\
-  fontType = 2;
+#define ALCHEMICAL_HYDRA_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FF9db304";textAccent = 1;fontType = 2;
 
 apply (name:ALCHEMICAL_HYDRA_LIST) {
     ALCHEMICAL_HYDRA_CUSTOMSTYLE
@@ -1826,15 +1759,7 @@ apply (name:ALCHEMICAL_HYDRA_LIST) {
 type: style
 label: Amoxliatl
 */
-#define AMOXLIATL_CUSTOMSTYLE \
-  textColor = "#FFdaecef";\
-  backgroundColor = "#6541BDE7";\
-  borderColor = "#FF000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF40b1d0";\
-  menuTextColor = "#FFadebff";\
-  textAccent = 1;\
-  fontType = 2;
+#define AMOXLIATL_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#6541BDE7";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FF40b1d0";menuTextColor = "#FFadebff";textAccent = 1;fontType = 2;
 
 apply (name:AMOXLIATL_LIST) {
     AMOXLIATL_CUSTOMSTYLE
@@ -1844,15 +1769,7 @@ apply (name:AMOXLIATL_LIST) {
 type: style
 label: Artio & Callisto
 */
-#define ARTIO_AND_CALLISTO_CUSTOMSTYLE \
-  textColor = "#FFdedede";\
-  backgroundColor = "#99110e0e";\
-  borderColor = "#99c91515";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFff3d3d";\
-  textAccent = 1;\
-  fontType = 2;
+#define ARTIO_AND_CALLISTO_CUSTOMSTYLE textColor = "#FFdedede";backgroundColor = "#99110e0e";borderColor = "#99c91515";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:ARTIO_AND_CALLISTO_LIST) {
     ARTIO_AND_CALLISTO_CUSTOMSTYLE
@@ -1862,15 +1779,7 @@ apply (name:ARTIO_AND_CALLISTO_LIST) {
 type: style
 label: Bryophyta
 */
-#define BRYOPHYTA_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70105f10";\
-  borderColor = "#FF9db304";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF225a22";\
-  menuTextColor = "#FF9db304";\
-  textAccent = 1;\
-  fontType = 2;
+#define BRYOPHYTA_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FF9db304";textAccent = 1;fontType = 2;
 
 apply (name:BRYOPHYTA_LIST) {
     BRYOPHYTA_CUSTOMSTYLE
@@ -1880,15 +1789,7 @@ apply (name:BRYOPHYTA_LIST) {
 type: style
 label: Calvar'ion & Vet'ion
 */
-#define CALVARION_AND_VETION_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#689823ff";\
-  borderColor = "#99fcb42e";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF8c5cc0";\
-  menuTextColor = "#FFd5a5ff";\
-  textAccent = 1;\
-  fontType = 2;
+#define CALVARION_AND_VETION_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFd5a5ff";textAccent = 1;fontType = 2;
 
 apply (name:CALVARION_AND_VETION_LIST) {
     CALVARION_AND_VETION_CUSTOMSTYLE
@@ -1898,15 +1799,7 @@ apply (name:CALVARION_AND_VETION_LIST) {
 type: style
 label: Cerberus
 */
-#define CERBERUS_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70FF3F38";\
-  borderColor = "#FF000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFea1911";\
-  menuTextColor = "#FFff443d";\
-  textAccent = 1;\
-  fontType = 2;
+#define CERBERUS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff443d";textAccent = 1;fontType = 2;
 
 apply (name:CERBERUS_LIST) {
     CERBERUS_CUSTOMSTYLE
@@ -1916,15 +1809,7 @@ apply (name:CERBERUS_LIST) {
 type: style
 label: Chaos Elemental
 */
-#define CHAOS_ELEMENTAL_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#689823ff";\
-  borderColor = "#99fcb42e";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF8c5cc0";\
-  menuTextColor = "#FFd5a5ff";\
-  textAccent = 1;\
-  fontType = 2;
+#define CHAOS_ELEMENTAL_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFd5a5ff";textAccent = 1;fontType = 2;
 
 apply (name:CHAOS_ELEMENTAL_LIST) {
     CHAOS_ELEMENTAL_CUSTOMSTYLE
@@ -1934,15 +1819,7 @@ apply (name:CHAOS_ELEMENTAL_LIST) {
 type: style
 label: Commander Zilyana
 */
-#define COMMANDER_ZILYANA_CUSTOMSTYLE \
-  textColor = "#FFf6d05b";\
-  backgroundColor = "#70557eff";\
-  borderColor = "#95f6d05b";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF2c5fff";\
-  menuTextColor = "#FFb4c6ff";\
-  textAccent = 1;\
-  fontType = 2;
+#define COMMANDER_ZILYANA_CUSTOMSTYLE textColor = "#FFf6d05b";backgroundColor = "#70557eff";borderColor = "#95f6d05b";textAccentColor = "#FF000000";lootbeamColor = "#FF2c5fff";menuTextColor = "#FFb4c6ff";textAccent = 1;fontType = 2;
 
 apply (name:COMMANDER_ZILYANA_LIST) {
     COMMANDER_ZILYANA_CUSTOMSTYLE
@@ -1952,15 +1829,7 @@ apply (name:COMMANDER_ZILYANA_LIST) {
 type: style
 label: Corporeal Beast
 */
-#define CORPOREAL_BEAST_CUSTOMSTYLE \
-  textColor = "#FFe3d8c8";\
-  backgroundColor = "#80af898f";\
-  borderColor = "#FFf7e3c7";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFEDD9B7";\
-  menuTextColor = "#FFffbdbd";\
-  textAccent = 1;\
-  fontType = 2;
+#define CORPOREAL_BEAST_CUSTOMSTYLE textColor = "#FFe3d8c8";backgroundColor = "#80af898f";borderColor = "#FFf7e3c7";textAccentColor = "#FF000000";lootbeamColor = "#FFEDD9B7";menuTextColor = "#FFffbdbd";textAccent = 1;fontType = 2;
 
 apply (name:CORPOREAL_BEAST_LIST) {
     CORPOREAL_BEAST_CUSTOMSTYLE
@@ -1970,15 +1839,7 @@ apply (name:CORPOREAL_BEAST_LIST) {
 type: style
 label: Crazy Archaeologist
 */
-#define CRAZY_ARCHAEOLOGIST_CUSTOMSTYLE \
-  textColor = "#FFffffff";\
-  backgroundColor = "#70d3914b";\
-  borderColor = "#FFd3cbc8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFb8752d";\
-  menuTextColor = "#FFffd3a3";\
-  textAccent = 1;\
-  fontType = 2;
+#define CRAZY_ARCHAEOLOGIST_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffd3a3";textAccent = 1;fontType = 2;
 
 apply (name:CRAZY_ARCHAEOLOGIST_LIST) {
     CRAZY_ARCHAEOLOGIST_CUSTOMSTYLE
@@ -1988,15 +1849,7 @@ apply (name:CRAZY_ARCHAEOLOGIST_LIST) {
 type: style
 label: Dagannoth Kings
 */
-#define DAGANNOTH_KINGS_CUSTOMSTYLE \
-  textColor = "#FFf75227";\
-  backgroundColor = "#705b503c";\
-  borderColor = "#9900a34e";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF675e4f";\
-  menuTextColor = "#FFff3d3d";\
-  textAccent = 1;\
-  fontType = 2;
+#define DAGANNOTH_KINGS_CUSTOMSTYLE textColor = "#FFf75227";backgroundColor = "#705b503c";borderColor = "#9900a34e";textAccentColor = "#FF000000";lootbeamColor = "#FF675e4f";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:DAGANNOTH_KINGS_LIST) {
     DAGANNOTH_KINGS_CUSTOMSTYLE
@@ -2006,15 +1859,7 @@ apply (name:DAGANNOTH_KINGS_LIST) {
 type: style
 label: Duke Sucellus
 */
-#define DUKE_SUCELLUS_CUSTOMSTYLE \
-  textColor = "#FFdaecef";\
-  backgroundColor = "#655d369a";\
-  borderColor = "#992cc5e8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF306a79";\
-  menuTextColor = "#FFba9aea";\
-  textAccent = 1;\
-  fontType = 2;
+#define DUKE_SUCELLUS_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#655d369a";borderColor = "#992cc5e8";textAccentColor = "#FF000000";lootbeamColor = "#FF306a79";menuTextColor = "#FFba9aea";textAccent = 1;fontType = 2;
 
 apply (name:DUKE_SUCELLUS_LIST) {
     DUKE_SUCELLUS_CUSTOMSTYLE
@@ -2024,15 +1869,7 @@ apply (name:DUKE_SUCELLUS_LIST) {
 type: style
 label: General Graardor
 */
-#define GENERAL_GRAARDOR_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#80121211";\
-  borderColor = "#FF326d35";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF318c34";\
-  menuTextColor = "#FF31dd39";\
-  textAccent = 1;\
-  fontType = 2;
+#define GENERAL_GRAARDOR_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#80121211";borderColor = "#FF326d35";textAccentColor = "#FF000000";lootbeamColor = "#FF318c34";menuTextColor = "#FF31dd39";textAccent = 1;fontType = 2;
 
 apply (name:GENERAL_GRAARDOR_LIST) {
     GENERAL_GRAARDOR_CUSTOMSTYLE
@@ -2042,15 +1879,7 @@ apply (name:GENERAL_GRAARDOR_LIST) {
 type: style
 label: Grotesque Guardians
 */
-#define GROTESQUE_GUARDIANS_CUSTOMSTYLE \
-  textColor = "#FFFCB80D";\
-  backgroundColor = "#60763EF0";\
-  borderColor = "#99FCB80D";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF6B6B6B";\
-  menuTextColor = "#FFfdd46e";\
-  textAccent = 1;\
-  fontType = 2;
+#define GROTESQUE_GUARDIANS_CUSTOMSTYLE textColor = "#FFFCB80D";backgroundColor = "#60763EF0";borderColor = "#99FCB80D";textAccentColor = "#FF000000";lootbeamColor = "#FF6B6B6B";menuTextColor = "#FFfdd46e";textAccent = 1;fontType = 2;
 
 apply (name:GROTESQUE_GUARDIANS_LIST) {
     GROTESQUE_GUARDIANS_CUSTOMSTYLE
@@ -2060,15 +1889,7 @@ apply (name:GROTESQUE_GUARDIANS_LIST) {
 type: style
 label: Hespori
 */
-#define HESPORI_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70105f10";\
-  borderColor = "#FF9db304";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF225a22";\
-  menuTextColor = "#FF8abd00";\
-  textAccent = 1;\
-  fontType = 2;
+#define HESPORI_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FF8abd00";textAccent = 1;fontType = 2;
 
 apply (name:HESPORI_LIST) {
     HESPORI_CUSTOMSTYLE
@@ -2078,15 +1899,7 @@ apply (name:HESPORI_LIST) {
 type: style
 label: K'ril Tsutsaroth
 */
-#define KRIL_TSUTSAROTH_CUSTOMSTYLE \
-  textColor = "#f0f0f0";\
-  backgroundColor = "#70FF3F38";\
-  borderColor = "#FF000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFea1911";\
-  menuTextColor = "#FFc91515";\
-  textAccent = 1;\
-  fontType = 2;
+#define KRIL_TSUTSAROTH_CUSTOMSTYLE textColor = "#f0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFc91515";textAccent = 1;fontType = 2;
 
 apply (name:KRIL_TSUTSAROTH_LIST) {
     KRIL_TSUTSAROTH_CUSTOMSTYLE
@@ -2096,15 +1909,7 @@ apply (name:KRIL_TSUTSAROTH_LIST) {
 type: style
 label: Kalphite Queen
 */
-#define KALPHITE_QUEEN_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70105f10";\
-  borderColor = "#FF9db304";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF225a22";\
-  menuTextColor = "#FFcbc4c4";\
-  textAccent = 1;\
-  fontType = 2;
+#define KALPHITE_QUEEN_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70105f10";borderColor = "#FF9db304";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FFcbc4c4";textAccent = 1;fontType = 2;
 
 apply (name:KALPHITE_QUEEN_LIST) {
     KALPHITE_QUEEN_CUSTOMSTYLE
@@ -2114,15 +1919,7 @@ apply (name:KALPHITE_QUEEN_LIST) {
 type: style
 label: King Black Dragon
 */
-#define KING_BLACK_DRAGON_CUSTOMSTYLE \
-  textColor = "#FFdedede";\
-  backgroundColor = "#99110e0e";\
-  borderColor = "#99c91515";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFc91515";\
-  textAccent = 1;\
-  fontType = 2;
+#define KING_BLACK_DRAGON_CUSTOMSTYLE textColor = "#FFdedede";backgroundColor = "#99110e0e";borderColor = "#99c91515";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFc91515";textAccent = 1;fontType = 2;
 
 apply (name:KING_BLACK_DRAGON_LIST) {
     KING_BLACK_DRAGON_CUSTOMSTYLE
@@ -2132,15 +1929,7 @@ apply (name:KING_BLACK_DRAGON_LIST) {
 type: style
 label: Kraken
 */
-#define KRAKEN_CUSTOMSTYLE \
-  textColor = "#FFE8DFDF";\
-  backgroundColor = "#70d3914b";\
-  borderColor = "#FFd3cbc8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFb8752d";\
-  menuTextColor = "#FFffba70";\
-  textAccent = 1;\
-  fontType = 2;
+#define KRAKEN_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:KRAKEN_LIST) {
     KRAKEN_CUSTOMSTYLE
@@ -2150,15 +1939,7 @@ apply (name:KRAKEN_LIST) {
 type: style
 label: Kree'arra
 */
-#define KREEARRA_CUSTOMSTYLE \
-  textColor = "#FFE8DFDF";\
-  backgroundColor = "#70d3914b";\
-  borderColor = "#FFd3cbc8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFb8752d";\
-  menuTextColor = "#FFffba70";\
-  textAccent = 1;\
-  fontType = 2;
+#define KREEARRA_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:KREEARRA_LIST) {
     KREEARRA_CUSTOMSTYLE
@@ -2168,15 +1949,7 @@ apply (name:KREEARRA_LIST) {
 type: style
 label: Nex
 */
-#define NEX_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#689823ff";\
-  borderColor = "#99fcb42e";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF8c5cc0";\
-  menuTextColor = "#FFc88aff";\
-  textAccent = 1;\
-  fontType = 2;
+#define NEX_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#689823ff";borderColor = "#99fcb42e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFc88aff";textAccent = 1;fontType = 2;
 
 apply (name:NEX_LIST) {
     NEX_CUSTOMSTYLE
@@ -2186,15 +1959,7 @@ apply (name:NEX_LIST) {
 type: style
 label: Obor
 */
-#define OBOR_CUSTOMSTYLE \
-  textColor = "#FFE8DFDF";\
-  backgroundColor = "#70d3914b";\
-  borderColor = "#FFd3cbc8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFb8752d";\
-  menuTextColor = "#FFffba70";\
-  textAccent = 1;\
-  fontType = 2;
+#define OBOR_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:OBOR_LIST) {
     OBOR_CUSTOMSTYLE
@@ -2204,15 +1969,7 @@ apply (name:OBOR_LIST) {
 type: style
 label: Osto-Ayak
 */
-#define OSTO_AYAK_CUSTOMSTYLE \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#67FF0000";\
-  borderColor = "#FFffbd24";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFE83131";\
-  menuTextColor = "#FFE83131";\
-  textAccent = 1;\
-  fontType = 2;
+#define OSTO_AYAK_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FFffbd24";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;fontType = 2;
 
 apply (name:OSTO_AYAK_LIST) {
     OSTO_AYAK_CUSTOMSTYLE
@@ -2222,15 +1979,7 @@ apply (name:OSTO_AYAK_LIST) {
 type: style
 label: Phantom Muspah
 */
-#define PHANTOM_MUSPAH_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#650e66b4";\
-  borderColor = "#9900e580";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF1d8859";\
-  menuTextColor = "#FF8ae4ea";\
-  textAccent = 1;\
-  fontType = 2;
+#define PHANTOM_MUSPAH_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#650e66b4";borderColor = "#9900e580";textAccentColor = "#FF000000";lootbeamColor = "#FF1d8859";menuTextColor = "#FF8ae4ea";textAccent = 1;fontType = 2;
 
 apply (name:PHANTOM_MUSPAH_LIST) {
     PHANTOM_MUSPAH_CUSTOMSTYLE
@@ -2240,15 +1989,7 @@ apply (name:PHANTOM_MUSPAH_LIST) {
 type: style
 label: Revenant maledictus
 */
-#define REVENANT_MALEDICTUS_CUSTOMSTYLE \
-  textColor = "#FF7FF6FA";\
-  backgroundColor = "#75C3C0CC";\
-  borderColor = "#FF13E3EB";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF7CEEF2";\
-  menuTextColor = "#FF13e3eb";\
-  textAccent = 1;\
-  fontType = 2;
+#define REVENANT_MALEDICTUS_CUSTOMSTYLE textColor = "#FF7FF6FA";backgroundColor = "#75C3C0CC";borderColor = "#FF13E3EB";textAccentColor = "#FF000000";lootbeamColor = "#FF7CEEF2";menuTextColor = "#FF13e3eb";textAccent = 1;fontType = 2;
 
 apply (name:REVENANT_MALEDICTUS_LIST) {
     REVENANT_MALEDICTUS_CUSTOMSTYLE
@@ -2258,15 +1999,7 @@ apply (name:REVENANT_MALEDICTUS_LIST) {
 type: style
 label: Sarachnis
 */
-#define SARACHNIS_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70FF3F38";\
-  borderColor = "#FF000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFea1911";\
-  menuTextColor = "#FFff3d3d";\
-  textAccent = 1;\
-  fontType = 2;
+#define SARACHNIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:SARACHNIS_LIST) {
     SARACHNIS_CUSTOMSTYLE
@@ -2276,15 +2009,7 @@ apply (name:SARACHNIS_LIST) {
 type: style
 label: Scorpia
 */
-#define SCORPIA_CUSTOMSTYLE \
-  textColor = "#FFdedede";\
-  backgroundColor = "#99110e0e";\
-  borderColor = "#99c91515";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF000000";\
-  menuTextColor = "#FFff3d3d";\
-  textAccent = 1;\
-  fontType = 2;
+#define SCORPIA_CUSTOMSTYLE textColor = "#FFdedede";backgroundColor = "#99110e0e";borderColor = "#99c91515";textAccentColor = "#FF000000";lootbeamColor = "#FF000000";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:SCORPIA_LIST) {
     SCORPIA_CUSTOMSTYLE
@@ -2294,15 +2019,7 @@ apply (name:SCORPIA_LIST) {
 type: style
 label: Scurrius
 */
-#define SCURRIUS_CUSTOMSTYLE \
-  textColor = "#FFE8DFDF";\
-  backgroundColor = "#70d3914b";\
-  borderColor = "#FFd3cbc8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFb8752d";\
-  menuTextColor = "#FFffba70";\
-  textAccent = 1;\
-  fontType = 2;
+#define SCURRIUS_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:SCURRIUS_LIST) {
     SCURRIUS_CUSTOMSTYLE
@@ -2312,15 +2029,7 @@ apply (name:SCURRIUS_LIST) {
 type: style
 label: Skotizo
 */
-#define SKOTIZO_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#687f1fd5";\
-  borderColor = "#99000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF0c0c0d";\
-  menuTextColor = "#FFc888ff";\
-  textAccent = 1;\
-  fontType = 2;
+#define SKOTIZO_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#687f1fd5";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF0c0c0d";menuTextColor = "#FFc888ff";textAccent = 1;fontType = 2;
 
 apply (name:SKOTIZO_LIST) {
     SKOTIZO_CUSTOMSTYLE
@@ -2330,33 +2039,29 @@ apply (name:SKOTIZO_LIST) {
 type: style
 label: Spindel & Venenatis
 */
-#define SPINDEL_AND_VENENATIS_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70FF3F38";\
-  borderColor = "#FF000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFea1911";\
-  menuTextColor = "#FFff3d3d";\
-  textAccent = 1;\
-  fontType = 2;
+#define SPINDEL_AND_VENENATIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:SPINDEL_AND_VENENATIS_LIST) {
     SPINDEL_AND_VENENATIS_CUSTOMSTYLE
 }
 
+
+/*@ define:input:bosses
+type: style
+label: The Doom of Mokhaiotl
+*/
+#define THE_DOOM_OF_MOKHAIOTL_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FF4d0400";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;fontType = 3;
+
+apply (name:THE_DOOM_OF_MOKHAIOTL_LIST) {
+    THE_DOOM_OF_MOKHAIOTL_CUSTOMSTYLE
+}
+
+
 /*@ define:input:bosses
 type: style
 label: The Hueycoatl
 */
-#define THE_HUEYCOATL_CUSTOMSTYLE \
-  textColor = "#FFffc7c7";\
-  backgroundColor = "#7044c3c6";\
-  borderColor = "#99ff8a87";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFff2520";\
-  menuTextColor = "#FFade5e6";\
-  textAccent = 1;\
-  fontType = 2;
+#define THE_HUEYCOATL_CUSTOMSTYLE textColor = "#FFffc7c7";backgroundColor = "#7044c3c6";borderColor = "#99ff8a87";textAccentColor = "#FF000000";lootbeamColor = "#FFff2520";menuTextColor = "#FFade5e6";textAccent = 1;fontType = 2;
 
 apply (name:THE_HUEYCOATL_LIST) {
     THE_HUEYCOATL_CUSTOMSTYLE
@@ -2366,15 +2071,7 @@ apply (name:THE_HUEYCOATL_LIST) {
 type: style
 label: The Leviathan
 */
-#define THE_LEVIATHAN_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#65e17c67";\
-  borderColor = "#FF72ca4e";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFff2520";\
-  menuTextColor = "#FFffbdbd";\
-  textAccent = 1;\
-  fontType = 2;
+#define THE_LEVIATHAN_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#65e17c67";borderColor = "#FF72ca4e";textAccentColor = "#FF000000";lootbeamColor = "#FFff2520";menuTextColor = "#FFffbdbd";textAccent = 1;fontType = 2;
 
 apply (name:THE_LEVIATHAN_LIST) {
     THE_LEVIATHAN_CUSTOMSTYLE
@@ -2384,15 +2081,7 @@ apply (name:THE_LEVIATHAN_LIST) {
 type: style
 label: The Mimic
 */
-#define THE_MIMIC_CUSTOMSTYLE \
-  textColor = "#FFE8DFDF";\
-  backgroundColor = "#70d3914b";\
-  borderColor = "#FFd3cbc8";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFb8752d";\
-  menuTextColor = "#FFffba70";\
-  textAccent = 1;\
-  fontType = 2;
+#define THE_MIMIC_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFb8752d";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
 
 apply (name:THE_MIMIC_LIST) {
     THE_MIMIC_CUSTOMSTYLE
@@ -2402,15 +2091,7 @@ apply (name:THE_MIMIC_LIST) {
 type: style
 label: The Nightmare & Phosani's Nightmare
 */
-#define THE_NIGHTMARE_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#650e66b4";\
-  borderColor = "#9900e580";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF1d8859";\
-  menuTextColor = "#FF61bdff";\
-  textAccent = 1;\
-  fontType = 2;
+#define THE_NIGHTMARE_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#650e66b4";borderColor = "#9900e580";textAccentColor = "#FF000000";lootbeamColor = "#FF1d8859";menuTextColor = "#FF61bdff";textAccent = 1;fontType = 2;
 
 apply (name:THE_NIGHTMARE_LIST) {
     THE_NIGHTMARE_CUSTOMSTYLE
@@ -2420,15 +2101,7 @@ apply (name:THE_NIGHTMARE_LIST) {
 type: style
 label: Thermonuclear Smoke Devil
 */
-#define THERMONUCLEAR_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#706c7dc4";\
-  borderColor = "#99f4e600";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF8c5cc0";\
-  menuTextColor = "#FFf8f066";\
-  textAccent = 1;\
-  fontType = 2;
+#define THERMONUCLEAR_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#706c7dc4";borderColor = "#99f4e600";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFf8f066";textAccent = 1;fontType = 2;
 
 apply (name:THERMONUCLEAR_LIST) {
     THERMONUCLEAR_CUSTOMSTYLE
@@ -2438,15 +2111,7 @@ apply (name:THERMONUCLEAR_LIST) {
 type: style
 label: The Whisperer
 */
-#define THE_WHISPERER_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#681f4190";\
-  borderColor = "#99bbd1f0";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#658ddf";\
-  menuTextColor = "#FF46c0ec";\
-  textAccent = 1;\
-  fontType = 2;
+#define THE_WHISPERER_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#681f4190";borderColor = "#99bbd1f0";textAccentColor = "#FF000000";lootbeamColor = "#658ddf";menuTextColor = "#FF46c0ec";textAccent = 1;fontType = 2;
 
 apply (name:THE_WHISPERER_LIST) {
     THE_WHISPERER_CUSTOMSTYLE
@@ -2461,15 +2126,7 @@ apply (name:TORMENTED_DEMON_LIST) {
 type: style
 label: Vardorvis
 */
-#define VARDORVIS_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#70FF3F38";\
-  borderColor = "#FF000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFea1911";\
-  menuTextColor = "#FFff3d3d";\
-  textAccent = 1;\
-  fontType = 2;
+#define VARDORVIS_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFea1911";menuTextColor = "#FFff3d3d";textAccent = 1;fontType = 2;
 
 apply (name:VARDORVIS_LIST) {
     VARDORVIS_CUSTOMSTYLE
@@ -2479,15 +2136,7 @@ apply (name:VARDORVIS_LIST) {
 type: style
 label: Vorkath
 */
-#define VORKATH_CUSTOMSTYLE \
-  textColor = "#FFdaecef";\
-  backgroundColor = "#6541BDE7";\
-  borderColor = "#FF000000";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF40b1d0";\
-  menuTextColor = "#FFadebff";\
-  textAccent = 1;\
-  fontType = 2;
+#define VORKATH_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#6541BDE7";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FF40b1d0";menuTextColor = "#FFadebff";textAccent = 1;fontType = 2;
 
 apply (name:VORKATH_LIST) {
     VORKATH_CUSTOMSTYLE
@@ -2497,15 +2146,7 @@ apply (name:VORKATH_LIST) {
 type: style
 label: Yama
 */
-#define YAMA_CUSTOMSTYLE \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#67FF0000";\
-  borderColor = "#FF4d0400";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFE83131";\
-  menuTextColor = "#FFE83131";\
-  textAccent = 1;\
-  fontType = 3;
+#define YAMA_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FF4d0400";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;fontType = 3;
 
 apply (name:YAMA_LIST) {
     YAMA_CUSTOMSTYLE
@@ -2515,424 +2156,16 @@ apply (name:YAMA_LIST) {
 type: style
 label: Zulrah
 */
-#define ZULRAH_CUSTOMSTYLE \
-  textColor = "#FFf0f0f0";\
-  backgroundColor = "#58bdd319";\
-  borderColor = "#FF223415";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF679312";\
-  menuTextColor = "#FFebf79c";\
-  textAccent = 1;\
-  fontType = 2;
+#define ZULRAH_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#58bdd319";borderColor = "#FF223415";textAccentColor = "#FF000000";lootbeamColor = "#FF679312";menuTextColor = "#FFebf79c";textAccent = 1;fontType = 2;
 
 apply (name:ZULRAH_LIST) {
     ZULRAH_CUSTOMSTYLE
 }
+/* #endregion */
 
 
-/*@ define:module:color_based_on_item_value
----
-name: Color based on item value
-description: |
-  Items below Tier 1 are hidden & not clikcable
-  
-  Tier 1 = hidden overlay, but clickable
-  
-  Tier 2 = grey for less visual clutter
-  
-  Tier 3 = default white
-  
-  Tier 4 = green, might wanna pick it up
-  
-  Tier 5 = green, but all tiers play a sound starting from this tier
-  
-  Tier 6-10 = worth picking up
-*/
 
-/*@ define:input:color_based_on_item_value
-type: number
-label: Hide ground items below the value of
-group: Hide Tradable Items Below
-*/
-#define GLOBAL_VALUE_HIDE 550
-
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 1 Enabled
-*/
-#define VALUES_TIER_1_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 2 Enabled
-*/
-#define VALUES_TIER_2_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 3 Enabled
-*/
-#define VALUES_TIER_3_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 4 Enabled
-*/
-#define VALUES_TIER_4_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 5 Enabled
-*/
-#define VALUES_TIER_5_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 6 Enabled
-*/
-#define VALUES_TIER_6_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 7 Enabled
-*/
-#define VALUES_TIER_7_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 8 Enabled
-*/
-#define VALUES_TIER_8_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 9 Enabled
-*/
-#define VALUES_TIER_9_ENABLED true
-
-/*@ define:input:color_based_on_item_value
-type: boolean
-label: Tier 10 Enabled
-*/
-#define VALUES_TIER_10_ENABLED true
-
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 1 Min value
-*/
-#define VALUES_TIER_1_VALUE 550
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 2 Min value
-*/
-#define VALUES_TIER_2_VALUE 1300
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 3 Min value
-*/
-#define VALUES_TIER_3_VALUE 5500
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 4 Min value
-*/
-#define VALUES_TIER_4_VALUE 18000
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 5 Min value
-*/
-#define VALUES_TIER_5_VALUE 45000
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 6 Min value
-*/
-#define VALUES_TIER_6_VALUE 80000
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 7 Min value
-*/
-#define VALUES_TIER_7_VALUE 300000
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 8 Min value
-*/
-#define VALUES_TIER_8_VALUE 1000000
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 9 Min value
-*/
-#define VALUES_TIER_9_VALUE 10000000
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Tier 10 Min value
-*/
-#define VALUES_TIER_10_VALUE 70000000
-
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 1 Display
-exampleItem: Mithril kiteshield
-*/
-#define VALUES_TIER_1_CUSTOMSTYLE \
-  textColor = "#FFFFFFFF";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF787878";\
-  textAccent = 3;\
-  hideOverlay = true;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 2 Display
-exampleItem: Adamant scimitar
-*/
-#define VALUES_TIER_2_CUSTOMSTYLE \
-  textColor = "#95808080";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF787878";\
-  textAccent = 1;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 3 Display
-exampleItem: Rune med helm
-*/
-#define VALUES_TIER_3_CUSTOMSTYLE \
-  textColor = "#FFffffff";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF787878";\
-  textAccent = 1;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 4 Display
-exampleItem: Rune platelegs
-*/
-#define VALUES_TIER_4_CUSTOMSTYLE \
-  textColor = "#FF21EB41";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF21EB41";\
-  textAccent = 1;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 5 Display
-exampleItem: Dragon scimitar
-*/
-#define VALUES_TIER_5_CUSTOMSTYLE \
-  textColor = "#FF21EB41";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FF21EB41";\
-  textAccent = 1;\
-  notify = true;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 6 Display
-exampleItem: Dragon platelegs
-*/
-#define VALUES_TIER_6_CUSTOMSTYLE \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#67A3A3A3";\
-  borderColor = "#FFD4D4D4";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFD4D4D4";\
-  menuTextColor = "#FFD4D4D4";\
-  textAccent = 1;\
-  notify = true;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 7 Display
-exampleItem: Granite maul
-*/
-#define VALUES_TIER_7_CUSTOMSTYLE \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#6700D97E";\
-  borderColor = "#FF32DC95";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF32DC95";\
-  menuTextColor = "#FF32DC95";\
-  textAccent = 1;\
-  notify = true;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 8 Display
-exampleItem: Eternal crystal
-*/
-#define VALUES_TIER_8_CUSTOMSTYLE \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#67FFA800";\
-  borderColor = "#FFF0D337";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFF0D337";\
-  menuTextColor = "#FFF0D337";\
-  textAccent = 1;\
-  notify = true;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 9 Display
-exampleItem: Virtus robe top
-*/
-#define VALUES_TIER_9_CUSTOMSTYLE \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#67FF0000";\
-  borderColor = "#FFE83131";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFE83131";\
-  menuTextColor = "#FFE83131";\
-  textAccent = 1;\
-  notify = true;\
-  hideOverlay = false;
-
-/*@ define:input:color_based_on_item_value
-type: style
-label: Tier 10 Display
-exampleItem: Scythe of vitur (uncharged)
-*/
-#define VALUES_TIER_10_CUSTOMSTYLE \
-  textColor = "#FFF2F2F2";\
-  backgroundColor = "#678000FF";\
-  borderColor = "#FFA74FFF";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFA74FFF";\
-  menuTextColor = "#FFA74FFF";\
-  textAccent = 1;\
-  notify = true;\
-  hideOverlay = false;
-
-
-apply (VALUES_TIER_1_ENABLED && value:>=VALUES_TIER_1_VALUE) {
-  VALUES_TIER_1_CUSTOMSTYLE
-}
-apply ((ownership:1 || ownership:2 || ownership:3) && VALUES_TIER_2_ENABLED && value:>=VALUES_TIER_2_VALUE) {
-  VALUES_TIER_2_CUSTOMSTYLE
-}
-apply (VALUES_TIER_3_ENABLED && value:>=VALUES_TIER_3_VALUE) {
-  VALUES_TIER_3_CUSTOMSTYLE
-}
-apply (VALUES_TIER_4_ENABLED && value:>=VALUES_TIER_4_VALUE) {
-  VALUES_TIER_4_CUSTOMSTYLE
-}
-apply (VALUES_TIER_5_ENABLED && value:>=VALUES_TIER_5_VALUE) {
-  VALUES_TIER_5_CUSTOMSTYLE
-}
-apply (VALUES_TIER_6_ENABLED && value:>=VALUES_TIER_6_VALUE) {
-  VALUES_TIER_6_CUSTOMSTYLE
-}
-apply (VALUES_TIER_7_ENABLED && value:>=VALUES_TIER_7_VALUE) {
-  VALUES_TIER_7_CUSTOMSTYLE
-}
-apply (VALUES_TIER_8_ENABLED && value:>=VALUES_TIER_8_VALUE) {
-  VALUES_TIER_8_CUSTOMSTYLE
-}
-apply (VALUES_TIER_9_ENABLED && value:>=VALUES_TIER_9_VALUE) {
-  VALUES_TIER_9_CUSTOMSTYLE
-}
-apply (VALUES_TIER_10_ENABLED && value:>=VALUES_TIER_10_VALUE) {
-  VALUES_TIER_10_CUSTOMSTYLE
-}
-
-apply (tradeable: true && name:"*") {
-    hidden = true;
-}
-
-apply (value:>GLOBAL_VALUE_HIDE) {
-    hidden = false;
-}
-
-/*@ define:module:not_g.e_tradeable
----
-name: Not G.E tradeable
-description: |
-  These are items that can be traded, but not on the G.E. For example: burnt food, crushed gem, half pies, etc. This section makes sure they don't bypass the filter by price checking them against their alchemy value. You can set a value at which items below it are hidden, but still clickable as opposed to having white text. Most items in this category are hidden below 100 gp.
-*/
-
-/*@ define:input:not_g.e_tradeable
-type: stringlist
-label: Not tradeable on GE
-*/
-#define NOT_GE_TRADEABLE_LIST ["Burnt shrimp","Burnt fish","Burnt fish","Burnt fish","Burnt fish","Burnt bat","Burnt fish","Burnt fish","Burnt eel","Burnt cave eel","Burnt rainbow fish","Burnt lobster","Burnt swordfish","Burnt karambwan","Burnt monkfish","Burnt shark","Burnt sea turtle","Burnt anglerfish","Burnt dark crab","Burnt manta ray","Burnt bread","Burnt pie","Burnt pizza","Burnt cake","Burnt chicken","Burnt meat","Burnt rabbit","Burnt bird meat","Burnt snail","Burnt spider (stick)","Burnt beast meat","Ruined chompy","Burnt jubbly","Burnt oomlie","Burnt oomlie wrap","Burnt egg","Burnt onion","Burnt mushroom","Burnt stew","Burnt curry","Burnt potato","Burnt crunchies","Burnt batta","Burnt sweetcorn","Burnt gnomebowl","Spider on shaft (burnt)","Bronze fire arrow","Iron fire arrow","Steel fire arrow","Mithril fire arrow","Adamant fire arrow","Rune fire arrow","Amethyst fire arrow","Dragon fire arrow","Black satchel","Gold satchel","Green satchel","Plain satchel","Red satchel","Rune satchel","Bucket of rubble (1/3)","Bucket of rubble (2/3)","Bucket of rubble (3/3)","Crate","Ground bat bones","Crystal singing for beginners","Cadarn lineage","Half certificate (left)","Half certificate (right)","Miscellaneous key","Mud","Muddy rock","Pete's candlestick","Phoenix crossbow","Rock","Ruined herb tea","Spare controls","Washing bowl","Weapon store key","An empty box","Anchovy paste","Astronomy book","Bailing bucket (full)","Bruised banana","Broken pole","Cat training medal","Chaotic handegg","Coconut shell","Cooked chicken (undead)","Cooked meat (undead)","Crushed gem","Damp tinderbox","Damp egg","Empty oyster","Field ration","Flyer (Bob's Axes)","Flyer (Iwan's Maces)","Fossilised Dung","Glassblowing book","Guthix balance (unf)","Half coconut","Holy handegg","Iron sickle","Newcomer map","Newspaper","Old wool","Platinum token","Peaceful handegg","Potion (Apothecary)","Raw chicken (undead)","Raw beef (undead)","Raw swamp paste","Rotten food","Rotten tomato","Sample bottle","Shayzien supply crate","Smashed glass","Smelly sock","Spooky egg","Strip of cloth","Sulphur","Tankard","Tea leaves","Tile","Ugthanki kebab (smelling)","Apples(1)","Apples(2)","Apples(3)","Apples(4)","Bananas(1)","Bananas(2)","Bananas(3)","Bananas(4)","Oranges(1)","Oranges(2)","Oranges(3)","Oranges(4)","Onions(1)","Onions(2)","Onions(3)","Onions(4)","Onions(5)","Onions(6)","Onions(7)","Onions(8)","Onions(9)","Strawberries(1)","Strawberries(2)","Strawberries(3)","Strawberries(4)","Tomatoes(1)","Tomatoes(2)","Tomatoes(3)","Tomatoes(4)","2/3*cake","Slice of cake","Chocolate slice","1/2*pizza","Half a*pie","Watering can(1)","Watering can(2)","Watering can(3)","Watering can(4)","Watering can(5)","Watering can(6)","Watering can(7)","Watering can(8)"]
-
-/*@ define:input:not_g.e_tradeable
-type: number
-label: Hide tradeable items not treadeable on the GE if they cost less than
-*/
-#define NOT_GE_TRADEABLE_HIDE 100
-
-/*@ define:input:not_g.e_tradeable
-type: boolean
-label: Filter Enabled
-*/
-#define NOT_GE_TRADEABLE_ENABLED true
-
-
-apply (NOT_GE_TRADEABLE_ENABLED && havalue:<NOT_GE_TRADEABLE_HIDE && name:NOT_GE_TRADEABLE_LIST) {
-  VALUES_TIER_1_CUSTOMSTYLE
-}
-
-apply (NOT_GE_TRADEABLE_ENABLED && havalue:>NOT_GE_TRADEABLE_HIDE && name:NOT_GE_TRADEABLE_LIST) {
-  VALUES_TIER_2_CUSTOMSTYLE
-}
-
-
-/*@ define:module:untradeables
----
-name: Untradeables
-description: |
-  Enabled by default is all untradeables show as white text as opposed to hidden. You can add which untradeables to hide by adding them to the text box or disabling this all together
-*/
-
-/*@ define:input:untradeables
-type: boolean
-label: Enabled
-*/
-#define UNTRADABLE_SHOW_ENABLED true
-
-/*@ define:input:untradeables
-type: stringlist
-label: Add item exceptions here to hide
-*/
-#define UNTRADABLE_HIDE_ITEMS []
-
-/*@ define:input:untradeables
-type: style
-label: Style
-exampleItem: Untradeable
-*/
-#define UNTRADABLE_SHOW_CUSTOMSTYLE \
-  textColor = "#FFffffff";\
-  showDespawn = true;
-
-
-apply (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
-    hidden = false;
-    UNTRADABLE_SHOW_CUSTOMSTYLE
-}
-
-apply (name:UNTRADABLE_HIDE_ITEMS) { 
-    hidden = true; 
-}
-
+/* #region [7] unhide skilling */
 /*@ define:module:unhide_skilling
 ---
 name: Unhide Skilling
@@ -2944,7 +2177,7 @@ description: |
 type: stringlist
 label: Unhide hunter skilling tools
 */
-#define HUNTER_TOOLS_UNHIDE_LIST ["Barb-tail harpoon","Hunters' crossbow ","Hunters' sunlight crossbow ","Hunter's spear ","Bird snare ","Box trap ","Butterfly net","Falconer's glove ","Fish chunks ","Hunter kit (spell) ","Imp-in-a-box*","Unlit torch","Lit torch","Magic box ","Noose wand ","Rabbit snare ","Teasing stick","Impling jar","Butterfly jar","Small fishing net","Rope"]
+#define HUNTER_TOOLS_UNHIDE_LIST ["Barb-tail harpoon","Hunters' crossbow","Hunters' sunlight crossbow","Hunter's spear","Bird snare","Box trap","Butterfly net","Falconer's glove","Fish chunks","Hunter kit (spell)","Imp-in-a-box*","Unlit torch","Lit torch","Magic box","Noose wand","Rabbit snare","Teasing stick","Impling jar","Butterfly jar","Small fishing net","Rope"]
 
 /*@ define:input:unhide_skilling
 type: stringlist
@@ -2957,7 +2190,6 @@ type: stringlist
 label: Unhide other items
 */
 #define OTHER_UNHIDE_LIST []
-
 
 /*@ define:input:unhide_skilling
 type: boolean
@@ -2982,49 +2214,23 @@ label: Other Unhide Enabled
 type: style
 label: Unhide hunter skilling tools
 */
-#define HUNTER_TOOLS_UNHIDE_CUSTOMSTYLE \
-  textColor = "#FFffffff";\
-  borderColor = "#FFffffff";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FFffffff";\
-  menuTextColor = "#FFff930b";\
-  hideOverlay = false;
+#define HUNTER_TOOLS_UNHIDE_CUSTOMSTYLE textColor = "#FFffffff";borderColor = "#40ffffff";textAccentColor = "#FF000000";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";hidden = false;
 
 /*@ define:input:unhide_skilling
 type: style
 label: Unhide agility skilling tools
 */
-#define AGILITY_TOOLS_UNHIDE_CUSTOMSTYLE \
-  textColor = "#ffd42d17";\
-  backgroundColor = "#75cdaf04";\
-  borderColor = "#ff001d1d";\
-  textAccentColor = "#FF000000";\
-  lootbeamColor = "#FF225a22";\
-  menuTextColor = "#FFff930b";\
-  textAccent = 1;\
-  fontType = 1;\
-  showDespawn = true;\
-  notify = true;\
-  hideOverlay = false;
+#define AGILITY_TOOLS_UNHIDE_CUSTOMSTYLE textColor = "#ffd42d17";backgroundColor = "#75cdaf04";borderColor = "#ff001d1d";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;notify = true;hidden = false;
 
 /*@ define:input:unhide_skilling
 type: style
 label: Unhide other items
 */
-#define OTHER_UNHIDE_CUSTOMSTYLE \
-  textColor = "#FFffffff";\
-  borderColor = "#FFffffff";\
-  textAccentColor = "#FFffffff";\
-  lootbeamColor = "#FFffffff";\
-  menuTextColor = "#FFff930b";\
-  textAccent = 1;\
-  fontType = 1;\
-  showDespawn = true;\
-  hideOverlay = false;
+#define OTHER_UNHIDE_CUSTOMSTYLE textColor = "#FFffffff";borderColor = "#FFffffff";textAccentColor = "#FFffffff";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;hidden = false;
 
 
 
-apply (HUNTER_TOOLS_UNHIDE_ENABLE && name:HUNTER_TOOLS_UNHIDE_LIST) {
+apply ((ownership:1) && HUNTER_TOOLS_UNHIDE_ENABLE && name:HUNTER_TOOLS_UNHIDE_LIST) {
     HUNTER_TOOLS_UNHIDE_CUSTOMSTYLE
 }
 
@@ -3035,8 +2241,10 @@ apply (AGILITY_TOOLS_UNHIDE_ENABLE && name:AGILITY_TOOLS_UNHIDE_LIST) {
 apply (OTHER_UNHIDE_ENABLE && name:OTHER_UNHIDE_LIST) {
     OTHER_UNHIDE_CUSTOMSTYLE
 }
+/* #endregion */
 
 
+/* #region [7] unhide food */
 /*@ define:module:unhide_food
 ---
 name: Unhide Food
@@ -3113,7 +2321,9 @@ enum: [
 ]
 */
 #define FOOD_UNHIDE_LIST ["*batta","Anglerfish","Blighted anglerfish","Blighted karambwan","Blighted manta ray","Chocolate bomb","Cooked dashing kebbit","Cooked karambwan","Cooked kyatt","Cooked moonlight antelope","Cooked pyre fox","Cooked sunlight antelope","Curry","Dark crab","Egg potato","Lobster","Manta ray","Monkfish","Peach","Potato with cheese","Premade*","Purple sweets","Saradomin brew","Sea turtle","Shark","Snowy knight","Swordfish","Tangled toad's legs","Tuna potato","Veg ball","Worm hole"]
+/* #endregion */
 
+/* #region [7] unhide food */
 /*@ define:input:unhide_food
 type: stringlist
 label: Forcibly unhide food not on the list
@@ -3125,14 +2335,50 @@ type: style
 label: Forcibly unhide food
 exampleItem: Shark
 */
-#define FOOD_UNHIDE_CUSTOMSTYLE \
-  textColor = "#FFFFFFFF";\
-  textAccentColor = "#FF000000";\
-  menuTextColor = "#FFff930b";
-
+#define FOOD_UNHIDE_CUSTOMSTYLE textColor = "#FFFFFFFF";textAccentColor = "#FF000000";menuTextColor = "#FFff930b";
 
 apply (FOOD_UNHIDE_ENABLED && (name:FOOD_UNHIDE_LIST || name:FOOD_UNHIDE_LIST_EXTRA)) {
     hidden = false;
     FOOD_UNHIDE_CUSTOMSTYLE 
 }
+/* #endregion */
 
+
+
+/* #region [7] GE untradeable */
+/*@ define:module:not_g.e_tradeable
+---
+name: Not G.E tradeable
+description: |
+  These are items that can be traded, but not on the G.E. For example: burnt food, crushed gem, half pies, etc. This section makes sure they don't bypass the filter by price checking them against their alchemy value. You can set a value at which items below it are hidden, but still clickable as opposed to having white text. Most items in this category are hidden below 100 gp.
+*/
+
+/*@ define:input:not_g.e_tradeable
+type: stringlist
+label: Not tradeable on GE
+*/
+#define NOT_GE_TRADEABLE_LIST ["Burnt shrimp","Burnt fish","Burnt fish","Burnt fish","Burnt fish","Burnt bat","Burnt fish","Burnt fish","Burnt eel","Burnt cave eel","Burnt rainbow fish","Burnt lobster","Burnt swordfish","Burnt karambwan","Burnt monkfish","Burnt shark","Burnt sea turtle","Burnt anglerfish","Burnt dark crab","Burnt manta ray","Burnt bread","Burnt pie","Burnt pizza","Burnt cake","Burnt chicken","Burnt meat","Burnt rabbit","Burnt bird meat","Burnt snail","Burnt spider (stick)","Burnt beast meat","Ruined chompy","Burnt jubbly","Burnt oomlie","Burnt oomlie wrap","Burnt egg","Burnt onion","Burnt mushroom","Burnt stew","Burnt curry","Burnt potato","Burnt crunchies","Burnt batta","Burnt sweetcorn","Burnt gnomebowl","Spider on shaft (burnt)","Bronze fire arrow","Iron fire arrow","Steel fire arrow","Mithril fire arrow","Adamant fire arrow","Rune fire arrow","Amethyst fire arrow","Dragon fire arrow","Black satchel","Gold satchel","Green satchel","Plain satchel","Red satchel","Rune satchel","Bucket of rubble (1/3)","Bucket of rubble (2/3)","Bucket of rubble (3/3)","Crate","Ground bat bones","Crystal singing for beginners","Cadarn lineage","Half certificate (left)","Half certificate (right)","Miscellaneous key","Mud","Muddy rock","Pete's candlestick","Phoenix crossbow","Rock","Ruined herb tea","Spare controls","Washing bowl","Weapon store key","An empty box","Anchovy paste","Astronomy book","Bailing bucket (full)","Bruised banana","Broken pole","Cat training medal","Chaotic handegg","Coconut shell","Cooked chicken (undead)","Cooked meat (undead)","Crushed gem","Damp tinderbox","Damp egg","Empty oyster","Field ration","Flyer (Bob's Axes)","Flyer (Iwan's Maces)","Fossilised Dung","Glassblowing book","Guthix balance (unf)","Half coconut","Holy handegg","Iron sickle","Newcomer map","Newspaper","Old wool","Platinum token","Peaceful handegg","Potion (Apothecary)","Raw chicken (undead)","Raw beef (undead)","Raw swamp paste","Rotten food","Rotten tomato","Sample bottle","Shayzien supply crate","Smashed glass","Smelly sock","Spooky egg","Strip of cloth","Sulphur","Tankard","Tea leaves","Tile","Ugthanki kebab (smelling)","Apples(1)","Apples(2)","Apples(3)","Apples(4)","Bananas(1)","Bananas(2)","Bananas(3)","Bananas(4)","Oranges(1)","Oranges(2)","Oranges(3)","Oranges(4)","Onions(1)","Onions(2)","Onions(3)","Onions(4)","Onions(5)","Onions(6)","Onions(7)","Onions(8)","Onions(9)","Strawberries(1)","Strawberries(2)","Strawberries(3)","Strawberries(4)","Tomatoes(1)","Tomatoes(2)","Tomatoes(3)","Tomatoes(4)","2/3*cake","Slice of cake","Chocolate slice","1/2*pizza","Half a*pie","Watering can(1)","Watering can(2)","Watering can(3)","Watering can(4)","Watering can(5)","Watering can(6)","Watering can(7)","Watering can(8)"]
+
+/*@ define:input:not_g.e_tradeable
+type: number
+label: Hide tradeable items not treadeable on the GE if they cost less than
+*/
+#define NOT_GE_TRADEABLE_HIDE 100
+
+/*@ define:input:not_g.e_tradeable
+type: boolean
+label: Filter Enabled
+*/
+#define NOT_GE_TRADEABLE_ENABLED true
+
+
+apply (NOT_GE_TRADEABLE_ENABLED && havalue:<NOT_GE_TRADEABLE_HIDE && name:NOT_GE_TRADEABLE_LIST) {
+  hidden = true;
+  VALUES_TIER_1_CUSTOMSTYLE
+}
+
+apply (NOT_GE_TRADEABLE_ENABLED && havalue:>NOT_GE_TRADEABLE_HIDE && name:NOT_GE_TRADEABLE_LIST) {
+  showDespawn = false;
+  VALUES_TIER_2_CUSTOMSTYLE
+}
+/* #endregion */
