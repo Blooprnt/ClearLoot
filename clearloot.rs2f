@@ -3,7 +3,7 @@
 name: About this filter
 description: |
   This filter prioritizes readable text & reducing visual ground item clutter while saving the nice colors for the nice PVM drops. Unique drops colors are influenced by the boss they're from, otherwise ground item colors are based on their value with some special exceptions. 
-    * This is version: 1.0
+    * This is version: 1.1
 */
 meta { name = "ClearLoot"; }
 
@@ -73,7 +73,9 @@ label: Hidden + Clickable
 */
 #define GLOBAL_HIDE []
 
-
+apply (tradeable: true && name:"*") {
+    hidden = true;
+}
 
 /*@ define:input:global_rules
 type: number
@@ -97,7 +99,6 @@ apply (name:"*") {
     showDespawn = true;
 }
 
-
 apply (name:"*") {
     showValue = true;
 }
@@ -105,6 +106,11 @@ apply (name:"*") {
 apply (value:<GLOBAL_VALUE_HIDE) {
     showValue = false;
 }
+
+apply (value:>GLOBAL_VALUE_HIDE) {
+    hidden = false;
+}
+
 /* #endregion */
 
 /* #region [1] hidden items desc*/
@@ -112,18 +118,369 @@ apply (value:<GLOBAL_VALUE_HIDE) {
 ---
 name: Hidden Items
 description: |
-  There are two ways to hide ground items
+  - Stack Amount: 
+    - Hides based on stack amount regardless of stack value
+
+  - Stack Value: 
+    - Hides based on stack value regardless of stack amount
   
-  - The 1st category: hide ground items based on stack amount regardless of stack value
-  
-  - The 2nd category: hide ground items based on stack value regardless of stack amount
-  
-  
-  I put all ammo under stack value hide so that you don't get clutter of 1-2 bolts in minigames/wildy/slayer
+  - Others' Boat: 
+    - Hides ground items in other people's boats
+
+  Ammo is under "stack value hide" as to not get clutter of 1-2 bolts in minigames/wildy/slayer
 */
 /* #endregion */
 
 /* #region [1] hidden items */
+
+/*@ define:input:hide
+label: Hide on other boats
+type: stringlist
+group: Hide items on other boats
+*/
+#define OTHER_BOAT_HIDE []
+
+/*@ define:input:hide
+type: number
+label: Hide Min value
+group: Hide items on other boats
+*/
+#define OTHER_BOAT_VALUE 15000
+
+/*@ define:input:hide
+label: Small shipwrecks
+type: enumlist
+group: Hide items on other boats
+enum: [
+    "Air rune",
+    "Boat bottle (empty)",
+    "Bones",
+    "Bronze bar",
+    "Bronze cannonball",
+    "Bronze nails",
+    "Coins",
+    "Iron bar",
+    "Iron cannonball",
+    "Iron nails",
+    "Logs",
+    "Oak logs",
+    "Oak plank",
+    "Plank",
+    "Steel arrow",
+    "Steel bar",
+    "Water rune"
+]
+*/
+#define SMALL_SHIPWRECKS_HIDE ["Air rune","Boat bottle (empty)","Bones","Bronze bar","Bronze cannonball","Bronze nails","Coins","Iron bar","Iron cannonball","Iron nails","Logs","Oak logs","Oak plank","Plank","Steel arrow","Steel bar","Water rune"]
+
+/*@ define:input:hide
+label: Small salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define SMALL_SHIPWRECKS_STATE true
+
+/*@ define:input:hide
+label: Fisherman's shipwrecks
+type: enumlist
+group: Hide items on other boats
+enum: [
+    "Boat bottle (empty)",
+    "Oak logs",
+    "Oak plank",
+    "Logs",
+    "Iron bar",
+    "Iron nails",
+    "Steel nails",
+    "Plank",
+    "Steel bar",
+    "Feather",
+    "Fishing bait",
+    "Raw lobster",
+    "Raw mackerel",
+    "Raw swordfish",
+    "Fishing rod",
+    "Harpoon",
+    "Lobster pot",
+    "Seaweed",
+    "Bronze cannonball",
+    "Iron cannonball"
+]
+*/
+#define FISHERMANS_SHIPWRECKS_HIDE ["Boat bottle (empty)","Oak logs","Oak plank","Logs","Iron bar","Iron nails","Steel nails","Plank","Steel bar","Feather","Fishing bait","Raw lobster","Raw mackerel","Raw swordfish","Fishing rod","Harpoon","Lobster pot","Seaweed","Bronze cannonball","Iron cannonball"]
+
+/*@ define:input:hide
+label: Fisherman's salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define FISHERMANS_SHIPWRECKS_STATE true
+
+/*@ define:input:hide
+label: Barracuda salvage
+type: enumlist
+group: Hide items on other boats
+enum: [
+    "Banana",
+    "Boat bottle (empty)",
+    "Copper ore",
+    "Flax seed",
+    "Hemp seed",
+    "Lead ore",
+    "Oak logs",
+    "Oak plank",
+    "Raw marlin",
+    "Raw shark",
+    "Raw swordfish",
+    "Rope",
+    "Rum",
+    "Steel cannonball",
+    "Steel nails",
+    "Swamp paste",
+    "Teak logs",
+    "Teak plank",
+    "Teak repair kit"
+]
+*/
+#define BARRACUDA_SHIPWRECK_HIDE ["Banana","Boat bottle (empty)","Copper ore","Flax seed","Hemp seed","Lead ore","Oak logs","Oak plank","Raw marlin","Raw shark","Raw swordfish","Rope","Rum","Steel cannonball","Steel nails","Swamp paste","Teak logs","Teak plank","Teak repair kit"]
+
+/*@ define:input:hide
+label: Barracuda salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define BARRACUDA_SHIPWRECK_STATE true
+
+/*@ define:input:hide
+label: Large salvage
+type: enumlist
+group: Hide items on other boats
+enum: [
+    "Adamant cannonball",
+    "Camphor seed",
+    "Casket",
+    "Cotton seed",
+    "Diamond ring",
+    "Elkhorn frag",
+    "Emerald ring",
+    "Giant seaweed",
+    "Gold ring",
+    "Hemp seed",
+    "Mithril cannonball",
+    "Mithril nails",
+    "Oak plank",
+    "Oyster pearl",
+    "Oyster pearls",
+    "Pillar frag",
+    "Sapphire ring",
+    "Steel nails",
+    "Teak logs"
+]
+*/
+#define LARGE_SHIPWRECKS_HIDE ["Adamant cannonball","Camphor seed","Casket","Cotton seed","Diamond ring","Elkhorn frag","Emerald ring","Giant seaweed","Gold ring","Hemp seed","Mithril cannonball","Mithril nails","Oak plank","Oyster pearl","Oyster pearls","Pillar frag","Sapphire ring","Steel nails","Teak logs"]
+
+/*@ define:input:hide
+label: Large salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define LARGE_SHIPWRECKS_STATE true
+
+/*@ define:input:hide
+label: Plundered salvage
+type: enumlist
+group: Hide items on other boats
+enum: [
+  "Facility bottle (empty)",
+  "Dragon cannonball",
+  "Rum",
+  "Mithril cannonball",
+  "Adamant cannonball",
+  "Mahogany repair kit",
+  "Rune cannonball",
+  "Mithril scimitar",
+  "Rune scimitar",
+  "Gold ring",
+  "Oyster pearls",
+  "Sapphire ring",
+  "Emerald bracelet",
+  "Ruby bracelet",
+  "Emerald ring",
+  "Casket",
+  "Diamond bracelet",
+  "Diamond ring"
+]
+*/
+#define PIRATE_SHIPWRECK_HIDE ["Facility bottle (empty)","Dragon cannonball","Rum","Mithril cannonball","Adamant cannonball","Mahogany repair kit","Rune cannonball","Mithril scimitar","Rune scimitar","Gold ring","Oyster pearls","Sapphire ring","Emerald bracelet","Ruby bracelet","Emerald ring","Casket","Diamond bracelet","Diamond ring"]
+
+/*@ define:input:hide
+label: Plundered salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define PIRATE_SHIPWRECK_STATE true
+
+/*@ define:input:hide
+label: Martial salvage
+type: enumlist
+group: Hide items on other boats
+enum: [
+  "Facility bottle (empty)",
+  "Dragon cannonball",
+  "Salvor's paint",
+  "Mithril longsword",
+  "Adamant longsword",
+  "Adamant 2h sword",
+  "Green d'hide body",
+  "Rune longsword",
+  "Adamant arrowtips",
+  "Mithril dart tip",
+  "Adamant dart tip",
+  "Adamant arrow",
+  "Adamant bolts(unf)",
+  "Rune arrow",
+  "Adamant cannonball",
+  "Rune cannonball",
+  "Umbral frag",
+  "Camphor seed",
+  "Ironwood seed",
+  "Mahogany logs",
+  "Camphor logs",
+  "Ironwood logs",
+  "Amulet of power",
+  "Adamantite nails"
+]
+*/
+#define MERCENARY_SHIPWRECK_HIDE ["Facility bottle (empty)","Dragon cannonball","Salvor's paint","Mithril longsword","Adamant longsword","Adamant 2h sword","Green d'hide body","Rune longsword","Adamant arrowtips","Mithril dart tip","Adamant dart tip","Adamant arrow","Adamant bolts(unf)","Rune arrow","Adamant cannonball","Rune cannonball","Umbral frag","Camphor seed","Ironwood seed","Mahogany logs","Camphor logs","Ironwood logs","Amulet of power","Adamantite nails"]
+
+/*@ define:input:hide
+label: Martial salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define MERCENARY_SHIPWRECK_STATE true
+
+/*@ define:input:hide
+label: Fremennik salvage
+type: enumlist
+group: Hide items on other boats
+enum: [
+  "Facility bottle (empty)",
+  "Raw salmon",
+  "Raw tuna",
+  "Raw lobster",
+  "Raw monkfish",
+  "Archer helm",
+  "Berserker helm",
+  "Farseer helm",
+  "Warrior helm",
+  "Fremennik helm",
+  "Mithril ore",
+  "Arctic pine logs",
+  "Adamantite nails",
+  "Rune nails",
+  "Mahogany plank",
+  "Ironwood logs",
+  "Rosewood logs",
+  "Cotton seed",
+  "Umbral frag",
+  "Ironwood seed",
+  "Rosewood seed",
+  "Astral rune",
+  "Ensouled troll head",
+  "Rune cannonball"
+]
+*/
+#define FREMENNIK_SHIPWRECK_HIDE ["Facility bottle (empty)","Raw salmon","Raw tuna","Raw lobster","Raw monkfish","Archer helm","Berserker helm","Farseer helm","Warrior helm","Fremennik helm","Mithril ore","Arctic pine logs","Adamantite nails","Rune nails","Mahogany plank","Ironwood logs","Rosewood logs","Cotton seed","Umbral frag","Ironwood seed","Rosewood seed","Astral rune","Ensouled troll head","Rune cannonball"]
+
+/*@ define:input:hide
+label: Fremennik salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define FREMENNIK_SHIPWRECK_STATE true
+
+/*@ define:input:hide
+label: Opulent salvage
+type: enumlist
+group: Hide items on other boats
+enum: [
+  "Facility bottle (empty)",
+  "Dragon nails",
+  "Dragon cannon barrel",
+  "Fish offcuts",
+  "Ironwood repair kit",
+  "Rune cannonball",
+  "Dragon cannonball",
+  "Toadflax seed",
+  "Irit seed",
+  "Belladonna seed",
+  "Poison ivy seed",
+  "Avantoe seed",
+  "Cactus seed",
+  "Potato cactus seed",
+  "Kwuarm seed",
+  "Snapdragon seed",
+  "Cadantine seed",
+  "Lantadyme seed",
+  "Snape grass seed",
+  "Dwarf weed seed",
+  "Torstol seed",
+  "Grimy avantoe",
+  "Grimy ranarr weed",
+  "Grimy snapdragon",
+  "Grimy torstol",
+  "Grimy kwuarm",
+  "Grimy dwarf weed",
+  "Grimy cadantine",
+  "Grimy lantadyme",
+  "Uncut opal",
+  "Uncut jade",
+  "Uncut red topaz",
+  "Silver ore",
+  "Silver bar",
+  "Tiara",
+  "Jug of wine",
+  "Spice",
+  "Grey wolf fur",
+  "Silk",
+  "Coins",
+  "Platinum token",
+  "Uncut sapphire",
+  "Uncut emerald",
+  "Uncut ruby",
+  "Nature talisman",
+  "Uncut diamond",
+  "Rune javelin",
+  "Loop half of key",
+  "Tooth half of key",
+  "Rune spear",
+  "Shield left half",
+  "Dragon spear"
+]
+*/
+#define MERCHANT_SHIPWRECK_HIDE ["Facility bottle (empty)","Dragon nails","Mouldy doll","Dragon cannon barrel","Fish offcuts","Ironwood repair kit","Rune cannonball","Dragon cannonball","Toadflax seed","Irit seed","Belladonna seed","Poison ivy seed","Avantoe seed","Cactus seed","Potato cactus seed","Kwuarm seed","Snapdragon seed","Cadantine seed","Lantadyme seed","Snape grass seed","Dwarf weed seed","Torstol seed","Grimy avantoe","Grimy ranarr weed","Grimy snapdragon","Grimy torstol","Grimy kwuarm","Grimy dwarf weed","Grimy cadantine","Grimy lantadyme","Uncut opal","Uncut jade","Uncut red topaz","Silver ore","Silver bar","Tiara","Jug of wine","Spice","Grey wolf fur","Silk","Coins","Platinum token","Uncut sapphire","Uncut emerald","Uncut ruby","Nature talisman","Uncut diamond","Rune javelin","Loop half of key","Tooth half of key","Rune spear","Shield left half","Dragon spear"]
+
+/*@ define:input:hide
+label: Opulent salvaging
+type: boolean
+group: Hide items on other boats
+*/
+#define MERCHANT_SHIPWRECK_STATE true
+
+#define SALVAGE_AREA_HIDE [3838,6432,0,3896,6465,3]
+
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:OTHER_BOAT_HIDE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:SMALL_SHIPWRECKS_HIDE && SMALL_SHIPWRECKS_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:FISHERMANS_SHIPWRECKS_HIDE && FISHERMANS_SHIPWRECKS_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:BARRACUDA_SHIPWRECK_HIDE && BARRACUDA_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:LARGE_SHIPWRECKS_HIDE && LARGE_SHIPWRECKS_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:PIRATE_SHIPWRECK_HIDE && PIRATE_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:MERCENARY_SHIPWRECK_HIDE && MERCENARY_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:FREMENNIK_SHIPWRECK_HIDE && FREMENNIK_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:MERCHANT_SHIPWRECK_HIDE && MERCHANT_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+
+
 /*@ define:input:hidden_items
 type: stringlist
 label: Hide if less than 1
@@ -274,13 +631,6 @@ description: |
   
   Tier 6-10 = worth picking up
 */
-
-/*@ define:input:color_based_on_item_value
-type: number
-label: Hide ground items below the value of
-group: Hide Tradable Items Below
-*/
-#define GLOBAL_VALUE_HIDE 1000
 
 
 /*@ define:input:color_based_on_item_value
@@ -510,13 +860,7 @@ apply (VALUES_TIER_10_ENABLED && value:>=VALUES_TIER_10_VALUE) {
   VALUES_TIER_10_CUSTOMSTYLE
 }
 
-apply (tradeable: true && name:"*") {
-    hidden = true;
-}
 
-apply (value:>GLOBAL_VALUE_HIDE) {
-    hidden = false;
-}
 /* #endregion */
 
 
@@ -1273,95 +1617,119 @@ apply (name:STATUETTES_LIST_1) {
 ---
 name: Jars
 description: |
-  Customize jars dropped from bosses
+ ## Names of the jars:
+
+ **Abyssal Sire** (Jar of Miasma), **Alchemical Hydra** (Jar of Chemicals), **Araxxor** (Jar of Venom), **Cerberus** (Jar of Souls), **Corporeal Beast** (Jar of Spirits), **Guardians** (Jar of Stone), **Kalphite Queen** (Jar of Sand), **Kraken** (Jar of Dirt), **Sarachnis** (Jar of Eyes), **Shellbane Gryphon** (Jar of Feathers), **Skotizo** (Jar of Darkness), **The Nightmare** (Jar of Dreams), **Thermonuclear Smoke Devil** (Jar of Smoke), **Vorkath** (Jar of Decay), **Zulrah** (Jar of Swamp) 
 */
 
 /*@ define:input:jars
 type: stringlist
-label: Alchemical Hydra
+group: Border color
+label: Red
 */
-#define JARS_LIST_1 ["Jar of chemicals"]
+#define JARS_LIST_1 ["Jar of souls","Jar of eyes","Jar of miasma"]
 
 /*@ define:input:jars
 type: stringlist
-label: Skotizo
+group: Border color
+label: Salmon
 */
-#define JARS_LIST_2 ["Jar of darkness"]
+#define JARS_LIST_2 ["Jar of spirits"]
 
 /*@ define:input:jars
 type: stringlist
-label: Vorkath
+group: Border color
+label: Orange
 */
-#define JARS_LIST_3 ["Jar of decay"]
+#define JARS_LIST_3 ["Jar of feathers"]
 
 /*@ define:input:jars
 type: stringlist
-label: Kraken
+group: Border color
+label: Sand
 */
-#define JARS_LIST_4 ["Jar of dirt"]
+#define JARS_LIST_4 ["Jar of dirt","Jar of smoke","Jar of swamp"]
 
 /*@ define:input:jars
 type: stringlist
-label: The Nightmare
+group: Border color
+label: Yellow
 */
-#define JARS_LIST_5 ["Jar of dreams"]
+#define JARS_LIST_5 []
 
 /*@ define:input:jars
 type: stringlist
-label: Corporeal Beast
+group: Border color
+label: Green
 */
-#define JARS_LIST_6 ["Jar of spirits"]
+#define JARS_LIST_6 ["Jar of chemicals","Jar of venom"]
 
 /*@ define:input:jars
 type: stringlist
-label: Grotesque Guardians
+group: Border color
+label: Teal
 */
-#define JARS_LIST_7 ["Jar of stone"]
+#define JARS_LIST_7 ["Jar of decay","Jar of dreams"]
 
 /*@ define:input:jars
 type: stringlist
-label: Zulrah
+group: Border color
+label: Blue
 */
-#define JARS_LIST_8 ["Jar of swamp"]
+#define JARS_LIST_8 []
 
 /*@ define:input:jars
 type: stringlist
-label: Araxxor
+group: Border color
+label: Purple
 */
-#define JARS_LIST_9 ["Jar of venom"]
+#define JARS_LIST_9 ["Jar of darkness"]
 
 /*@ define:input:jars
 type: stringlist
-label: Kalphite Queen
+group: Border color
+label: Pink
 */
-#define JARS_LIST_10 ["Jar of sand"]
+#define JARS_LIST_10 []
 
 /*@ define:input:jars
 type: stringlist
-label: Thermonuclear Smoke Devil
+group: Border color
+label: Guardians
 */
-#define JARS_LIST_11 ["Jar of smoke"]
+#define JARS_LIST_11 ["Jar of stone"]
 
 /*@ define:input:jars
 type: stringlist
-label: Cerb, Sarachnis, Sire
+group: Border color
+label: Khalaphite
 */
-#define JARS_LIST_12 ["Jar of souls","Jar of eyes","Jar of miasma"]
+#define JARS_LIST_12 ["Jar of sand"]
 
 /*@ define:input:jars
 type: stringlist
-label: Future Release Jars
+group: Border color
+label: Custom
 */
-#define JARS_LIST_13 ["Jar of*"]
+#define JARS_LIST_13 []
+
+/*@ define:input:jars
+type: stringlist
+group: Border color
+label: Uncategorized
+*/
+#define JARS_LIST_14 ["Jar of*"]
 /* #endregion */
 
 /* #region [5] jars */
+
 /*@ define:input:jars
 type: style
-label: Alchemical Hydra
-exampleItem: Jar of chemicals
+group: Border Styles
+label: Red
+exampleItem: Jar of Miasma
 */
-#define JARS_CUSTOMSTYLE_1 textColor = "#FF1deff6";backgroundColor = "#99000000";borderColor = "#FF6f8688";textAccentColor = "#FF000000";lootbeamColor = "#FF1deff6";menuTextColor = "#FF1deff6";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_1 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80f41d1d";textAccentColor = "#FF000000";lootbeamColor = "#FF7d0000";menuTextColor = "#FFFF3F38";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_1) {
     JARS_CUSTOMSTYLE_1
@@ -1369,10 +1737,11 @@ apply (name:JARS_LIST_1) {
 
 /*@ define:input:jars
 type: style
-label: Skotizo
-exampleItem: Jar of darkness
+group: Border Styles
+label: Salmon
+exampleItem: Jar of spirits
 */
-#define JARS_CUSTOMSTYLE_2 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#88a035ff";textAccentColor = "#FF000000";lootbeamColor = "#FF141010";menuTextColor = "#FFbb6cff";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_2 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80f1b18f";textAccentColor = "#FF000000";lootbeamColor = "#FF816a5e";menuTextColor = "#fff7b08a";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_2) {
     JARS_CUSTOMSTYLE_2
@@ -1380,10 +1749,11 @@ apply (name:JARS_LIST_2) {
 
 /*@ define:input:jars
 type: style
-label: Vorkath
-exampleItem: Jar of decay
+group: Border Styles
+label: Orange
+exampleItem: Jar of feathers
 */
-#define JARS_CUSTOMSTYLE_3 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#996af3de";textAccentColor = "#FF000000";lootbeamColor = "#FF3c6f67";menuTextColor = "#FF78d1c4";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_3 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80fca50f";textAccentColor = "#FF000000";lootbeamColor = "#FF816a5e";menuTextColor = "#ffffab2d";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_3) {
     JARS_CUSTOMSTYLE_3
@@ -1391,10 +1761,11 @@ apply (name:JARS_LIST_3) {
 
 /*@ define:input:jars
 type: style
-label: Kraken
+group: Border Styles
+label: Sand
 exampleItem: Jar of dirt
 */
-#define JARS_CUSTOMSTYLE_4 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#FFa5a362";textAccentColor = "#FF000000";lootbeamColor = "#FF66664e";menuTextColor = "#FFb5b588";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_4 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80afc90e";textAccentColor = "#FF000000";lootbeamColor = "#FF66664e";menuTextColor = "#ffb4cb2b";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_4) {
     JARS_CUSTOMSTYLE_4
@@ -1402,10 +1773,11 @@ apply (name:JARS_LIST_4) {
 
 /*@ define:input:jars
 type: style
-label: The Nightmare
-exampleItem: Jar of dreams
+group: Border Styles
+label: Yellow
+exampleItem: Jar of stone
 */
-#define JARS_CUSTOMSTYLE_5 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#995cafa2";textAccentColor = "#FF000000";lootbeamColor = "#FF697170";menuTextColor = "#ffdffffb";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_5 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80ffe500";textAccentColor = "#FF000000";lootbeamColor = "#FF926b0a";menuTextColor = "#ffe1df25";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_5) {
     JARS_CUSTOMSTYLE_5
@@ -1413,10 +1785,11 @@ apply (name:JARS_LIST_5) {
 
 /*@ define:input:jars
 type: style
-label: Corporeal Beast
-exampleItem: Jar of spirits
+group: Border Styles
+label: Green
+exampleItem: Jar of sand
 */
-#define JARS_CUSTOMSTYLE_6 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99f7e3c7";textAccentColor = "#FF000000";lootbeamColor = "#FF816a5e";menuTextColor = "#FFecc1aa";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_6 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#8030d93b";textAccentColor = "#FF000000";lootbeamColor = "#FF266e47";menuTextColor = "#FF11bb48";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_6) {
     JARS_CUSTOMSTYLE_6
@@ -1424,10 +1797,11 @@ apply (name:JARS_LIST_6) {
 
 /*@ define:input:jars
 type: style
-label: Grotesque Guardians
-exampleItem: Jar of stone
+group: Border Styles
+label: Teal
+exampleItem: Jar of decay
 */
-#define JARS_CUSTOMSTYLE_7 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#998148fe";textAccentColor = "#FF000000";lootbeamColor = "#FF926b0a";menuTextColor = "#FF7ec4c4";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_7 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#806af3de";textAccentColor = "#FF000000";lootbeamColor = "#FF3c6f67";menuTextColor = "#ff3fdcc5";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_7) {
     JARS_CUSTOMSTYLE_7
@@ -1435,10 +1809,11 @@ apply (name:JARS_LIST_7) {
 
 /*@ define:input:jars
 type: style
-label: Zulrah
-exampleItem: Jar of swamp
+group: Border Styles
+label: Blue
+exampleItem: Jar of smoke
 */
-#define JARS_CUSTOMSTYLE_8 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99bdd319";textAccentColor = "#FF000000";lootbeamColor = "#FF304a1e";menuTextColor = "#FF11bb48";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_8 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80358bfb";textAccentColor = "#FF000000";lootbeamColor = "#FF33627b";menuTextColor = "#ff87a9ff";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_8) {
     JARS_CUSTOMSTYLE_8
@@ -1446,10 +1821,11 @@ apply (name:JARS_LIST_8) {
 
 /*@ define:input:jars
 type: style
-label: Araxxor
-exampleItem: Jar of venom
+group: Border Styles
+label: Purple
+exampleItem: Jar of swamp
 */
-#define JARS_CUSTOMSTYLE_9 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99d8772f";textAccentColor = "#FF000000";lootbeamColor = "#FF266e47";menuTextColor = "#FF44bf7c";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_9 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80af40ff";textAccentColor = "#FF000000";lootbeamColor = "#FF141010";menuTextColor = "#ffc26bff";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_9) {
     JARS_CUSTOMSTYLE_9
@@ -1457,10 +1833,11 @@ apply (name:JARS_LIST_9) {
 
 /*@ define:input:jars
 type: style
-label: Kalphite Queen
-exampleItem: Jar of sand
+group: Border Styles
+label: Pink
+exampleItem: Jar of empty
 */
-#define JARS_CUSTOMSTYLE_10 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#9984cf10";textAccentColor = "#FF000000";lootbeamColor = "#FF869049";menuTextColor = "#FFc6bd5c";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_10 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80ff61fc";textAccentColor = "#FF000000";lootbeamColor = "#FF141010";menuTextColor = "#ffff54ff";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_10) {
     JARS_CUSTOMSTYLE_10
@@ -1468,10 +1845,11 @@ apply (name:JARS_LIST_10) {
 
 /*@ define:input:jars
 type: style
-label: Thermonuclear Smoke Devil
-exampleItem: Jar of smoke
+group: Border Styles
+label: Guardians
+exampleItem: Jar of decay
 */
-#define JARS_CUSTOMSTYLE_11 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99d3cf13";textAccentColor = "#FF000000";lootbeamColor = "#FF33627b";menuTextColor = "#FFefed79";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_11 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80793bfd";textAccentColor = "#FF000000";lootbeamColor = "#FF926b0a";menuTextColor = "#FF7ec4c4";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_11) {
     JARS_CUSTOMSTYLE_11
@@ -1479,10 +1857,11 @@ apply (name:JARS_LIST_11) {
 
 /*@ define:input:jars
 type: style
-label: Cerb, Sarachnis, Sire
-exampleItem: Jar of souls, eyes, miasma
+group: Border Styles
+label: Khalaphite
+exampleItem: Jar of sand
 */
-#define JARS_CUSTOMSTYLE_12 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99f41d1d";textAccentColor = "#FF000000";lootbeamColor = "#FF7d0000";menuTextColor = "#FFFF3F38";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_12 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80cbe910";textAccentColor = "#FF000000";lootbeamColor = "#FF869049";menuTextColor = "#FFc6bd5c";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_12) {
     JARS_CUSTOMSTYLE_12
@@ -1490,13 +1869,26 @@ apply (name:JARS_LIST_12) {
 
 /*@ define:input:jars
 type: style
-label: Future Release Jars
-exampleItem: Other Jars
+group: Border Styles
+label: Custom
+exampleItem: Jar of fire
 */
-#define JARS_CUSTOMSTYLE_13 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#99f41d1d";textAccentColor = "#FF000000";lootbeamColor = "#FFc90000";menuTextColor = "#FFFF3F38";textAccent = 1;fontType = 1;
+#define JARS_CUSTOMSTYLE_13 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80ffffff";textAccentColor = "#FF000000";lootbeamColor = "#FF869049";menuTextColor = "#ff51bd31";textAccent = 1;fontType = 1;
 
 apply (name:JARS_LIST_13) {
     JARS_CUSTOMSTYLE_13
+}
+
+/*@ define:input:jars
+type: style
+group: Border Styles
+label: Uncategorized
+exampleItem: Future Release Jars
+*/
+#define JARS_CUSTOMSTYLE_14 textColor = "#FF1deff6";backgroundColor = "#99141010";borderColor = "#80f41d1d";textAccentColor = "#FF000000";lootbeamColor = "#FFc90000";menuTextColor = "#FFFF3F38";textAccent = 1;fontType = 1;
+
+apply (name:JARS_LIST_14) {
+    JARS_CUSTOMSTYLE_14
 }
 /* #endregion */
 
@@ -1527,6 +1919,12 @@ type: stringlist
 label: Artio & Callisto
 */
 #define ARTIO_AND_CALLISTO_LIST ["Tyrannical ri*","Claws of callisto","Voidwaker hilt"]
+
+/*@ define:input:bosses
+type: stringlist
+label: Brutus
+*/
+#define BRUTUS_LIST ["Mooleta","Bottomless milk bucket (empty)","Brutus slippers"]
 
 /*@ define:input:bosses
 type: stringlist
@@ -1632,6 +2030,12 @@ label: Kree'arra
 
 /*@ define:input:bosses
 type: stringlist
+label: Maggot King
+*/
+#define MAGGOT_KING_LIST ["Crimson Kisten*","Necklace of Rupture*"]
+
+/*@ define:input:bosses
+type: stringlist
 label: Nex
 */
 #define NEX_LIST ["Ancient hilt","Nihil horn","Zaryte vambraces","Torva full helm (damaged)","Torva platebody (damaged)","Torva platelegs (damaged)","Nihil shard"]
@@ -1644,9 +2048,9 @@ label: Obor
 
 /*@ define:input:bosses
 type: stringlist
-label: Osto-Ayak
+label: Doom of Mokhaiotl
 */
-#define OSTO_AYAK_LIST ["*Eye of Ayak","Confliction Gauntlets","Avernic treads","Mokhaiotl cloth"]
+#define DOOM_OF_MOKHAIOTL_LIST ["Eye of Ayak*","Confliction Gauntlets","Avernic treads*","Mokhaiotl cloth"]
 
 /*@ define:input:bosses
 type: stringlist
@@ -1664,7 +2068,7 @@ label: Revenant maledictus
 type: stringlist
 label: Sarachnis
 */
-#define SARACHNIS_LIST ["Sraracha","Giant egg sac","Sarachnis cudgel"]
+#define SARACHNIS_LIST ["Sraracha","Pristine spider silk","Giant egg sac","Sarachnis cudgel"]
 
 /*@ define:input:bosses
 type: stringlist
@@ -1677,6 +2081,12 @@ type: stringlist
 label: Scurrius
 */
 #define SCURRIUS_LIST ["Scurrius' spine"]
+
+/*@ define:input:bosses
+type: stringlist
+label: Shellbane Gryphon
+*/
+#define SHELLBANE_GRYPHON_LIST ["Belle's folly*"]
 
 /*@ define:input:bosses
 type: stringlist
@@ -1730,7 +2140,7 @@ label: The Whisperer
 type: stringlist
 label: Tormented Demon
 */
-#define TORMENTED_DEMON_LIST ["Smouldering heart","Smouldering pile of flesh","Smouldering gland"]
+#define TORMENTED_DEMONS_LIST ["Smouldering heart","Smouldering pile of flesh","Smouldering gland"]
 
 /*@ define:input:bosses
 type: stringlist
@@ -1769,11 +2179,11 @@ label: Lightbeam Enabled
 */
 #define BOSS_BEAM_ENABLED true
 
-apply (BOSS_ICONS_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:NEX_LIST || name:OBOR_LIST || name:OSTO_AYAK_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:TORMENTED_DEMON_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
+apply (BOSS_ICONS_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRUTUS_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:MAGGOT_KING_LIST || name:NEX_LIST || name:OBOR_LIST || name:DOOM_OF_MOKHAIOTL_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SHELLBANE_GRYPHON_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:TORMENTED_DEMONS_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
     icon = CurrentItem();
 }
 
-apply (BOSS_BEAM_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:NEX_LIST || name:OBOR_LIST || name:OSTO_AYAK_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
+apply (BOSS_BEAM_ENABLED && (name:ALCHEMICAL_HYDRA_LIST || name:AMOXLIATL_LIST || name:ARTIO_AND_CALLISTO_LIST || name:BRUTUS_LIST || name:BRYOPHYTA_LIST || name:CALVARION_AND_VETION_LIST || name:CERBERUS_LIST || name:CHAOS_ELEMENTAL_LIST || name:COMMANDER_ZILYANA_LIST || name:CORPOREAL_BEAST_LIST || name:CRAZY_ARCHAEOLOGIST_LIST || name:DAGANNOTH_KINGS_LIST || name:DUKE_SUCELLUS_LIST || name:GENERAL_GRAARDOR_LIST || name:GROTESQUE_GUARDIANS_LIST || name:HESPORI_LIST || name:KRIL_TSUTSAROTH_LIST || name:KALPHITE_QUEEN_LIST || name:KING_BLACK_DRAGON_LIST || name:KRAKEN_LIST || name:KREEARRA_LIST || name:MAGGOT_KING_LIST || name:NEX_LIST || name:OBOR_LIST || name:DOOM_OF_MOKHAIOTL_LIST || name:PHANTOM_MUSPAH_LIST || name:REVENANT_MALEDICTUS_LIST || name:SARACHNIS_LIST || name:SCORPIA_LIST || name:SCURRIUS_LIST || name:SHELLBANE_GRYPHON_LIST || name:SKOTIZO_LIST || name:SPINDEL_AND_VENENATIS_LIST || name:THE_HUEYCOATL_LIST || name:THE_LEVIATHAN_LIST || name:THE_MIMIC_LIST || name:THE_NIGHTMARE_LIST || name:THERMONUCLEAR_LIST || name:THE_WHISPERER_LIST || name:VARDORVIS_LIST || name:VORKATH_LIST || name:YAMA_LIST || name:ZULRAH_LIST)) {
     showLootbeam = true;
 }
 /* #endregion */
@@ -1807,6 +2217,16 @@ label: Artio & Callisto
 
 apply (name:ARTIO_AND_CALLISTO_LIST) {
     ARTIO_AND_CALLISTO_CUSTOMSTYLE
+}
+
+/*@ define:input:bosses
+type: style
+label: Brutus
+*/
+#define BRUTUS_CUSTOMSTYLE textColor = "#FFE8DFDF";backgroundColor = "#70d3914b";borderColor = "#FFd3cbc8";textAccentColor = "#FF000000";lootbeamColor = "#FFa25500";menuTextColor = "#FFffba70";textAccent = 1;fontType = 2;
+
+apply (name:BRUTUS_LIST) {
+    BRUTUS_CUSTOMSTYLE
 }
 
 /*@ define:input:bosses
@@ -1891,6 +2311,16 @@ apply (name:DAGANNOTH_KINGS_LIST) {
 
 /*@ define:input:bosses
 type: style
+label: Doom of Mokhaiotl
+*/
+#define DOOM_OF_MOKHAIOTL_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#65f60718";borderColor = "#FFe9a60b";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFE83131";textAccent = 1;fontType = 2;
+
+apply (name:DOOM_OF_MOKHAIOTL_LIST) {
+    DOOM_OF_MOKHAIOTL_CUSTOMSTYLE
+}
+
+/*@ define:input:bosses
+type: style
 label: Duke Sucellus
 */
 #define DUKE_SUCELLUS_CUSTOMSTYLE textColor = "#FFdaecef";backgroundColor = "#655d369a";borderColor = "#992cc5e8";textAccentColor = "#FF000000";lootbeamColor = "#FF1595b6";menuTextColor = "#FFba9aea";textAccent = 1;fontType = 2;
@@ -1933,7 +2363,7 @@ apply (name:HESPORI_LIST) {
 type: style
 label: K'ril Tsutsaroth
 */
-#define KRIL_TSUTSAROTH_CUSTOMSTYLE textColor = "#f0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFc91515";textAccent = 1;fontType = 2;
+#define KRIL_TSUTSAROTH_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#70FF3F38";borderColor = "#FF000000";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFc91515";textAccent = 1;fontType = 2;
 
 apply (name:KRIL_TSUTSAROTH_LIST) {
     KRIL_TSUTSAROTH_CUSTOMSTYLE
@@ -1981,6 +2411,16 @@ apply (name:KREEARRA_LIST) {
 
 /*@ define:input:bosses
 type: style
+label: Maggot King
+*/
+#define MAGGOT_KING_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#65f60718";borderColor = "#FFe9a60b";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFE83131";textAccent = 1;fontType = 2;
+
+apply (name:MAGGOT_KING_LIST) {
+    MAGGOT_KING_CUSTOMSTYLE
+}
+
+/*@ define:input:bosses
+type: style
 label: Nex
 */
 #define NEX_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#709823ff";borderColor = "#99ffb01e";textAccentColor = "#FF000000";lootbeamColor = "#FF8c5cc0";menuTextColor = "#FFc88aff";textAccent = 1;fontType = 2;
@@ -1997,16 +2437,6 @@ label: Obor
 
 apply (name:OBOR_LIST) {
     OBOR_CUSTOMSTYLE
-}
-
-/*@ define:input:bosses
-type: style
-label: Osto-Ayak
-*/
-#define OSTO_AYAK_CUSTOMSTYLE textColor = "#FFffffff";backgroundColor = "#65f60718";borderColor = "#FFe9a60b";textAccentColor = "#FF000000";lootbeamColor = "#FFff0000";menuTextColor = "#FFE83131";textAccent = 1;fontType = 2;
-
-apply (name:OSTO_AYAK_LIST) {
-    OSTO_AYAK_CUSTOMSTYLE
 }
 
 /*@ define:input:bosses
@@ -2057,6 +2487,16 @@ label: Scurrius
 
 apply (name:SCURRIUS_LIST) {
     SCURRIUS_CUSTOMSTYLE
+}
+
+/*@ define:input:bosses
+type: style
+label: Shellbane Gryphon
+*/
+#define SHELLBANE_GRYPHON_CUSTOMSTYLE textColor = "#FFf0f0f0";backgroundColor = "#687f1fd5";borderColor = "#99000000";textAccentColor = "#FF000000";lootbeamColor = "#FF120f19";menuTextColor = "#FFc888ff";textAccent = 1;fontType = 2;
+
+apply (name:SHELLBANE_GRYPHON_LIST) {
+    SHELLBANE_GRYPHON_CUSTOMSTYLE
 }
 
 /*@ define:input:bosses
@@ -2139,8 +2579,13 @@ apply (name:THE_WHISPERER_LIST) {
     THE_WHISPERER_CUSTOMSTYLE
 }
 
-#define TORMENTED_DEMONS_CUSTOMSTYLE
-apply (name:TORMENTED_DEMON_LIST) {
+/*@ define:input:bosses
+type: style
+label: Tormented Demons
+*/
+#define TORMENTED_DEMONS_CUSTOMSTYLE textColor = "#ffffffff";textAccent = 1;fontType = 1;showLootbeam = false;showDespawn = true;
+
+apply (name:TORMENTED_DEMONS_LIST) {
     TORMENTED_DEMONS_CUSTOMSTYLE
 }
 
@@ -2235,19 +2680,19 @@ label: Other Unhide Enabled
 type: style
 label: Unhide hunter skilling tools
 */
-#define HUNTER_TOOLS_UNHIDE_CUSTOMSTYLE textColor = "#FFffffff";borderColor = "#40ffffff";textAccentColor = "#FF000000";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";hidden = false;
+#define HUNTER_TOOLS_UNHIDE_CUSTOMSTYLE hidden = false;textColor = "#FFffffff";borderColor = "#40ffffff";textAccentColor = "#FF000000";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";
 
 /*@ define:input:unhide_skilling
 type: style
 label: Unhide agility skilling tools
 */
-#define AGILITY_TOOLS_UNHIDE_CUSTOMSTYLE textColor = "#ffd42d17";backgroundColor = "#75cdaf04";borderColor = "#ff001d1d";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;notify = true;hidden = false;
+#define AGILITY_TOOLS_UNHIDE_CUSTOMSTYLE hidden = false;textColor = "#ffd42d17";backgroundColor = "#75cdaf04";borderColor = "#ff001d1d";textAccentColor = "#FF000000";lootbeamColor = "#FF225a22";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;notify = true;
 
 /*@ define:input:unhide_skilling
 type: style
 label: Unhide other items
 */
-#define OTHER_UNHIDE_CUSTOMSTYLE textColor = "#FFffffff";borderColor = "#40ffffff";textAccentColor = "#FFffffff";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;hidden = false;
+#define OTHER_UNHIDE_CUSTOMSTYLE hidden = false;textColor = "#FFffffff";borderColor = "#40ffffff";textAccentColor = "#FFffffff";lootbeamColor = "#FFffffff";menuTextColor = "#FFff930b";textAccent = 1;fontType = 1;showDespawn = true;
 
 
 
