@@ -591,7 +591,7 @@ label: Enabled
 type: stringlist
 label: Add item exceptions here to hide
 */
-#define UNTRADABLE_HIDE_ITEMS []
+#define UNTRADABLE_HIDE_ITEMS ["Stymphike carcass"]
 
 /*@ define:input:untradeables
 type: style
@@ -2643,7 +2643,7 @@ description: |
 type: stringlist
 label: Unhide hunter skilling tools
 */
-#define HUNTER_TOOLS_UNHIDE_LIST ["Barb-tail harpoon","Hunters' crossbow","Hunters' sunlight crossbow","Hunter's spear","Bird snare","Box trap","Butterfly net","Falconer's glove","Fish chunks","Hunter kit (spell)","Imp-in-a-box*","Unlit torch","Lit torch","Magic box","Noose wand","Rabbit snare","Teasing stick","Impling jar","Butterfly jar","Small fishing net","Rope"]
+#define HUNTER_TOOLS_UNHIDE_LIST ["Barb-tail harpoon","Hunters' crossbow","Hunters' sunlight crossbow","Hunter's spear","Bird snare","Box trap","Butterfly net","Falconer's glove","Fish chunks","Hunter kit (spell)","Imp-in-a-box*","Unlit torch","Lit torch","Magic box","Noose wand","Rabbit snare","Teasing stick","Impling jar","Butterfly jar","Small fishing net","Rope","Stymphike feather"]
 
 /*@ define:input:unhide_skilling
 type: stringlist
