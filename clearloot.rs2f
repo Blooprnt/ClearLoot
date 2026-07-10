@@ -147,25 +147,25 @@ type: stringlist
 label: Less than 4
 group: Stack amount
 */
-#define HIDE_4 []
+#define HIDE_3 []
 
 /*@ define:input:hidden_items
 type: stringlist
-label: Less than 5
+label: Less than 6
 group: Stack amount
 */
 #define HIDE_5 ["Big bones","Spinach roll","Goblin mail","Small ninja monkey bones","Empty spice shaker","Icosahedron","Orb","Burnt meat","Flyer","Brown spice (1)","Brown spice (2)","Red spice (1)","Red spice (2)","Red spice (3)","Red spice (4)","Yellow spice (1)","Yellow spice (2)","Tile","Abyssal ashes"]
 
 /*@ define:input:hidden_items
 type: stringlist
-label: Less than 40
+label: Less than 41
 group: Stack amount
 */
 #define HIDE_40 ["Dark kebbit fur","Suqah hide","Suqah tooth","Volcanic sulphur","Malicious ashes"]
 
 /*@ define:input:hidden_items
 type: stringlist
-label: Less than 60
+label: Less than 61
 group: Stack amount
 */
 #define HIDE_60 ["Logs","Vile ashes","Fiendish ashes","Ashes","Oyster pearl","Calcite","Numulite","Volcanic ash","Vial","Bucket","Jug","Seaweed","Green egg","Red egg","Blue egg","Yellow egg","Raw chicken","Empty oyster","Edible seaweed","Tin ore","Fishing bait","Raw mackerel","Wildblood seed"]
@@ -242,7 +242,7 @@ group: Stack value
 
 
 rule (name:HIDE_1 && quantity:<2) { hidden = true; }
-rule (name:HIDE_4 && quantity:<4) { hidden = true; }
+rule (name:HIDE_3 && quantity:<4) { hidden = true; }
 rule (name:HIDE_5 && quantity:<6) { hidden = true; }
 rule (name:HIDE_40 && quantity:<41) { hidden = true; }
 rule (name:HIDE_60 && quantity:<61) { hidden = true; }
