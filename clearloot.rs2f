@@ -120,18 +120,143 @@ name: Hidden Items
 description: |
   - Stack Amount: 
     - Hides based on stack amount regardless of stack value
+    - Non-noted items dont add up in "stack amount"
 
   - Stack Value: 
     - Hides based on stack value regardless of stack amount
+    - Non-noted items dont add up in price
   
   - Others' Boat: 
     - Hides ground items in other people's boats
 
-  Ammo is under "stack value hide" as to not get clutter of 1-2 bolts in minigames/wildy/slayer
+  Ammo is under "Stack value" as to not get clutter of 1-2 bolts in minigames/wildy/slayer
 */
 /* #endregion */
 
 /* #region [1] hidden items */
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 2
+group: Stack amount
+*/
+#define HIDE_1 ["*ashes","Dragon dart","blue dragonhide","green dragonhide","red dragonhide","black dragonhide","Adamant battleaxe"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 4
+group: Stack amount
+*/
+#define HIDE_4 []
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 5
+group: Stack amount
+*/
+#define HIDE_5 ["Big bones","Spinach roll","Goblin mail","Small ninja monkey bones","Empty spice shaker","Icosahedron","Orb","Burnt meat","Flyer","Brown spice (1)","Brown spice (2)","Red spice (1)","Red spice (2)","Red spice (3)","Red spice (4)","Yellow spice (1)","Yellow spice (2)","Tile","Abyssal ashes"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 40
+group: Stack amount
+*/
+#define HIDE_40 ["Dark kebbit fur","Suqah hide","Suqah tooth","Volcanic sulphur","Malicious ashes"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 60
+group: Stack amount
+*/
+#define HIDE_60 ["Logs","Vile ashes","Fiendish ashes","Ashes","Oyster pearl","Calcite","Numulite","Volcanic ash","Vial","Bucket","Jug","Seaweed","Green egg","Red egg","Blue egg","Yellow egg","Raw chicken","Empty oyster","Edible seaweed","Tin ore","Fishing bait","Raw mackerel","Wildblood seed"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 1,600 GP
+group: Stack value
+*/
+#define HIDE_VALUE_1600 ["Bronze bolts*","Silver bolts*","Iron bolts*","Bone bolts*","Steel bolts*","Mithril bolts*","Broad bolts*","Adamant bolts*","Runite bolts*","Bolt rack","Opal bolts (e)","Pearl bolts (e)","Topaz bolts (e)","Sapphire bolts (e)","Emerald bolts (e)","Ruby bolts (e)","Diamond bolts (e)","Kebbit","Long kebbit","Sunlight antler","Training arrows","Fire arrows","Broad arrows","Ice arrows","Bronze arrow*","Iron arrow*","Steel arrow*","Mithril arrow*","Adamant arrow*","Rune arrow*","Bronze dart*","Iron dart*","Steel dart*","Mithril dart*","Adamant dart*","Bronze javelin*","Iron javelin*","Steel javelin*","Mithril javelin*","Adamant javelin*","Bronze knife*","Iron knife*","Steel knife*","Black knife*","Bronze thrownaxe","Iron thrownaxe","Steel thrownaxe"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 2,000 GP
+group: Stack value
+*/
+#define HIDE_VALUE_2000 ["Moonlight antler","Ogre arrow","Amethyst arrow*","Rune dart*","Atlatl dart","Bronze brutal","Iron brutal","Steel brutal","Rune javelin*","Amethyst javelin*","Mithril brutal","Mithril knife*","Rune knife*","Mithril thrownaxe","Rune thrownaxe"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 3,500 GP
+group: Stack value
+*/
+#define HIDE_VALUE_3500 ["Amethyst broad bolts*","Dragonstone bolts (e)","Adamant brutal","Adamant knife*","Adamant thrownaxe","Dragon thrownaxe"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 4,500 GP
+group: Stack value
+*/
+#define HIDE_VALUE_4500 ["Black brutal","Rune brutal"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 5,700 GP
+group: Stack value
+*/
+#define HIDE_VALUE_5700 []
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 6,300 GP
+group: Stack value
+*/
+#define HIDE_VALUE_6300 []
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 7,500 GP
+group: Stack value
+*/
+#define HIDE_VALUE_7500 []
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 9,000 GP
+group: Stack value
+*/
+#define HIDE_VALUE_9000 ["Jade dragon bolts (e)","Topaz dragon bolts (e)","Dragon arrow*","Toktz-xil-ul"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 18,000 GP
+group: Stack value
+*/
+#define HIDE_VALUE_18000 ["Emerald dragon bolts (e)","Dragonstone dragon bolts (e)","Dragon knife*"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Less than 25,000 GP
+group: Stack value
+*/
+#define HIDE_VALUE_25000 ["Dragon bolts*","Onyx bolts (e)","Opal dragon bolts (e)","Pearl dragon bolts (e)","Sapphire dragon bolts (e)","Ruby dragon bolts (e)","Diamond dragon bolts (e)","Onyx dragon bolts (e)","Black dart*","Dragon dart*","Morrigan's javelin*"]
+
+
+rule (name:HIDE_1 && quantity:<2) { hidden = true; }
+rule (name:HIDE_4 && quantity:<4) { hidden = true; }
+rule (name:HIDE_5 && quantity:<6) { hidden = true; }
+rule (name:HIDE_40 && quantity:<41) { hidden = true; }
+rule (name:HIDE_60 && quantity:<61) { hidden = true; }
+
+rule (name:HIDE_VALUE_1600 && value:<1600) { hidden = true; }
+rule (name:HIDE_VALUE_2000 && value:<2000) { hidden = true; }
+rule (name:HIDE_VALUE_3500 && value:<3500) { hidden = true; }
+rule (name:HIDE_VALUE_4500 && value:<4500) { hidden = true; }
+rule (name:HIDE_VALUE_5700 && value:<5700) { hidden = true; }
+rule (name:HIDE_VALUE_6300 && value:<6300) { hidden = true; }
+rule (name:HIDE_VALUE_7500 && value:<7500) { hidden = true; }
+rule (name:HIDE_VALUE_9000 && value:<9000) { hidden = true; }
+rule (name:HIDE_VALUE_18000 && value:<18000) { hidden = true; }
+rule (name:HIDE_VALUE_25000 && value:<25000) { hidden = true; }
 
 /*@ define:input:hide
 label: Hide on other boats
@@ -480,97 +605,6 @@ rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:MERCENARY_SHIPWRECK_HIDE &
 rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:FREMENNIK_SHIPWRECK_HIDE && FREMENNIK_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
 rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:MERCHANT_SHIPWRECK_HIDE && MERCHANT_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
 
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Hide if less than 1
-group: Stack amount hide
-*/
-#define HIDE_1 ["*ashes","Dragon dart","blue dragonhide","green dragonhide","red dragonhide","black dragonhide"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Hide if less than a stack of 5
-group: Stack amount hide
-*/
-#define HIDE_5 ["Big bones","Spinach roll","Goblin mail","Small ninja monkey bones","Empty spice shaker","Icosahedron","Orb","Burnt meat","Flyer","Brown spice (1)","Brown spice (2)","Red spice (1)","Red spice (2)","Red spice (3)","Red spice (4)","Yellow spice (1)","Yellow spice (2)","Tile","Abyssal ashes"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Hide if less than a stack of 40
-group: Stack amount hide
-*/
-#define HIDE_40 ["Dark kebbit fur","Suqah hide","Suqah tooth","Volcanic sulphur","Malicious ashes"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Hide if less than a stack of 60
-group: Stack amount hide
-*/
-#define HIDE_60 ["Logs","Vile ashes","Fiendish ashes","Ashes","Oyster pearl","Calcite","Numulite","Volcanic ash","Vial","Bucket","Jug","Seaweed","Green egg","Red egg","Blue egg","Yellow egg","Raw chicken","Empty oyster","Edible seaweed","Tin ore","Fishing bait","Raw mackerel","Wildblood seed"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Under 1600 GP stack
-group: Stack value hide
-*/
-#define HIDE_VALUE_1600 ["Bronze bolts*","Silver bolts*","Iron bolts*","Bone bolts*","Steel bolts*","Mithril bolts*","Broad bolts*","Adamant bolts*","Runite bolts*","Bolt rack","Opal bolts (e)","Pearl bolts (e)","Topaz bolts (e)","Sapphire bolts (e)","Emerald bolts (e)","Ruby bolts (e)","Diamond bolts (e)","Kebbit","Long kebbit","Sunlight antler","Training arrows","Fire arrows","Broad arrows","Ice arrows","Bronze arrow*","Iron arrow*","Steel arrow*","Mithril arrow*","Adamant arrow*","Rune arrow*","Bronze dart*","Iron dart*","Steel dart*","Mithril dart*","Adamant dart*","Bronze javelin*","Iron javelin*","Steel javelin*","Mithril javelin*","Adamant javelin*","Bronze knife*","Iron knife*","Steel knife*","Black knife*","Bronze thrownaxe","Iron thrownaxe","Steel thrownaxe"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Under 2000 GP stack
-group: Stack value hide
-*/
-#define HIDE_VALUE_2000 ["Moonlight antler","Ogre arrow","Amethyst arrow*","Rune dart*","Atlatl dart","Bronze brutal","Iron brutal","Steel brutal","Rune javelin*","Amethyst javelin*","Mithril brutal","Mithril knife*","Rune knife*","Mithril thrownaxe","Rune thrownaxe"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Under 3500 GP stack
-group: Stack value hide
-*/
-#define HIDE_VALUE_3500 ["Amethyst broad bolts*","Dragonstone bolts (e)","Adamant brutal","Adamant knife*","Adamant thrownaxe","Dragon thrownaxe"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Under 4500 GP stack
-group: Stack value hide
-*/
-#define HIDE_VALUE_4500 ["Black brutal","Rune brutal"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Under 9000 GP stack
-group: Stack value hide
-*/
-#define HIDE_VALUE_9000 ["Jade dragon bolts (e)","Topaz dragon bolts (e)","Dragon arrow*","Toktz-xil-ul"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Under 18000 GP stack
-group: Stack value hide
-*/
-#define HIDE_VALUE_18000 ["Emerald dragon bolts (e)","Dragonstone dragon bolts (e)","Dragon knife*"]
-
-/*@ define:input:hidden_items
-type: stringlist
-label: Under 25000 GP stack
-group: Stack value hide
-*/
-#define HIDE_VALUE_25000 ["Dragon bolts*","Onyx bolts (e)","Opal dragon bolts (e)","Pearl dragon bolts (e)","Sapphire dragon bolts (e)","Ruby dragon bolts (e)","Diamond dragon bolts (e)","Onyx dragon bolts (e)","Black dart*","Dragon dart*","Morrigan's javelin*"]
-
-
-rule (name:HIDE_1 && quantity:<2) { hidden = true; }
-rule (name:HIDE_5 && quantity:<6) { hidden = true; }
-rule (name:HIDE_40 && quantity:<41) { hidden = true; }
-rule (name:HIDE_60 && quantity:<61) { hidden = true; }
-
-rule (name:HIDE_VALUE_1600 && value:<1600) { hidden = true; }
-rule (name:HIDE_VALUE_2000 && value:<2000) { hidden = true; }
-rule (name:HIDE_VALUE_3500 && value:<3500) { hidden = true; }
-rule (name:HIDE_VALUE_4500 && value:<4500) { hidden = true; }
-rule (name:HIDE_VALUE_9000 && value:<9000) { hidden = true; }
-rule (name:HIDE_VALUE_18000 && value:<18000) { hidden = true; }
-rule (name:HIDE_VALUE_25000 && value:<25000) { hidden = true; }
 /* #endregion */
 
 /* #region [1] untradeable */
@@ -762,70 +796,70 @@ type: style
 label: Tier 1 Display
 exampleItem: Mithril kiteshield
 */
-#define VALUES_TIER_1_CUSTOMSTYLE textColor = "#95808080";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 1;
+#define VALUES_TIER_1_CUSTOMSTYLE textColor = "#95808080";textAccentColor = "#87000000";menuTextColor = "#FF787878";textAccent = 1;showValue = false;showDespawn = false;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 2 Display
 exampleItem: Adamant scimitar
 */
-#define VALUES_TIER_2_CUSTOMSTYLE textColor = "#95808080";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 1;
+#define VALUES_TIER_2_CUSTOMSTYLE textColor = "#c98f8f8f";textAccentColor = "#6b000000";menuTextColor = "#FF787878";textAccent = 1;showValue = false;showDespawn = false;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 3 Display
 exampleItem: Rune med helm
 */
-#define VALUES_TIER_3_CUSTOMSTYLE textColor = "#FFffffff";textAccentColor = "#FF000000";menuTextColor = "#FF787878";textAccent = 1;
+#define VALUES_TIER_3_CUSTOMSTYLE textColor = "#e8e8e8e8";textAccentColor = "#db000000";menuTextColor = "#FF787878";textAccent = 1;showValue = true;showDespawn = true;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 4 Display
 exampleItem: Rune platelegs
 */
-#define VALUES_TIER_4_CUSTOMSTYLE textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;
+#define VALUES_TIER_4_CUSTOMSTYLE textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;showValue = true;showDespawn = true;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 5 Display
 exampleItem: Dragon scimitar
 */
-#define VALUES_TIER_5_CUSTOMSTYLE textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;notify = true;
+#define VALUES_TIER_5_CUSTOMSTYLE textColor = "#FF21EB41";textAccentColor = "#FF000000";menuTextColor = "#FF21EB41";textAccent = 1;showValue = true;showDespawn = true;notify = true;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 6 Display
 exampleItem: Dragon platelegs
 */
-#define VALUES_TIER_6_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67A3A3A3";borderColor = "#FFD4D4D4";textAccentColor = "#FF000000";lootbeamColor = "#FFD4D4D4";menuTextColor = "#FFD4D4D4";textAccent = 1;notify = true;
+#define VALUES_TIER_6_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67A3A3A3";borderColor = "#FFD4D4D4";textAccentColor = "#FF000000";lootbeamColor = "#FFD4D4D4";menuTextColor = "#FFD4D4D4";textAccent = 1;showValue = true;showDespawn = true;notify = true;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 7 Display
 exampleItem: Granite maul
 */
-#define VALUES_TIER_7_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#6700D97E";borderColor = "#FF32DC95";textAccentColor = "#FF000000";lootbeamColor = "#FF32DC95";menuTextColor = "#FF32DC95";textAccent = 1;notify = true;
+#define VALUES_TIER_7_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#6700D97E";borderColor = "#FF32DC95";textAccentColor = "#FF000000";lootbeamColor = "#FF32DC95";menuTextColor = "#FF32DC95";textAccent = 1;showValue = true;showDespawn = true;notify = true;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 8 Display
 exampleItem: Eternal crystal
 */
-#define VALUES_TIER_8_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FFA800";borderColor = "#FFF0D337";textAccentColor = "#FF000000";lootbeamColor = "#FFF0D337";menuTextColor = "#FFF0D337";textAccent = 1;notify = true;
+#define VALUES_TIER_8_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FFA800";borderColor = "#FFF0D337";textAccentColor = "#FF000000";lootbeamColor = "#FFF0D337";menuTextColor = "#FFF0D337";textAccent = 1;showValue = true;showDespawn = true;notify = true;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 9 Display
 exampleItem: Virtus robe top
 */
-#define VALUES_TIER_9_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FFE83131";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;notify = true;
+#define VALUES_TIER_9_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#67FF0000";borderColor = "#FFE83131";textAccentColor = "#FF000000";lootbeamColor = "#FFE83131";menuTextColor = "#FFE83131";textAccent = 1;showValue = true;showDespawn = true;notify = true;
 
 /*@ define:input:color_based_on_item_value
 type: style
 label: Tier 10 Display
 exampleItem: Scythe of vitur (uncharged)
 */
-#define VALUES_TIER_10_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#678000FF";borderColor = "#FFA74FFF";textAccentColor = "#FF000000";lootbeamColor = "#FFA74FFF";menuTextColor = "#FFA74FFF";textAccent = 1;notify = true;
+#define VALUES_TIER_10_CUSTOMSTYLE textColor = "#FFF2F2F2";backgroundColor = "#678000FF";borderColor = "#FFA74FFF";textAccentColor = "#FF000000";lootbeamColor = "#FFA74FFF";menuTextColor = "#FFA74FFF";textAccent = 1;showValue = true;showDespawn = true;notify = true;
 /* #endregion */
 
 /* #region [6] value */
