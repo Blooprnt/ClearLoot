@@ -247,16 +247,16 @@ rule (name:HIDE_5 && quantity:<6) { hidden = true; }
 rule (name:HIDE_40 && quantity:<41) { hidden = true; }
 rule (name:HIDE_60 && quantity:<61) { hidden = true; }
 
-rule (name:HIDE_VALUE_1600 && value:<1600) { hidden = true; }
-rule (name:HIDE_VALUE_2000 && value:<2000) { hidden = true; }
-rule (name:HIDE_VALUE_3500 && value:<3500) { hidden = true; }
-rule (name:HIDE_VALUE_4500 && value:<4500) { hidden = true; }
-rule (name:HIDE_VALUE_5700 && value:<5700) { hidden = true; }
-rule (name:HIDE_VALUE_6300 && value:<6300) { hidden = true; }
-rule (name:HIDE_VALUE_7500 && value:<7500) { hidden = true; }
-rule (name:HIDE_VALUE_9000 && value:<9000) { hidden = true; }
-rule (name:HIDE_VALUE_18000 && value:<18000) { hidden = true; }
-rule (name:HIDE_VALUE_25000 && value:<25000) { hidden = true; }
+rule (name:HIDE_VALUE_1600 && gevalue:<1600) { hidden = true; }
+rule (name:HIDE_VALUE_2000 && gevalue:<2000) { hidden = true; }
+rule (name:HIDE_VALUE_3500 && gevalue:<3500) { hidden = true; }
+rule (name:HIDE_VALUE_4500 && gevalue:<4500) { hidden = true; }
+rule (name:HIDE_VALUE_5700 && gevalue:<5700) { hidden = true; }
+rule (name:HIDE_VALUE_6300 && gevalue:<6300) { hidden = true; }
+rule (name:HIDE_VALUE_7500 && gevalue:<7500) { hidden = true; }
+rule (name:HIDE_VALUE_9000 && gevalue:<9000) { hidden = true; }
+rule (name:HIDE_VALUE_18000 && gevalue:<18000) { hidden = true; }
+rule (name:HIDE_VALUE_25000 && gevalue:<25000) { hidden = true; }
 
 /*@ define:input:hide
 label: Hide on other boats
@@ -617,15 +617,39 @@ description: |
 
 /*@ define:input:untradeables
 type: boolean
-label: Enabled
+label: They appear white
 */
 #define UNTRADABLE_SHOW_ENABLED true
 
 /*@ define:input:untradeables
-type: stringlist
-label: Add item exceptions here to hide
+type: boolean
+label: Some are transparent
 */
-#define UNTRADABLE_HIDE_ITEMS ["Stymphike carcass"]
+#define UNTRADABLE_SHOW_TRANSPARENT_ENABLED true
+
+/*@ define:input:untradeables
+type: boolean
+label: Some are hidden, but clickable
+*/
+#define UNTRADABLE_HIDE_CLICKABLE_ENABLED true
+
+/*@ define:input:untradeables
+type: stringlist
+label: Untradeables to make less transparent
+*/
+#define UNTRADABLE_SHOW_TRANSPARENT_ITEMS ["Queen help book","Damaged armour","Tortugan scute","Sea shell","Fossilised skull"]
+
+/*@ define:input:untradeables
+type: stringlist
+label: Untradeables to hide but keep clickable
+*/
+#define UNTRADABLE_HIDE_CLICKABLE_ITEMS ["Broken arrow"]
+
+/*@ define:input:untradeables
+type: stringlist
+label: Untradeables to fully hide
+*/
+#define UNTRADABLE_HIDE_ITEMS ["Stymphike carcass","Broken glass"]
 
 /*@ define:input:untradeables
 type: style
@@ -634,10 +658,33 @@ exampleItem: Untradeable
 */
 #define UNTRADABLE_SHOW_CUSTOMSTYLE textColor = "#FFffffff";showDespawn = true;
 
+/*@ define:input:untradeables
+type: style
+label: Style
+exampleItem: Broken Glasss
+*/
+#define UNTRADABLE_SHOW_TRANSPARENT_CUSTOMSTYLE textColor = "#6e919191";textAccentColor = "#6e000000";menuTextColor = "#FF787878";textAccent = 1;fontType = 1;showDespawn = false;
+
+/*@ define:input:untradeables
+type: style
+label: Style
+exampleItem: Hidden
+*/
+#define UNTRADABLE_HIDE_CLICKABLE_CUSTOMSTYLE textColor = "#00ffffff";backgroundColor = "#00000000";borderColor = "#00000000";textAccentColor = "#00000000";textAccent = 3;showDespawn = false;
 
 apply (tradeable: false && UNTRADABLE_SHOW_ENABLED) {
     hidden = false;
     UNTRADABLE_SHOW_CUSTOMSTYLE
+}
+
+apply (tradeable: false && UNTRADABLE_SHOW_TRANSPARENT_ENABLED && name:UNTRADABLE_SHOW_TRANSPARENT_ITEMS) {
+    hidden = false;
+    UNTRADABLE_SHOW_TRANSPARENT_CUSTOMSTYLE
+}
+
+apply (tradeable: false && UNTRADABLE_HIDE_CLICKABLE_ENABLED && name:UNTRADABLE_HIDE_CLICKABLE_ITEMS) {
+    hidden = false;
+    UNTRADABLE_HIDE_CLICKABLE_CUSTOMSTYLE
 }
 
 apply (name:UNTRADABLE_HIDE_ITEMS) { 
@@ -863,34 +910,34 @@ exampleItem: Scythe of vitur (uncharged)
 /* #endregion */
 
 /* #region [6] value */
-apply (VALUES_TIER_1_ENABLED && value:>=VALUES_TIER_1_VALUE) {
+apply (VALUES_TIER_1_ENABLED && gevalue:>=VALUES_TIER_1_VALUE) {
   VALUES_TIER_1_CUSTOMSTYLE
 }
-apply ((ownership:1 || ownership:2 || ownership:3) && VALUES_TIER_2_ENABLED && value:>=VALUES_TIER_2_VALUE) {
+apply ((ownership:1 || ownership:2 || ownership:3) && VALUES_TIER_2_ENABLED && gevalue:>=VALUES_TIER_2_VALUE) {
   VALUES_TIER_2_CUSTOMSTYLE
 }
-apply (VALUES_TIER_3_ENABLED && value:>=VALUES_TIER_3_VALUE) {
+apply (VALUES_TIER_3_ENABLED && gevalue:>=VALUES_TIER_3_VALUE) {
   VALUES_TIER_3_CUSTOMSTYLE
 }
-apply (VALUES_TIER_4_ENABLED && value:>=VALUES_TIER_4_VALUE) {
+apply (VALUES_TIER_4_ENABLED && gevalue:>=VALUES_TIER_4_VALUE) {
   VALUES_TIER_4_CUSTOMSTYLE
 }
-apply (VALUES_TIER_5_ENABLED && value:>=VALUES_TIER_5_VALUE) {
+apply (VALUES_TIER_5_ENABLED && gevalue:>=VALUES_TIER_5_VALUE) {
   VALUES_TIER_5_CUSTOMSTYLE
 }
-apply (VALUES_TIER_6_ENABLED && value:>=VALUES_TIER_6_VALUE) {
+apply (VALUES_TIER_6_ENABLED && gevalue:>=VALUES_TIER_6_VALUE) {
   VALUES_TIER_6_CUSTOMSTYLE
 }
-apply (VALUES_TIER_7_ENABLED && value:>=VALUES_TIER_7_VALUE) {
+apply (VALUES_TIER_7_ENABLED && gevalue:>=VALUES_TIER_7_VALUE) {
   VALUES_TIER_7_CUSTOMSTYLE
 }
-apply (VALUES_TIER_8_ENABLED && value:>=VALUES_TIER_8_VALUE) {
+apply (VALUES_TIER_8_ENABLED && gevalue:>=VALUES_TIER_8_VALUE) {
   VALUES_TIER_8_CUSTOMSTYLE
 }
-apply (VALUES_TIER_9_ENABLED && value:>=VALUES_TIER_9_VALUE) {
+apply (VALUES_TIER_9_ENABLED && gevalue:>=VALUES_TIER_9_VALUE) {
   VALUES_TIER_9_CUSTOMSTYLE
 }
-apply (VALUES_TIER_10_ENABLED && value:>=VALUES_TIER_10_VALUE) {
+apply (VALUES_TIER_10_ENABLED && gevalue:>=VALUES_TIER_10_VALUE) {
   VALUES_TIER_10_CUSTOMSTYLE
 }
 
@@ -929,11 +976,11 @@ exampleItem: Grimy ranarr weed
 #define HERBS_CUSTOMSTYLE textColor = "#FF0eee00";menuTextColor = "#FF0eee00";
 
 
-// apply (HERB_ICON_ENABLED && value:>HERBS_SHOW && name:HERBS_LIST && name:["Grimy ranarr weed","Grimy dwarf weed"]) {
+// apply (HERB_ICON_ENABLED && gevalue:>HERBS_SHOW && name:HERBS_LIST && name:["Grimy ranarr weed","Grimy dwarf weed"]) {
 //     icon = CurrentItem();
 // }
 
-rule (name:HERBS_LIST && value:>HERBS_SHOW) { 
+rule (name:HERBS_LIST && gevalue:>HERBS_SHOW) { 
     hidden = false;
     HERBS_CUSTOMSTYLE 
 }
@@ -2192,7 +2239,7 @@ label: Vorkath
 type: stringlist
 label: Yama
 */
-#define YAMA_LIST ["Demonic tallow","Cosmic catalysts","Soulflame horn","Oathplate*","Diabolic worms"]
+#define YAMA_LIST ["Dossier","Oathplate*","Forgotten lockbox","Soulflame horn","Contract of oathplate acquisition"]
 
 /*@ define:input:bosses
 type: stringlist
