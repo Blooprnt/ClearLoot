@@ -129,6 +129,9 @@ description: |
   - Others' Boat: 
     - Hides ground items in other people's boats
 
+  - Boss Rooms: 
+    - Hides ground items in boss rooms
+
   Ammo is under "Stack value" as to not get clutter of 1-2 bolts in minigames/wildy/slayer
 */
 /* #endregion */
@@ -604,6 +607,27 @@ rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:PIRATE_SHIPWRECK_HIDE && P
 rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:MERCENARY_SHIPWRECK_HIDE && MERCENARY_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
 rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:FREMENNIK_SHIPWRECK_HIDE && FREMENNIK_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
 rule ((ownership:2) && area:SALVAGE_AREA_HIDE && name:MERCHANT_SHIPWRECK_HIDE && MERCHANT_SHIPWRECK_STATE && gevalue:<OTHER_BOAT_VALUE) {hidden = true;}
+
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Nex (less than 5k gp)
+group: Boss Room
+*/
+#define NEX_ROOM ["Shark","Coal"]
+
+/*@ define:input:hidden_items
+type: stringlist
+label: Nex (less than 10k gp)
+group: Boss Room
+*/
+#define NEX_ROOM2 ["Prayer potion*","Saradomin brew*","Restore*"]
+
+#define NEX_AREA [2910, 5185, 0, 2942, 5220, 0]
+
+rule ((ownership:2) && area:NEX_AREA && name:NEX_ROOM && gevalue:<5000) {hidden = true;}
+rule ((ownership:2) && area:NEX_AREA && name:NEX_ROOM2 && gevalue:<10000) {hidden = true;}
+
 
 /* #endregion */
 
@@ -2119,7 +2143,7 @@ label: Maggot King
 type: stringlist
 label: Nex
 */
-#define NEX_LIST ["Ancient hilt","Nihil horn","Zaryte vambraces","Torva full helm (damaged)","Torva platebody (damaged)","Torva platelegs (damaged)","Nihil shard"]
+#define NEX_LIST ["Ancient hilt","Zaryte vambraces","Torva full helm (damaged)","Torva platebody (damaged)","Torva platelegs (damaged)"]
 
 /*@ define:input:bosses
 type: stringlist
