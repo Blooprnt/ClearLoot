@@ -2143,7 +2143,7 @@ label: Maggot King
 type: stringlist
 label: Nex
 */
-#define NEX_LIST ["Ancient hilt","Zaryte vambraces","Torva full helm (damaged)","Torva platebody (damaged)","Torva platelegs (damaged)"]
+#define NEX_LIST ["Ancient hilt","Zaryte vambraces","Nihil horn","Torva full helm (damaged)","Torva platebody (damaged)","Torva platelegs (damaged)"]
 
 /*@ define:input:bosses
 type: stringlist
